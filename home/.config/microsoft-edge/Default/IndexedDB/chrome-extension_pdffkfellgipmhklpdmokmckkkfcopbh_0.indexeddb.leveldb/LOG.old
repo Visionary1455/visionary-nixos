@@ -1,0 +1,14 @@
+2025/05/06-00:02:18.787 17ac Reusing MANIFEST /home/visionary/.config/microsoft-edge/Default/IndexedDB/chrome-extension_pdffkfellgipmhklpdmokmckkkfcopbh_0.indexeddb.leveldb/MANIFEST-000001
+2025/05/06-00:02:18.787 17ac Recovering log #193
+2025/05/06-00:02:18.787 17ac Reusing old log /home/visionary/.config/microsoft-edge/Default/IndexedDB/chrome-extension_pdffkfellgipmhklpdmokmckkkfcopbh_0.indexeddb.leveldb/000193.log 
+2025/05/06-00:02:18.788 17ac Delete type=2 #191
+2025/05/06-00:02:18.791 17ac Level-0 table #198: started
+2025/05/06-00:02:18.792 17ac Level-0 table #198: 621 bytes OK
+2025/05/06-00:02:18.793 17ac Delete type=0 #193
+2025/05/06-00:02:18.793 17ac Manual compaction at level-0 from '\x004\x00\x00\x00' @ 72057594037927935 : 1 .. '\x005\x00\x00\x00' @ 0 : 0; will stop at '\x004\x00\x00\x05' @ 7723 : 1
+2025/05/06-00:02:18.793 17ac Compacting 1@0 + 1@1 files
+2025/05/06-00:02:18.795 17ac Generated table #199@0: 896 keys, 92508 bytes
+2025/05/06-00:02:18.795 17ac Compacted 1@0 + 1@1 files => 92508 bytes
+2025/05/06-00:02:18.795 17ac compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/06-00:02:18.796 17ac Delete type=2 #198
+2025/05/06-00:02:18.796 17ac Manual compaction at level-0 from '\x004\x00\x00\x05' @ 7723 : 1 .. '\x005\x00\x00\x00' @ 0 : 0; will stop at (end)

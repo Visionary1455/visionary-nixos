@@ -1,0 +1,29 @@
+2025-05-05 23:21:35.841 [info] Extension host with pid 3150 started
+2025-05-05 23:21:35.931 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-05-05 23:21:35.932 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-05-05 23:21:36.030 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-05-05 23:21:36.050 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-05-05 23:21:36.051 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-05-05 23:21:36.225 [info] Eager extensions activated
+2025-05-05 23:21:36.236 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 23:21:36.236 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 23:21:36.237 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 23:21:36.248 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 23:21:36.248 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 23:21:36.248 [info] ExtensionService#_doActivateExtension atommaterial.a-file-icon-vscode, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 23:22:04.065 [info] Extension host terminating: renderer closed the MessagePort
+2025-05-05 23:22:04.084 [info] Extension host with pid 3150 exiting with code 0
+2025-05-05 23:22:05.163 [info] Extension host with pid 3263 started
+2025-05-05 23:22:05.163 [info] Skipping acquiring lock for /home/visionary/.config/Code/User/workspaceStorage/176908ef150ac1f2a1dd2199c231f178.
+2025-05-05 23:22:05.443 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-05-05 23:22:05.444 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-05-05 23:22:05.662 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-05-05 23:22:05.709 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-05-05 23:22:05.710 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-05-05 23:22:05.853 [info] Eager extensions activated
+2025-05-05 23:22:05.854 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 23:22:05.855 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 23:22:05.855 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 23:22:05.867 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 23:22:05.873 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 23:22:05.873 [info] ExtensionService#_doActivateExtension atommaterial.a-file-icon-vscode, startup: false, activationEvent: 'onStartupFinished'

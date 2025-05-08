@@ -1,0 +1,42 @@
+2025/05/07-23:01:50.967 4 Reusing MANIFEST /home/visionary/.config/microsoft-edge/Default/Session Storage/MANIFEST-000001
+2025/05/07-23:01:50.968 4 Recovering log #377
+2025/05/07-23:01:50.968 4 Reusing old log /home/visionary/.config/microsoft-edge/Default/Session Storage/000377.log 
+2025/05/07-23:03:17.943 5 Level-0 table #381: started
+2025/05/07-23:03:17.948 5 Level-0 table #381: 354412 bytes OK
+2025/05/07-23:03:17.949 5 Delete type=0 #377
+2025/05/07-23:06:14.323 5 Level-0 table #383: started
+2025/05/07-23:06:14.326 5 Level-0 table #383: 188988 bytes OK
+2025/05/07-23:06:14.327 5 Delete type=0 #380
+2025/05/07-23:10:26.913 5 Level-0 table #385: started
+2025/05/07-23:10:26.916 5 Level-0 table #385: 154711 bytes OK
+2025/05/07-23:10:26.917 5 Delete type=0 #382
+2025/05/07-23:10:26.917 5 Compacting 4@0 + 1@1 files
+2025/05/07-23:10:26.927 5 Generated table #386@0: 2594 keys, 1086311 bytes
+2025/05/07-23:10:26.927 5 Compacted 4@0 + 1@1 files => 1086311 bytes
+2025/05/07-23:10:26.927 5 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/07-23:10:26.928 5 Delete type=2 #376
+2025/05/07-23:10:26.928 5 Delete type=2 #378
+2025/05/07-23:10:26.928 5 Delete type=2 #381
+2025/05/07-23:10:26.928 5 Delete type=2 #383
+2025/05/07-23:10:26.928 5 Delete type=2 #385
+2025/05/07-23:10:39.548 5 Level-0 table #388: started
+2025/05/07-23:10:39.551 5 Level-0 table #388: 178790 bytes OK
+2025/05/07-23:10:39.552 5 Delete type=0 #384
+2025/05/07-23:12:13.284 5 Level-0 table #390: started
+2025/05/07-23:12:13.287 5 Level-0 table #390: 131438 bytes OK
+2025/05/07-23:12:13.288 5 Delete type=0 #387
+2025/05/07-23:17:46.054 5 Level-0 table #392: started
+2025/05/07-23:17:46.058 5 Level-0 table #392: 132633 bytes OK
+2025/05/07-23:17:46.060 5 Delete type=0 #389
+2025/05/07-23:33:48.551 5 Level-0 table #394: started
+2025/05/07-23:33:48.554 5 Level-0 table #394: 156378 bytes OK
+2025/05/07-23:33:48.555 5 Delete type=0 #391
+2025/05/07-23:33:48.555 5 Compacting 4@0 + 1@1 files
+2025/05/07-23:33:48.574 5 Generated table #395@0: 2627 keys, 1684259 bytes
+2025/05/07-23:33:48.574 5 Compacted 4@0 + 1@1 files => 1684259 bytes
+2025/05/07-23:33:48.576 5 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/07-23:33:48.577 5 Delete type=2 #386
+2025/05/07-23:33:48.577 5 Delete type=2 #388
+2025/05/07-23:33:48.577 5 Delete type=2 #390
+2025/05/07-23:33:48.577 5 Delete type=2 #392
+2025/05/07-23:33:48.577 5 Delete type=2 #394

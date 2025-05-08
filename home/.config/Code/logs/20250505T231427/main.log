@@ -1,0 +1,8 @@
+2025-05-05 23:14:27.428 [info] update#setState idle
+2025-05-05 23:14:57.427 [info] update#setState checking for updates
+2025-05-05 23:14:57.513 [info] update#setState idle
+2025-05-05 23:16:53.768 [error] [UtilityProcess type: shared-process, pid: 2278]: crashed with code 15 and reason 'killed'
+2025-05-05 23:16:53.773 [info] Extension host with pid 2268 exited with code: 15, signal: unknown.
+2025-05-05 23:16:53.774 [error] [UtilityProcess id: 1, type: extensionHost, pid: 2268]: crashed with code 15 and reason 'killed'
+2025-05-05 23:16:53.778 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown
+2025-05-05 23:16:53.778 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 2279]: crashed with code 15 and reason 'killed'

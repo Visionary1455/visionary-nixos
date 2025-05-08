@@ -1,0 +1,559 @@
+2025-05-07 23:02:20.760 [info] [main] 日志级别: Info
+2025-05-07 23:02:20.760 [info] [main] 正在验证在以下位置找到的 git: "git"
+2025-05-07 23:02:20.760 [info] [main] 使用来自 "git" 的 git "2.47.2"
+2025-05-07 23:02:20.760 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-07 23:02:20.760 [info] > git rev-parse --show-toplevel [13ms]
+2025-05-07 23:02:20.760 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:02:20.760 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-07 23:02:31.820 [info] [main] 日志级别: Info
+2025-05-07 23:02:31.820 [info] [main] 正在验证在以下位置找到的 git: "git"
+2025-05-07 23:02:31.820 [info] [main] 使用来自 "git" 的 git "2.47.2"
+2025-05-07 23:02:31.820 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-07 23:02:31.820 [info] > git rev-parse --show-toplevel [8ms]
+2025-05-07 23:02:31.820 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:02:31.822 [info] > git rev-parse --show-toplevel [32ms]
+2025-05-07 23:02:31.822 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:02:31.861 [info] > git rev-parse --show-toplevel [28ms]
+2025-05-07 23:02:31.861 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:02:31.871 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:02:31.871 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:02:31.873 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-07 23:02:33.062 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:02:33.062 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:08:52.144 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-07 23:08:52.144 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:14:32.698 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-07 23:14:32.698 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:14:34.289 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:14:34.289 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:14:36.850 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-07 23:14:36.850 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:15:32.211 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:15:32.219 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2025-05-07 23:15:32.225 [info] [Model][openRepository] Opened repository: /home/visionary/Downloads/visionary-nixos
+2025-05-07 23:15:32.235 [info] > git config --get commit.template [2ms]
+2025-05-07 23:15:32.244 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:15:32.245 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2025-05-07 23:15:32.245 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:15:32.261 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:15:32.278 [info] > git status -z -uall [26ms]
+2025-05-07 23:15:32.621 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [296ms]
+2025-05-07 23:15:32.621 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:15:32.622 [error] [GitHistoryProvider][resolveHEADMergeBase] Failed to resolve merge base for master: Error: No such branch: master.
+2025-05-07 23:15:32.625 [info] > git config --get commit.template [9ms]
+2025-05-07 23:15:32.634 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:15:32.635 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2025-05-07 23:15:32.635 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:15:32.657 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2025-05-07 23:15:32.665 [info] > git status -z -uall [23ms]
+2025-05-07 23:15:32.771 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-07 23:18:43.513 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:18:43.513 [info] > git config --get commit.template [9ms]
+2025-05-07 23:18:43.514 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2025-05-07 23:18:43.514 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:18:43.531 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:18:43.541 [info] > git status -z -uall [20ms]
+2025-05-07 23:18:44.232 [info] > git show --textconv :home/.ssh/id_rsa.pub [21ms]
+2025-05-07 23:18:44.232 [info] > git show --textconv HEAD:home/.ssh/id_rsa.pub [14ms]
+2025-05-07 23:18:44.232 [info] > git ls-files --stage -- home/.ssh/id_rsa.pub [7ms]
+2025-05-07 23:18:44.248 [info] > git hash-object -t tree /dev/null [1ms]
+2025-05-07 23:18:44.248 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:18:44.249 [info] > git cat-file -s a67796a19d730d23719454eeea8f072f70c86691 [10ms]
+2025-05-07 23:18:44.249 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa.pub [18ms]
+2025-05-07 23:18:44.249 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:18:44.250 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:18:48.593 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:18:48.594 [info] > git config --get commit.template [8ms]
+2025-05-07 23:18:48.594 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:18:48.594 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:18:48.608 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:18:48.618 [info] > git status -z -uall [18ms]
+2025-05-07 23:19:20.816 [info] > git show --textconv :module/program/git.nix [7ms]
+2025-05-07 23:19:20.817 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22%22%7D
+2025-05-07 23:19:20.817 [info] > git ls-files --stage -- module/program/git.nix [1ms]
+2025-05-07 23:19:20.817 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22%22%7D
+2025-05-07 23:19:21.095 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-07 23:19:21.659 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:19:21.666 [info] > git config --get commit.template [7ms]
+2025-05-07 23:19:21.667 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:19:21.667 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:19:21.683 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:19:21.690 [info] > git status -z -uall [17ms]
+2025-05-07 23:19:25.425 [info] > git show --textconv :module/program/lsp.nix [23ms]
+2025-05-07 23:19:25.425 [info] > git show --textconv HEAD:module/program/lsp.nix [15ms]
+2025-05-07 23:19:25.425 [info] > git ls-files --stage -- module/program/lsp.nix [9ms]
+2025-05-07 23:19:25.431 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/lsp.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Flsp.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:25.433 [info] > git cat-file -s 0dc368e3eaae32751ccda9a2e995f2372fc631c2 [2ms]
+2025-05-07 23:19:25.433 [info] > git ls-tree -l HEAD -- module/program/lsp.nix [9ms]
+2025-05-07 23:19:25.433 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:19:25.433 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/lsp.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Flsp.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:26.720 [info] > git show --textconv :module/program/hyprland.nix [22ms]
+2025-05-07 23:19:26.720 [info] > git show --textconv HEAD:module/program/hyprland.nix [15ms]
+2025-05-07 23:19:26.720 [info] > git ls-files --stage -- module/program/hyprland.nix [8ms]
+2025-05-07 23:19:26.728 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/hyprland.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fhyprland.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:26.729 [info] > git ls-tree -l HEAD -- module/program/hyprland.nix [9ms]
+2025-05-07 23:19:26.729 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:19:26.729 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/hyprland.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fhyprland.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:26.729 [info] > git cat-file -s dd9cdff530e67a6676d3906bd6780bd0b4511936 [2ms]
+2025-05-07 23:19:29.673 [info] > git show --textconv :module/program/fish.nix [23ms]
+2025-05-07 23:19:29.673 [info] > git show --textconv HEAD:module/program/fish.nix [16ms]
+2025-05-07 23:19:29.673 [info] > git ls-files --stage -- module/program/fish.nix [8ms]
+2025-05-07 23:19:29.681 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:29.682 [info] > git cat-file -s 4808de6edacc45d408776038a3e463e37e124a7f [2ms]
+2025-05-07 23:19:29.682 [info] > git ls-tree -l HEAD -- module/program/fish.nix [10ms]
+2025-05-07 23:19:29.682 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:19:29.682 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:45.309 [info] > git show --textconv :module/program/fish.nix [24ms]
+2025-05-07 23:19:45.310 [info] > git show --textconv HEAD:module/program/fish.nix [17ms]
+2025-05-07 23:19:45.310 [info] > git ls-files --stage -- module/program/fish.nix [10ms]
+2025-05-07 23:19:45.316 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:45.317 [info] > git cat-file -s 4808de6edacc45d408776038a3e463e37e124a7f [2ms]
+2025-05-07 23:19:45.318 [info] > git ls-tree -l HEAD -- module/program/fish.nix [9ms]
+2025-05-07 23:19:45.318 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:19:45.318 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:46.855 [info] > git show --textconv :module/program/hyprland.nix [22ms]
+2025-05-07 23:19:46.855 [info] > git show --textconv HEAD:module/program/hyprland.nix [15ms]
+2025-05-07 23:19:46.855 [info] > git ls-files --stage -- module/program/hyprland.nix [8ms]
+2025-05-07 23:19:46.861 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/hyprland.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fhyprland.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:46.863 [info] > git cat-file -s dd9cdff530e67a6676d3906bd6780bd0b4511936 [2ms]
+2025-05-07 23:19:46.863 [info] > git ls-tree -l HEAD -- module/program/hyprland.nix [9ms]
+2025-05-07 23:19:46.863 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:19:46.863 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/hyprland.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fhyprland.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:48.323 [info] > git show --textconv :module/program/fish.nix [24ms]
+2025-05-07 23:19:48.323 [info] > git show --textconv HEAD:module/program/fish.nix [16ms]
+2025-05-07 23:19:48.323 [info] > git ls-files --stage -- module/program/fish.nix [9ms]
+2025-05-07 23:19:48.330 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:48.332 [info] > git cat-file -s 4808de6edacc45d408776038a3e463e37e124a7f [2ms]
+2025-05-07 23:19:48.332 [info] > git ls-tree -l HEAD -- module/program/fish.nix [10ms]
+2025-05-07 23:19:48.332 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:19:48.332 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:19:51.925 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:19:51.931 [info] > git config --get commit.template [6ms]
+2025-05-07 23:19:51.932 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:19:51.932 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:19:51.946 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:19:51.955 [info] > git status -z -uall [17ms]
+2025-05-07 23:20:21.277 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:20:21.282 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2025-05-07 23:20:21.282 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:20:21.282 [info] > git config --get commit.template [12ms]
+2025-05-07 23:20:21.298 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:20:21.307 [info] > git status -z -uall [17ms]
+2025-05-07 23:21:22.122 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:21:22.129 [info] > git config --get commit.template [7ms]
+2025-05-07 23:21:22.130 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:21:22.130 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:21:22.145 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:21:22.155 [info] > git status -z -uall [18ms]
+2025-05-07 23:21:24.855 [info] > git show --textconv :home/.ssh/id_rsa [26ms]
+2025-05-07 23:21:24.855 [info] > git show --textconv HEAD:home/.ssh/id_rsa [17ms]
+2025-05-07 23:21:24.855 [info] > git ls-files --stage -- home/.ssh/id_rsa [10ms]
+2025-05-07 23:21:24.863 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:21:24.864 [info] > git cat-file -s 24838ade5db4252f00d3f7a12625e73436decb6a [2ms]
+2025-05-07 23:21:24.865 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa [11ms]
+2025-05-07 23:21:24.865 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:21:24.865 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:21:26.451 [info] > git show --textconv :home/.ssh/id_rsa.pub [33ms]
+2025-05-07 23:21:26.451 [info] > git show --textconv HEAD:home/.ssh/id_rsa.pub [24ms]
+2025-05-07 23:21:26.451 [info] > git ls-files --stage -- home/.ssh/id_rsa.pub [16ms]
+2025-05-07 23:21:26.460 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:21:26.461 [info] > git cat-file -s a67796a19d730d23719454eeea8f072f70c86691 [2ms]
+2025-05-07 23:21:26.461 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa.pub [16ms]
+2025-05-07 23:21:26.461 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:21:26.462 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:21:28.866 [info] > git show --textconv :home/.ssh/id_rsa [22ms]
+2025-05-07 23:21:28.866 [info] > git show --textconv HEAD:home/.ssh/id_rsa [16ms]
+2025-05-07 23:21:28.866 [info] > git ls-files --stage -- home/.ssh/id_rsa [8ms]
+2025-05-07 23:21:28.874 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:21:28.875 [info] > git cat-file -s 24838ade5db4252f00d3f7a12625e73436decb6a [1ms]
+2025-05-07 23:21:28.875 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa [10ms]
+2025-05-07 23:21:28.875 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:21:28.875 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:21:38.037 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:21:38.037 [info] > git config --get commit.template [8ms]
+2025-05-07 23:21:38.038 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:21:38.038 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:21:38.054 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:21:38.062 [info] > git status -z -uall [17ms]
+2025-05-07 23:21:44.586 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:21:44.586 [info] > git config --get commit.template [8ms]
+2025-05-07 23:21:44.587 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:21:44.587 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:21:44.603 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:21:44.614 [info] > git status -z -uall [21ms]
+2025-05-07 23:21:59.491 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:21:59.492 [info] > git config --get commit.template [8ms]
+2025-05-07 23:21:59.492 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:21:59.492 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:21:59.507 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:21:59.515 [info] > git status -z -uall [17ms]
+2025-05-07 23:22:04.564 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:22:04.564 [info] > git config --get commit.template [8ms]
+2025-05-07 23:22:04.564 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:22:04.565 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:22:04.579 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:22:04.588 [info] > git status -z -uall [17ms]
+2025-05-07 23:22:05.347 [info] > git show --textconv :flake.nix [25ms]
+2025-05-07 23:22:05.347 [info] > git show --textconv HEAD:flake.nix [17ms]
+2025-05-07 23:22:05.347 [info] > git ls-files --stage -- flake.nix [9ms]
+2025-05-07 23:22:05.356 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:22:05.357 [info] > git cat-file -s 2c1c3573395c4bfa8707bb7dcbbc95da8389a4c1 [2ms]
+2025-05-07 23:22:05.357 [info] > git ls-tree -l HEAD -- flake.nix [10ms]
+2025-05-07 23:22:05.357 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:22:05.358 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:22:38.652 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:22:38.653 [info] > git config --get commit.template [9ms]
+2025-05-07 23:22:38.653 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:22:38.653 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:22:38.671 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:22:38.683 [info] > git status -z -uall [22ms]
+2025-05-07 23:23:02.312 [info] > git show --textconv :flake.nix [24ms]
+2025-05-07 23:23:02.312 [info] > git show --textconv HEAD:flake.nix [16ms]
+2025-05-07 23:23:02.312 [info] > git ls-files --stage -- flake.nix [9ms]
+2025-05-07 23:23:02.319 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:23:02.320 [info] > git cat-file -s 2c1c3573395c4bfa8707bb7dcbbc95da8389a4c1 [1ms]
+2025-05-07 23:23:02.321 [info] > git ls-tree -l HEAD -- flake.nix [9ms]
+2025-05-07 23:23:02.321 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:23:02.321 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:23:16.353 [info] > git show --textconv :host/configuration.nix [32ms]
+2025-05-07 23:23:16.353 [info] > git show --textconv HEAD:host/configuration.nix [19ms]
+2025-05-07 23:23:16.353 [info] > git ls-files --stage -- host/configuration.nix [10ms]
+2025-05-07 23:23:16.361 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:23:16.366 [info] > git cat-file -s 3e3e8345b6c08eb0af2b2c8bf592d4caa1052b9d [5ms]
+2025-05-07 23:23:16.366 [info] > git ls-tree -l HEAD -- host/configuration.nix [14ms]
+2025-05-07 23:23:16.366 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:23:16.366 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:23:33.934 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:23:33.935 [info] > git config --get commit.template [8ms]
+2025-05-07 23:23:33.935 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:23:33.935 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:23:33.949 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:23:33.959 [info] > git status -z -uall [18ms]
+2025-05-07 23:24:06.227 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:24:06.237 [info] > git config --get commit.template [11ms]
+2025-05-07 23:24:06.238 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:24:06.238 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:24:06.275 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [15ms]
+2025-05-07 23:24:06.278 [info] > git ls-files --stage -- host/configuration.nix [8ms]
+2025-05-07 23:24:06.288 [info] > git status -z -uall [38ms]
+2025-05-07 23:24:06.340 [info] > git cat-file -s d9f00d9f9f698e0e7364011060c036461c9d4e50 [53ms]
+2025-05-07 23:24:06.354 [info] > git show --textconv :host/configuration.nix [2ms]
+2025-05-07 23:24:36.854 [info] > git show --textconv :module/program/git.nix [27ms]
+2025-05-07 23:24:36.854 [info] > git show --textconv HEAD:module/program/git.nix [18ms]
+2025-05-07 23:24:36.854 [info] > git ls-files --stage -- module/program/git.nix [10ms]
+2025-05-07 23:24:36.861 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:36.863 [info] > git cat-file -s 0d2a613fbd270f9a7136b1f6a5766f8eb42204a2 [2ms]
+2025-05-07 23:24:36.863 [info] > git ls-tree -l HEAD -- module/program/git.nix [10ms]
+2025-05-07 23:24:36.863 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:24:36.863 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:37.350 [info] > git show --textconv :module/program/fish.nix [24ms]
+2025-05-07 23:24:37.350 [info] > git show --textconv HEAD:module/program/fish.nix [16ms]
+2025-05-07 23:24:37.350 [info] > git ls-files --stage -- module/program/fish.nix [9ms]
+2025-05-07 23:24:37.357 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:37.358 [info] > git cat-file -s ba74a009d956b233e8e8e33b1af6dce53d2a16bf [2ms]
+2025-05-07 23:24:37.358 [info] > git ls-tree -l HEAD -- module/program/fish.nix [9ms]
+2025-05-07 23:24:37.358 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:24:37.359 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:48.858 [info] > git show --textconv :host/configuration.nix [32ms]
+2025-05-07 23:24:48.858 [info] > git show --textconv HEAD:host/configuration.nix [21ms]
+2025-05-07 23:24:48.859 [info] > git ls-files --stage -- host/configuration.nix [11ms]
+2025-05-07 23:24:48.869 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:48.870 [info] > git cat-file -s d9f00d9f9f698e0e7364011060c036461c9d4e50 [2ms]
+2025-05-07 23:24:48.870 [info] > git ls-tree -l HEAD -- host/configuration.nix [13ms]
+2025-05-07 23:24:48.870 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:24:48.870 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:51.898 [info] > git show --textconv :module/program/fish.nix [23ms]
+2025-05-07 23:24:51.898 [info] > git show --textconv HEAD:module/program/fish.nix [16ms]
+2025-05-07 23:24:51.898 [info] > git ls-files --stage -- module/program/fish.nix [9ms]
+2025-05-07 23:24:51.905 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:51.906 [info] > git cat-file -s ba74a009d956b233e8e8e33b1af6dce53d2a16bf [2ms]
+2025-05-07 23:24:51.906 [info] > git ls-tree -l HEAD -- module/program/fish.nix [9ms]
+2025-05-07 23:24:51.906 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:24:51.906 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/fish.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Ffish.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:54.374 [info] > git show --textconv :module/program/git.nix [24ms]
+2025-05-07 23:24:54.374 [info] > git show --textconv HEAD:module/program/git.nix [16ms]
+2025-05-07 23:24:54.374 [info] > git ls-files --stage -- module/program/git.nix [9ms]
+2025-05-07 23:24:54.381 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:24:54.383 [info] > git cat-file -s 0d2a613fbd270f9a7136b1f6a5766f8eb42204a2 [2ms]
+2025-05-07 23:24:54.383 [info] > git ls-tree -l HEAD -- module/program/git.nix [10ms]
+2025-05-07 23:24:54.383 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:24:54.384 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:12.372 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:25:12.373 [info] > git config --get commit.template [8ms]
+2025-05-07 23:25:12.373 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:25:12.373 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:25:12.390 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:25:12.398 [info] > git status -z -uall [18ms]
+2025-05-07 23:25:29.703 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-07 23:25:33.273 [info] > git show --textconv :home/.ssh/id_rsa.pub [22ms]
+2025-05-07 23:25:33.273 [info] > git show --textconv HEAD:home/.ssh/id_rsa.pub [15ms]
+2025-05-07 23:25:33.273 [info] > git ls-files --stage -- home/.ssh/id_rsa.pub [8ms]
+2025-05-07 23:25:33.279 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:33.280 [info] > git cat-file -s a67796a19d730d23719454eeea8f072f70c86691 [1ms]
+2025-05-07 23:25:33.280 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa.pub [8ms]
+2025-05-07 23:25:33.280 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:33.281 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:34.051 [info] > git show --textconv :module/program/git.nix [23ms]
+2025-05-07 23:25:34.051 [info] > git show --textconv HEAD:module/program/git.nix [15ms]
+2025-05-07 23:25:34.051 [info] > git ls-files --stage -- module/program/git.nix [8ms]
+2025-05-07 23:25:34.059 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:34.060 [info] > git cat-file -s 0d2a613fbd270f9a7136b1f6a5766f8eb42204a2 [2ms]
+2025-05-07 23:25:34.060 [info] > git ls-tree -l HEAD -- module/program/git.nix [10ms]
+2025-05-07 23:25:34.060 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:34.060 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:34.916 [info] > git show --textconv :home/.ssh/id_rsa.pub [23ms]
+2025-05-07 23:25:34.916 [info] > git show --textconv HEAD:home/.ssh/id_rsa.pub [15ms]
+2025-05-07 23:25:34.916 [info] > git ls-files --stage -- home/.ssh/id_rsa.pub [8ms]
+2025-05-07 23:25:34.923 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:34.924 [info] > git cat-file -s a67796a19d730d23719454eeea8f072f70c86691 [2ms]
+2025-05-07 23:25:34.924 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa.pub [8ms]
+2025-05-07 23:25:34.924 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:34.924 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:36.255 [info] > git show --textconv HEAD:home/.config/microsoft-edge/Default/Preferences [16ms]
+2025-05-07 23:25:36.255 [info] > git ls-files --stage -- home/.config/microsoft-edge/Default/Preferences [9ms]
+2025-05-07 23:25:36.262 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/microsoft-edge/Default/Preferences.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fmicrosoft-edge%2FDefault%2FPreferences%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:36.263 [info] > git cat-file -s 78a371938dbdb454d54b06c65cd2a51324aa4f2f [2ms]
+2025-05-07 23:25:36.263 [info] > git ls-tree -l HEAD -- home/.config/microsoft-edge/Default/Preferences [10ms]
+2025-05-07 23:25:36.263 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:36.263 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/microsoft-edge/Default/Preferences.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fmicrosoft-edge%2FDefault%2FPreferences%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:36.264 [info] > git show --textconv :home/.config/microsoft-edge/Default/Preferences [33ms]
+2025-05-07 23:25:36.449 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-07 23:25:43.413 [info] > git show --textconv :module/program/git.nix [24ms]
+2025-05-07 23:25:43.413 [info] > git show --textconv HEAD:module/program/git.nix [16ms]
+2025-05-07 23:25:43.413 [info] > git ls-files --stage -- module/program/git.nix [8ms]
+2025-05-07 23:25:43.419 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:43.420 [info] > git cat-file -s 0d2a613fbd270f9a7136b1f6a5766f8eb42204a2 [1ms]
+2025-05-07 23:25:43.421 [info] > git ls-tree -l HEAD -- module/program/git.nix [9ms]
+2025-05-07 23:25:43.421 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:43.421 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:52.434 [info] > git show --textconv HEAD:home/.config/microsoft-edge/Default/Preferences [17ms]
+2025-05-07 23:25:52.434 [info] > git ls-files --stage -- home/.config/microsoft-edge/Default/Preferences [9ms]
+2025-05-07 23:25:52.441 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/microsoft-edge/Default/Preferences.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fmicrosoft-edge%2FDefault%2FPreferences%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:52.442 [info] > git ls-tree -l HEAD -- home/.config/microsoft-edge/Default/Preferences [11ms]
+2025-05-07 23:25:52.442 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:52.442 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/microsoft-edge/Default/Preferences.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fmicrosoft-edge%2FDefault%2FPreferences%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:52.443 [info] > git show --textconv :home/.config/microsoft-edge/Default/Preferences [33ms]
+2025-05-07 23:25:52.443 [info] > git cat-file -s 78a371938dbdb454d54b06c65cd2a51324aa4f2f [2ms]
+2025-05-07 23:25:53.209 [info] > git show --textconv :home/.ssh/id_rsa.pub [24ms]
+2025-05-07 23:25:53.209 [info] > git show --textconv HEAD:home/.ssh/id_rsa.pub [16ms]
+2025-05-07 23:25:53.209 [info] > git ls-files --stage -- home/.ssh/id_rsa.pub [8ms]
+2025-05-07 23:25:53.217 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:53.219 [info] > git cat-file -s a67796a19d730d23719454eeea8f072f70c86691 [3ms]
+2025-05-07 23:25:53.220 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa.pub [12ms]
+2025-05-07 23:25:53.220 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:53.220 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:53.905 [info] > git show --textconv HEAD:home/.config/microsoft-edge/Default/Preferences [16ms]
+2025-05-07 23:25:53.905 [info] > git ls-files --stage -- home/.config/microsoft-edge/Default/Preferences [8ms]
+2025-05-07 23:25:53.913 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/microsoft-edge/Default/Preferences.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fmicrosoft-edge%2FDefault%2FPreferences%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:53.914 [info] > git ls-tree -l HEAD -- home/.config/microsoft-edge/Default/Preferences [10ms]
+2025-05-07 23:25:53.914 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:53.914 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/microsoft-edge/Default/Preferences.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fmicrosoft-edge%2FDefault%2FPreferences%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:53.914 [info] > git show --textconv :home/.config/microsoft-edge/Default/Preferences [32ms]
+2025-05-07 23:25:53.914 [info] > git cat-file -s 78a371938dbdb454d54b06c65cd2a51324aa4f2f [1ms]
+2025-05-07 23:25:54.386 [info] > git show --textconv :home/.ssh/id_rsa.pub [23ms]
+2025-05-07 23:25:54.386 [info] > git show --textconv HEAD:home/.ssh/id_rsa.pub [16ms]
+2025-05-07 23:25:54.386 [info] > git ls-files --stage -- home/.ssh/id_rsa.pub [9ms]
+2025-05-07 23:25:54.395 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:54.396 [info] > git cat-file -s a67796a19d730d23719454eeea8f072f70c86691 [2ms]
+2025-05-07 23:25:54.397 [info] > git ls-tree -l HEAD -- home/.ssh/id_rsa.pub [11ms]
+2025-05-07 23:25:54.397 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:54.397 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.ssh/id_rsa.pub.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.ssh%2Fid_rsa.pub%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:54.628 [info] > git show --textconv :module/program/git.nix [23ms]
+2025-05-07 23:25:54.628 [info] > git show --textconv HEAD:module/program/git.nix [15ms]
+2025-05-07 23:25:54.628 [info] > git ls-files --stage -- module/program/git.nix [8ms]
+2025-05-07 23:25:54.635 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:54.635 [info] > git ls-tree -l HEAD -- module/program/git.nix [8ms]
+2025-05-07 23:25:54.635 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:25:54.636 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:25:54.636 [info] > git cat-file -s 0d2a613fbd270f9a7136b1f6a5766f8eb42204a2 [2ms]
+2025-05-07 23:29:41.421 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:29:41.428 [info] > git config --get commit.template [8ms]
+2025-05-07 23:29:41.428 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:29:41.428 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:29:41.443 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:29:41.454 [info] > git status -z -uall [19ms]
+2025-05-07 23:29:46.507 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:29:46.508 [info] > git config --get commit.template [9ms]
+2025-05-07 23:29:46.508 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2025-05-07 23:29:46.508 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:29:46.524 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:29:46.534 [info] > git status -z -uall [19ms]
+2025-05-07 23:29:55.220 [info] > git show --textconv :module/base/open-ssh.nix [24ms]
+2025-05-07 23:29:55.220 [info] > git show --textconv HEAD:module/base/open-ssh.nix [16ms]
+2025-05-07 23:29:55.220 [info] > git ls-files --stage -- module/base/open-ssh.nix [8ms]
+2025-05-07 23:29:55.228 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/base/open-ssh.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fbase%2Fopen-ssh.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:29:55.229 [info] > git cat-file -s 5ada43d350a526056af5a7be356a0fd3578861e6 [1ms]
+2025-05-07 23:29:55.229 [info] > git ls-tree -l HEAD -- module/base/open-ssh.nix [10ms]
+2025-05-07 23:29:55.229 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:29:55.230 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/base/open-ssh.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fbase%2Fopen-ssh.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:31:06.252 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-07 23:31:06.252 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:31:12.587 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:31:12.588 [info] > git config --get commit.template [9ms]
+2025-05-07 23:31:12.588 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:31:12.588 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:31:12.606 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2025-05-07 23:31:12.615 [info] > git status -z -uall [19ms]
+2025-05-07 23:31:18.437 [info] > git show --textconv :module/base/open-ssh.nix [24ms]
+2025-05-07 23:31:18.437 [info] > git show --textconv HEAD:module/base/open-ssh.nix [16ms]
+2025-05-07 23:31:18.437 [info] > git ls-files --stage -- module/base/open-ssh.nix [9ms]
+2025-05-07 23:31:18.445 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/base/open-ssh.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fbase%2Fopen-ssh.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:31:18.446 [info] > git cat-file -s 5ada43d350a526056af5a7be356a0fd3578861e6 [2ms]
+2025-05-07 23:31:18.446 [info] > git ls-tree -l HEAD -- module/base/open-ssh.nix [10ms]
+2025-05-07 23:31:18.446 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:31:18.446 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/base/open-ssh.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fbase%2Fopen-ssh.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:32:11.188 [info] > git show --textconv :module/program/v2raya [7ms]
+2025-05-07 23:32:11.189 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/v2raya.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fv2raya%22%2C%22ref%22%3A%22%22%7D
+2025-05-07 23:32:11.189 [info] > git ls-files --stage -- module/program/v2raya [1ms]
+2025-05-07 23:32:11.190 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/v2raya.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fv2raya%22%2C%22ref%22%3A%22%22%7D
+2025-05-07 23:32:11.472 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-07 23:32:12.035 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:32:12.035 [info] > git config --get commit.template [8ms]
+2025-05-07 23:32:12.036 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:32:12.036 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:32:12.051 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:32:12.059 [info] > git status -z -uall [17ms]
+2025-05-07 23:32:14.242 [info] > git show --textconv :module/program/thunar.nix [22ms]
+2025-05-07 23:32:14.242 [info] > git show --textconv HEAD:module/program/thunar.nix [15ms]
+2025-05-07 23:32:14.242 [info] > git ls-files --stage -- module/program/thunar.nix [8ms]
+2025-05-07 23:32:14.248 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/thunar.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fthunar.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:32:14.249 [info] > git cat-file -s 568f75818d0e20dbea8a0bfb61aa2e462eab3431 [1ms]
+2025-05-07 23:32:14.249 [info] > git ls-tree -l HEAD -- module/program/thunar.nix [8ms]
+2025-05-07 23:32:14.249 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:32:14.249 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/thunar.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fthunar.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:32:18.033 [info] > git show --textconv :module/program/v2raya.nix [7ms]
+2025-05-07 23:32:18.034 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/v2raya.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fv2raya.nix%22%2C%22ref%22%3A%22%22%7D
+2025-05-07 23:32:18.034 [info] > git ls-files --stage -- module/program/v2raya.nix [2ms]
+2025-05-07 23:32:18.034 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/v2raya.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fv2raya.nix%22%2C%22ref%22%3A%22%22%7D
+2025-05-07 23:32:18.320 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-07 23:32:18.880 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:32:18.887 [info] > git config --get commit.template [8ms]
+2025-05-07 23:32:18.888 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2025-05-07 23:32:18.888 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:32:18.902 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:32:18.912 [info] > git status -z -uall [18ms]
+2025-05-07 23:32:22.056 [info] > git show --textconv :module/program/git.nix [24ms]
+2025-05-07 23:32:22.056 [info] > git show --textconv HEAD:module/program/git.nix [16ms]
+2025-05-07 23:32:22.056 [info] > git ls-files --stage -- module/program/git.nix [9ms]
+2025-05-07 23:32:22.064 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:32:22.066 [info] > git cat-file -s 0d2a613fbd270f9a7136b1f6a5766f8eb42204a2 [2ms]
+2025-05-07 23:32:22.066 [info] > git ls-tree -l HEAD -- module/program/git.nix [11ms]
+2025-05-07 23:32:22.066 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:32:22.066 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:32:31.997 [info] > git show --textconv :host/configuration.nix [29ms]
+2025-05-07 23:32:31.997 [info] > git show --textconv HEAD:host/configuration.nix [20ms]
+2025-05-07 23:32:31.997 [info] > git ls-files --stage -- host/configuration.nix [12ms]
+2025-05-07 23:32:32.004 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:32:32.007 [info] > git cat-file -s d9f00d9f9f698e0e7364011060c036461c9d4e50 [3ms]
+2025-05-07 23:32:32.008 [info] > git ls-tree -l HEAD -- host/configuration.nix [15ms]
+2025-05-07 23:32:32.008 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:32:32.008 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:32:39.948 [info] > git config --get commit.template [1ms]
+2025-05-07 23:32:39.955 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:32:39.956 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:32:39.956 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:32:39.971 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:32:39.981 [info] > git status -z -uall [19ms]
+2025-05-07 23:32:56.868 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:32:56.876 [info] > git config --get commit.template [8ms]
+2025-05-07 23:32:56.876 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:32:56.876 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:32:56.892 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:32:56.900 [info] > git status -z -uall [17ms]
+2025-05-07 23:33:00.185 [info] > git show --textconv :flake.nix [28ms]
+2025-05-07 23:33:00.185 [info] > git show --textconv HEAD:flake.nix [19ms]
+2025-05-07 23:33:00.185 [info] > git ls-files --stage -- flake.nix [10ms]
+2025-05-07 23:33:00.193 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:33:00.194 [info] > git ls-tree -l HEAD -- flake.nix [10ms]
+2025-05-07 23:33:00.194 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:33:00.194 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:33:00.195 [info] > git cat-file -s 52aba44d3afc6448ffbdec3aa3b2fca199ae608a [2ms]
+2025-05-07 23:33:09.347 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:33:09.347 [info] > git config --get commit.template [8ms]
+2025-05-07 23:33:09.349 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2025-05-07 23:33:09.349 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:33:09.364 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:33:09.375 [info] > git status -z -uall [20ms]
+2025-05-07 23:34:15.119 [info] > git show --textconv :host/configuration.nix [26ms]
+2025-05-07 23:34:15.119 [info] > git show --textconv HEAD:host/configuration.nix [19ms]
+2025-05-07 23:34:15.119 [info] > git ls-files --stage -- host/configuration.nix [11ms]
+2025-05-07 23:34:15.127 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:34:15.128 [info] > git cat-file -s d9f00d9f9f698e0e7364011060c036461c9d4e50 [2ms]
+2025-05-07 23:34:15.128 [info] > git ls-tree -l HEAD -- host/configuration.nix [10ms]
+2025-05-07 23:34:15.128 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:34:15.128 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:34:20.833 [info] > git show --textconv :module/program/git.nix [30ms]
+2025-05-07 23:34:20.833 [info] > git show --textconv HEAD:module/program/git.nix [21ms]
+2025-05-07 23:34:20.833 [info] > git ls-files --stage -- module/program/git.nix [13ms]
+2025-05-07 23:34:20.842 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:34:20.843 [info] > git ls-tree -l HEAD -- module/program/git.nix [15ms]
+2025-05-07 23:34:20.843 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:34:20.843 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/git.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fgit.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:34:20.844 [info] > git cat-file -s 0d2a613fbd270f9a7136b1f6a5766f8eb42204a2 [3ms]
+2025-05-07 23:34:32.997 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:34:32.997 [info] > git config --get commit.template [9ms]
+2025-05-07 23:34:32.998 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:34:32.998 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:34:33.015 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:34:33.023 [info] > git status -z -uall [17ms]
+2025-05-07 23:34:34.934 [info] > git show --textconv :flake.nix [23ms]
+2025-05-07 23:34:34.935 [info] > git show --textconv HEAD:flake.nix [16ms]
+2025-05-07 23:34:34.935 [info] > git ls-files --stage -- flake.nix [9ms]
+2025-05-07 23:34:34.941 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:34:34.942 [info] > git ls-tree -l HEAD -- flake.nix [9ms]
+2025-05-07 23:34:34.942 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:34:34.942 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/flake.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fflake.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:34:34.943 [info] > git cat-file -s 52aba44d3afc6448ffbdec3aa3b2fca199ae608a [2ms]
+2025-05-07 23:34:52.498 [info] > git config --get commit.template [12ms]
+2025-05-07 23:34:52.508 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:34:52.508 [info] > git ls-files --stage -- flake.nix [11ms]
+2025-05-07 23:34:52.515 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [7ms]
+2025-05-07 23:34:52.515 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:34:52.531 [info] > git cat-file -s 8676101ea8bea5390628ce13723819abd1d805dd [16ms]
+2025-05-07 23:34:52.532 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:34:52.543 [info] > git status -z -uall [19ms]
+2025-05-07 23:34:52.543 [info] > git show --textconv :flake.nix [2ms]
+2025-05-07 23:35:36.140 [info] > git show --textconv :host/configuration.nix [23ms]
+2025-05-07 23:35:36.140 [info] > git show --textconv HEAD:host/configuration.nix [16ms]
+2025-05-07 23:35:36.140 [info] > git ls-files --stage -- host/configuration.nix [8ms]
+2025-05-07 23:35:36.149 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:35:36.150 [info] > git cat-file -s abb4d1918aeb573a8b61bafa405d531e65f3d7b0 [2ms]
+2025-05-07 23:35:36.150 [info] > git ls-tree -l HEAD -- host/configuration.nix [11ms]
+2025-05-07 23:35:36.150 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:35:36.150 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:35:45.273 [info] > git show --textconv :module/program/hyprland.nix [23ms]
+2025-05-07 23:35:45.273 [info] > git show --textconv HEAD:module/program/hyprland.nix [15ms]
+2025-05-07 23:35:45.273 [info] > git ls-files --stage -- module/program/hyprland.nix [8ms]
+2025-05-07 23:35:45.280 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/hyprland.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fhyprland.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:35:45.281 [info] > git cat-file -s dd9cdff530e67a6676d3906bd6780bd0b4511936 [2ms]
+2025-05-07 23:35:45.281 [info] > git ls-tree -l HEAD -- module/program/hyprland.nix [9ms]
+2025-05-07 23:35:45.281 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:35:45.281 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/module/program/hyprland.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fmodule%2Fprogram%2Fhyprland.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:35:48.649 [info] > git check-ignore -v -z --stdin [4ms]
+2025-05-07 23:35:53.638 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-07 23:35:54.541 [info] > git show --textconv :home/.config/hypr/hyprland.conf [25ms]
+2025-05-07 23:35:54.541 [info] > git show --textconv HEAD:home/.config/hypr/hyprland.conf [16ms]
+2025-05-07 23:35:54.541 [info] > git ls-files --stage -- home/.config/hypr/hyprland.conf [9ms]
+2025-05-07 23:35:54.548 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/hypr/hyprland.conf.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fhypr%2Fhyprland.conf%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:35:54.549 [info] > git cat-file -s 3daaf7e23594803a4d694bee982d1cfecaec008e [2ms]
+2025-05-07 23:35:54.549 [info] > git ls-tree -l HEAD -- home/.config/hypr/hyprland.conf [9ms]
+2025-05-07 23:35:54.549 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:35:54.549 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/hypr/hyprland.conf.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fhypr%2Fhyprland.conf%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:37:47.400 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:37:47.400 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:37:49.827 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:37:49.827 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:37:54.489 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:37:54.489 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:38:24.430 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:38:24.430 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:40:19.692 [info] > git show --textconv :home/.config/hypr/hyprland.conf [25ms]
+2025-05-07 23:40:19.692 [info] > git show --textconv HEAD:home/.config/hypr/hyprland.conf [18ms]
+2025-05-07 23:40:19.692 [info] > git ls-files --stage -- home/.config/hypr/hyprland.conf [9ms]
+2025-05-07 23:40:19.700 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/hypr/hyprland.conf.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fhypr%2Fhyprland.conf%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:40:19.700 [info] > git cat-file -s 3daaf7e23594803a4d694bee982d1cfecaec008e [1ms]
+2025-05-07 23:40:19.701 [info] > git ls-tree -l HEAD -- home/.config/hypr/hyprland.conf [11ms]
+2025-05-07 23:40:19.701 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:40:19.701 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/home/.config/hypr/hyprland.conf.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhome%2F.config%2Fhypr%2Fhyprland.conf%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:40:20.008 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-07 23:40:20.008 [info] fatal: not a git repository (or any of the parent directories): .git

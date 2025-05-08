@@ -1,0 +1,50 @@
+2025-05-07 23:40:59.173 [info] [main] 日志级别: Info
+2025-05-07 23:40:59.173 [info] [main] 正在验证在以下位置找到的 git: "git"
+2025-05-07 23:40:59.173 [info] [main] 使用来自 "git" 的 git "2.47.2"
+2025-05-07 23:40:59.173 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-07 23:40:59.173 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-07 23:40:59.173 [info] > git rev-parse --git-dir --git-common-dir [31ms]
+2025-05-07 23:40:59.173 [info] [Model][openRepository] Opened repository: /home/visionary/Downloads/visionary-nixos
+2025-05-07 23:40:59.174 [info] > git rev-parse --show-toplevel [5ms]
+2025-05-07 23:40:59.174 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:40:59.174 [info] > git config --get commit.template [12ms]
+2025-05-07 23:40:59.191 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:40:59.192 [info] > git rev-parse --show-toplevel [11ms]
+2025-05-07 23:40:59.200 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [10ms]
+2025-05-07 23:40:59.200 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:40:59.217 [info] > git rev-parse --show-toplevel [18ms]
+2025-05-07 23:40:59.226 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2025-05-07 23:40:59.232 [info] > git rev-parse --show-toplevel [6ms]
+2025-05-07 23:40:59.234 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-07 23:40:59.315 [info] > git status -z -uall [107ms]
+2025-05-07 23:40:59.376 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [13ms]
+2025-05-07 23:40:59.376 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:40:59.376 [error] [GitHistoryProvider][resolveHEADMergeBase] Failed to resolve merge base for master: Error: No such branch: master.
+2025-05-07 23:40:59.381 [info] > git config --get commit.template [5ms]
+2025-05-07 23:40:59.388 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:40:59.389 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:40:59.389 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:40:59.403 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:40:59.413 [info] > git status -z -uall [18ms]
+2025-05-07 23:40:59.821 [info] > git check-ignore -v -z --stdin [13ms]
+2025-05-07 23:41:01.041 [info] > git show --textconv :host/configuration.nix [28ms]
+2025-05-07 23:41:01.041 [info] > git show --textconv HEAD:host/configuration.nix [19ms]
+2025-05-07 23:41:01.041 [info] > git ls-files --stage -- host/configuration.nix [11ms]
+2025-05-07 23:41:01.058 [info] > git hash-object -t tree /dev/null [1ms]
+2025-05-07 23:41:01.058 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:41:01.058 [info] > git cat-file -s abb4d1918aeb573a8b61bafa405d531e65f3d7b0 [9ms]
+2025-05-07 23:41:01.059 [info] > git ls-tree -l HEAD -- host/configuration.nix [21ms]
+2025-05-07 23:41:01.059 [info] fatal: Not a valid object name HEAD
+2025-05-07 23:41:01.059 [warning] [GitFileSystemProvider][stat] File not found - git:/home/visionary/Downloads/visionary-nixos/host/configuration.nix.git?%7B%22path%22%3A%22%2Fhome%2Fvisionary%2FDownloads%2Fvisionary-nixos%2Fhost%2Fconfiguration.nix%22%2C%22ref%22%3A%22HEAD%22%7D
+2025-05-07 23:41:03.310 [info] [Git][getRemotes] No remotes found in the git config file
+2025-05-07 23:41:03.311 [info] > git config --get commit.template [8ms]
+2025-05-07 23:41:03.311 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2025-05-07 23:41:03.311 [warning] [Git][getBranch] No such branch: master
+2025-05-07 23:41:03.326 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-07 23:41:03.335 [info] > git status -z -uall [17ms]
+2025-05-07 23:42:13.884 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:42:13.884 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:44:21.488 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:44:21.488 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-07 23:44:54.617 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-07 23:44:54.617 [info] fatal: not a git repository (or any of the parent directories): .git

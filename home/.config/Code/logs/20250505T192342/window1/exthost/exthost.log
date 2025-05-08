@@ -1,0 +1,193 @@
+2025-05-05 19:23:43.519 [info] Extension host with pid 5281 started
+2025-05-05 19:23:43.621 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-05-05 19:23:43.622 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-05-05 19:23:43.755 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2025-05-05 19:23:43.842 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-05-05 19:23:43.888 [info] Eager extensions activated
+2025-05-05 19:23:43.889 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 19:23:43.890 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 19:24:09.282 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 19:24:09.283 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 19:24:09.283 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 19:24:43.743 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2025-05-05 19:28:33.706 [info] Extension host terminating: renderer closed the MessagePort
+2025-05-05 19:28:33.723 [info] Extension host with pid 5281 exiting with code 0
+2025-05-05 19:28:34.572 [info] Extension host with pid 5589 started
+2025-05-05 19:28:34.572 [info] Skipping acquiring lock for /home/visionary/.config/Code/User/workspaceStorage/176908ef150ac1f2a1dd2199c231f178.
+2025-05-05 19:28:34.588 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-05-05 19:28:34.729 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2025-05-05 19:28:34.806 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-05-05 19:28:34.843 [info] Eager extensions activated
+2025-05-05 19:28:34.854 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 19:28:34.854 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 19:28:36.433 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2025-05-05 19:28:38.598 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-05-05 19:28:47.958 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 19:28:47.959 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 19:28:47.959 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-05 19:29:21.524 [info] ExtensionService#_doActivateExtension atommaterial.a-file-icon-vscode, startup: false, activationEvent: 'onStartupFinished'
+2025-05-05 19:29:39.344 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:30:59.483 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:32:23.434 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:33:47.750 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:33:49.575 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:35:26.250 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:35:43.884 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:35:47.035 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:36:03.813 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:36:04.730 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:36:40.959 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:36:47.313 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:36:52.852 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:36:56.920 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:38:33.229 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:38:35.004 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:38:50.657 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:38:57.798 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:39:55.264 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:40:13.684 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 19:40:22.521 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 21:09:53.068 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:16:38.018 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:16:48.022 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:16:54.427 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:17:04.741 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:17:05.230 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:20:39.990 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:20:55.587 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:21:20.332 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:25:09.456 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:25:10.420 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:25:13.816 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:25:49.950 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:26:53.892 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:27:02.443 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:27:22.406 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:27:49.180 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:29:48.134 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:30:00.343 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:30:02.001 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:30:19.748 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:31:10.064 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:31:16.336 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:31:41.212 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:31:48.113 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:32:03.878 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:32:33.746 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:33:06.967 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:33:09.126 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:33:36.201 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:33:38.701 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:33:49.739 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:33:58.383 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:34:05.389 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:34:16.337 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:34:35.798 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:34:37.096 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:34:37.784 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:36:29.748 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:36:34.442 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:36:51.982 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:36:58.138 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:37:01.276 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:37:20.326 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:37:21.609 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:37:36.693 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:37:39.297 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:37:55.520 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:37:57.595 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:38:27.333 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:38:28.693 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:38:29.537 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:38:32.174 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:38:51.428 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:38:52.999 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:38:55.209 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:40:20.630 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:40:24.154 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:40:31.633 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:41:06.519 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:41:10.485 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:41:29.753 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:42:00.717 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:42:12.026 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:42:52.779 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:43:04.478 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:43:06.314 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:43:26.678 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:43:34.094 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:43:36.903 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:43:54.516 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:44:36.454 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:44:50.322 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:44:53.800 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:44:57.225 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:44:58.097 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:45:16.303 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:45:17.559 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:45:23.342 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:45:25.946 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:45:52.468 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:45:54.589 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:46:03.177 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:46:09.660 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:46:11.014 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:46:17.473 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:47:53.721 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:47:58.251 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:00.925 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:02.589 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:22.238 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:26.860 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:30.503 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:38.774 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:40.565 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:43.403 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:48:45.018 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:49:09.219 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:49:16.669 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:49:21.790 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:49:27.912 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:49:36.325 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:49:48.775 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:52:57.321 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:00.634 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:03.473 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:05.005 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:09.594 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:16.142 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:18.458 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:33.728 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:40.825 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:53:54.433 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:54:15.756 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:54:30.337 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:54:51.905 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:54:54.894 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:54:57.126 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:55:06.501 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:55:12.882 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:55:33.948 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:03.920 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:18.128 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:21.546 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:29.903 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:33.942 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:35.902 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:37.279 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:38.712 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:56:53.383 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:57:02.614 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:57:05.441 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:57:08.392 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:57:10.296 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:57:33.407 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:57:45.386 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:58:07.667 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:59:37.918 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 22:59:58.901 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 23:00:16.308 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 23:09:50.455 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 23:09:51.821 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 23:09:59.962 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2025-05-05 23:10:02.291 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation

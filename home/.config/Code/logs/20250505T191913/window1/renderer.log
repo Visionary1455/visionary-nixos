@@ -1,0 +1,8 @@
+2025-05-05 19:19:14.568 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-vscode.vscode-selfhost-test-provider' wants API proposal 'attributableCoverage' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-05-05 19:19:14.575 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-05-05 19:19:14.576 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.debugpy' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-05-05 19:19:14.893 [info] Started local extension host with pid 3654.
+2025-05-05 19:19:15.375 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2025-05-05 19:19:17.815 [info] [perf] Render performance baseline is 17ms
+2025-05-05 19:23:25.818 [error] [network] #10: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled
+2025-05-05 19:23:26.349 [error] [network] #11: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled

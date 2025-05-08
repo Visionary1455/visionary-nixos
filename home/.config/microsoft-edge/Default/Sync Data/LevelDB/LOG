@@ -1,0 +1,18 @@
+2025/05/07-23:01:49.605 78e Reusing MANIFEST /home/visionary/.config/microsoft-edge/Default/Sync Data/LevelDB/MANIFEST-000001
+2025/05/07-23:01:49.606 78e Recovering log #71
+2025/05/07-23:01:49.607 78e Reusing old log /home/visionary/.config/microsoft-edge/Default/Sync Data/LevelDB/000071.log 
+2025/05/07-23:28:46.519 791 Level-0 table #75: started
+2025/05/07-23:28:46.522 791 Level-0 table #75: 98706 bytes OK
+2025/05/07-23:28:46.522 791 Delete type=0 #71
+2025/05/07-23:41:45.065 78e Level-0 table #77: started
+2025/05/07-23:41:45.067 78e Level-0 table #77: 93030 bytes OK
+2025/05/07-23:41:45.068 78e Delete type=0 #74
+2025/05/07-23:41:45.068 78e Compacting 4@0 + 1@1 files
+2025/05/07-23:41:45.072 78e Generated table #78@0: 313 keys, 27093 bytes
+2025/05/07-23:41:45.072 78e Compacted 4@0 + 1@1 files => 27093 bytes
+2025/05/07-23:41:45.073 78e compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/07-23:41:45.073 78e Delete type=2 #66
+2025/05/07-23:41:45.073 78e Delete type=2 #69
+2025/05/07-23:41:45.073 78e Delete type=2 #72
+2025/05/07-23:41:45.073 78e Delete type=2 #75
+2025/05/07-23:41:45.073 78e Delete type=2 #77

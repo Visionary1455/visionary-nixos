@@ -1,0 +1,113 @@
+2025-05-05 19:24:16.223 [info] Getting Manifest... ms-ceintl.vscode-language-pack-zh-hans
+2025-05-05 19:24:16.303 [info] Installing extension: ms-ceintl.vscode-language-pack-zh-hans {"productVersion":{"version":"1.99.3","date":"2025-04-15T23:16:36.374Z"},"pinned":false,"operation":3,"isApplicationScoped":true,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true}
+2025-05-05 19:24:16.958 [info] Extension signature verification result for ms-ceintl.vscode-language-pack-zh-hans: UnknownError. Executed: true. Duration: 8ms.
+2025-05-05 19:24:17.009 [info] Extracted extension to file:///home/visionary/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.99.2025041609: ms-ceintl.vscode-language-pack-zh-hans
+2025-05-05 19:24:17.013 [info] Renamed to /home/visionary/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.99.2025041609
+2025-05-05 19:24:17.019 [info] Marked extension as uninstalled ms-ceintl.vscode-language-pack-zh-hans-1.96.2024121109
+2025-05-05 19:24:17.020 [info] Adding language packs from the extension ms-ceintl.vscode-language-pack-zh-hans
+2025-05-05 19:24:17.038 [info] Extension installed successfully: ms-ceintl.vscode-language-pack-zh-hans vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:24:17.094 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-05-05 19:24:23.389 [error] [uncaught exception in sharedProcess]: 发生了系统错误 (ENOENT: no such file or directory, scandir '/home/visionary/.config/Code/clp/e29fa1bf597cf39176d8202ce543e6d3.zh-cn'): Error: ENOENT: no such file or directory, scandir '/home/visionary/.config/Code/clp/e29fa1bf597cf39176d8202ce543e6d3.zh-cn'
+    at async Object.readdir (node:internal/original-fs/promises:950:18)
+    at async Object.So (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:33:6874)
+    at async Gc.g (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:20619)
+2025-05-05 19:24:43.732 [info] Getting Manifest... ms-vscode.cpptools
+2025-05-05 19:24:43.820 [info] Installing extension: ms-vscode.cpptools {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-05-05 19:24:49.222 [info] Getting Manifest... ms-vscode.cpptools-extension-pack
+2025-05-05 19:24:49.351 [info] Installing extension: ms-vscode.cpptools-extension-pack {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-05-05 19:24:50.787 [info] Getting Manifest... ms-vscode.cpptools
+2025-05-05 19:24:50.962 [info] Getting Manifest... ms-vscode.cmake-tools
+2025-05-05 19:24:51.017 [info] Getting Manifest... ms-vscode.cpptools-themes
+2025-05-05 19:24:51.085 [info] Waiting for already requested installing extension ms-vscode.cpptools ms-vscode.cpptools-extension-pack vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:24:51.085 [info] Installing extension: ms-vscode.cmake-tools {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"},"context":{"dependecyOrPackExtensionInstall":true}}
+2025-05-05 19:24:51.085 [info] Installing extension: ms-vscode.cpptools-themes {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"},"context":{"dependecyOrPackExtensionInstall":true}}
+2025-05-05 19:24:51.548 [info] Extension signature verification result for ms-vscode.cpptools-extension-pack: UnknownError. Executed: true. Duration: 8ms.
+2025-05-05 19:24:51.559 [info] Extracted extension to file:///home/visionary/.vscode/extensions/ms-vscode.cpptools-extension-pack-1.3.1: ms-vscode.cpptools-extension-pack
+2025-05-05 19:24:51.562 [info] Renamed to /home/visionary/.vscode/extensions/ms-vscode.cpptools-extension-pack-1.3.1
+2025-05-05 19:24:51.643 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-05-05 19:24:51.888 [info] Extension signature verification result for ms-vscode.cpptools-themes: UnknownError. Executed: true. Duration: 8ms.
+2025-05-05 19:24:51.899 [info] Extracted extension to file:///home/visionary/.vscode/extensions/ms-vscode.cpptools-themes-2.0.0: ms-vscode.cpptools-themes
+2025-05-05 19:24:51.901 [info] Renamed to /home/visionary/.vscode/extensions/ms-vscode.cpptools-themes-2.0.0
+2025-05-05 19:24:51.980 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-05-05 19:24:52.578 [info] Extension signature verification result for ms-vscode.cmake-tools: UnknownError. Executed: true. Duration: 8ms.
+2025-05-05 19:24:52.766 [info] Extracted extension to file:///home/visionary/.vscode/extensions/ms-vscode.cmake-tools-1.20.53: ms-vscode.cmake-tools
+2025-05-05 19:24:52.777 [info] Renamed to /home/visionary/.vscode/extensions/ms-vscode.cmake-tools-1.20.53
+2025-05-05 19:24:52.860 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-05-05 19:24:54.711 [info] Extension signature verification result for ms-vscode.cpptools: UnknownError. Executed: true. Duration: 8ms.
+2025-05-05 19:24:56.285 [info] Extracted extension to file:///home/visionary/.vscode/extensions/ms-vscode.cpptools-1.25.3-linux-x64: ms-vscode.cpptools
+2025-05-05 19:24:56.305 [info] Renamed to /home/visionary/.vscode/extensions/ms-vscode.cpptools-1.25.3-linux-x64
+2025-05-05 19:24:56.327 [info] Extension installed successfully: ms-vscode.cpptools vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:24:56.327 [info] Finished waiting for already requested installing extension ms-vscode.cpptools ms-vscode.cpptools-extension-pack vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:24:56.327 [info] Extension installed successfully: ms-vscode.cpptools-extension-pack vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:24:56.328 [info] Extension installed successfully: ms-vscode.cpptools-themes vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:24:56.328 [info] Extension installed successfully: ms-vscode.cmake-tools vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:24:56.392 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-05-05 19:25:17.331 [info] Getting Manifest... yzhang.markdown-all-in-one
+2025-05-05 19:25:17.476 [info] Installing extension: yzhang.markdown-all-in-one {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-05-05 19:25:17.982 [info] Extension signature verification result for yzhang.markdown-all-in-one: UnknownError. Executed: true. Duration: 9ms.
+2025-05-05 19:25:18.014 [info] Extracted extension to file:///home/visionary/.vscode/extensions/yzhang.markdown-all-in-one-3.6.3: yzhang.markdown-all-in-one
+2025-05-05 19:25:18.017 [info] Renamed to /home/visionary/.vscode/extensions/yzhang.markdown-all-in-one-3.6.3
+2025-05-05 19:25:18.030 [info] Extension installed successfully: yzhang.markdown-all-in-one vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:25:18.097 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-05-05 19:28:23.097 [info] Getting Manifest... akamud.vscode-theme-onedark
+2025-05-05 19:28:23.388 [info] Installing extension: akamud.vscode-theme-onedark {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-05-05 19:28:24.829 [info] Extension signature verification result for akamud.vscode-theme-onedark: UnknownError. Executed: true. Duration: 7ms.
+2025-05-05 19:28:24.835 [info] Extracted extension to file:///home/visionary/.vscode/extensions/akamud.vscode-theme-onedark-2.3.0: akamud.vscode-theme-onedark
+2025-05-05 19:28:24.836 [info] Renamed to /home/visionary/.vscode/extensions/akamud.vscode-theme-onedark-2.3.0
+2025-05-05 19:28:24.848 [info] Extension installed successfully: akamud.vscode-theme-onedark vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:28:24.916 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-05-05 19:29:19.216 [info] Getting Manifest... atommaterial.a-file-icon-vscode
+2025-05-05 19:29:19.304 [info] Installing extension: atommaterial.a-file-icon-vscode {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/visionary/.vscode/extensions/extensions.json","path":"/home/visionary/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-05-05 19:29:20.620 [info] Extension signature verification result for atommaterial.a-file-icon-vscode: UnknownError. Executed: true. Duration: 7ms.
+2025-05-05 19:29:21.381 [info] Extracted extension to file:///home/visionary/.vscode/extensions/atommaterial.a-file-icon-vscode-2.0.1: atommaterial.a-file-icon-vscode
+2025-05-05 19:29:21.425 [info] Renamed to /home/visionary/.vscode/extensions/atommaterial.a-file-icon-vscode-2.0.1
+2025-05-05 19:29:21.440 [info] Extension installed successfully: atommaterial.a-file-icon-vscode vscode-userdata:/home/visionary/.vscode/extensions/extensions.json
+2025-05-05 19:29:21.505 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/visionary/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///nix/store/j850qlp7r2k4m0xip8qpfg1gq313a46h-vscode-1.96.2/lib/vscode/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)

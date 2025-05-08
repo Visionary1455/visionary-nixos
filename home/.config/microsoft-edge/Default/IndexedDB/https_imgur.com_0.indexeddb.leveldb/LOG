@@ -1,0 +1,6 @@
+2025/01/21-22:58:48.837 3f75 Creating DB /home/visionary/.config/microsoft-edge/Default/IndexedDB/https_imgur.com_0.indexeddb.leveldb since it was missing.
+2025/01/21-22:58:48.843 3f75 Reusing MANIFEST /home/visionary/.config/microsoft-edge/Default/IndexedDB/https_imgur.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/21-22:58:48.928 3f78 Level-0 table #5: started
+2025/01/21-22:58:48.932 3f78 Level-0 table #5: 758 bytes OK
+2025/01/21-22:58:48.935 3f78 Delete type=0 #3
+2025/01/21-22:58:48.935 3f78 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
