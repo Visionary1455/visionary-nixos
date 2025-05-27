@@ -41,7 +41,7 @@
           ./module/program/lsp.nix
           ./module/program/hyprland.nix
           ./module/program/fish.nix
-          ./module/program/thunar.nix
+          ./module/program/dolphin.nix
           ./module/program/git.nix
           ./module/program/v2raya.nix
         ];
