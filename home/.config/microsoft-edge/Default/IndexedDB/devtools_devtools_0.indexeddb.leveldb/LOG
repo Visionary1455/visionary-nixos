@@ -1,7 +1,0 @@
-2025/04/24-22:39:37.723 832 Reusing MANIFEST /home/visionary/.config/microsoft-edge/Default/IndexedDB/devtools_devtools_0.indexeddb.leveldb/MANIFEST-000001
-2025/04/24-22:39:37.723 832 Recovering log #3
-2025/04/24-22:39:37.724 832 Reusing old log /home/visionary/.config/microsoft-edge/Default/IndexedDB/devtools_devtools_0.indexeddb.leveldb/000003.log 
-2025/04/24-22:39:43.240 832 Level-0 table #5: started
-2025/04/24-22:39:43.242 832 Level-0 table #5: 1009 bytes OK
-2025/04/24-22:39:43.243 832 Delete type=0 #3
-2025/04/24-22:39:43.243 832 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

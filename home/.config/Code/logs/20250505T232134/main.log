@@ -1,9 +1,0 @@
-2025-05-05 23:21:34.639 [info] update#setState idle
-2025-05-05 23:22:04.085 [info] Extension host with pid 3150 exited with code: 0, signal: unknown.
-2025-05-05 23:22:04.603 [info] update#setState checking for updates
-2025-05-05 23:22:04.689 [info] update#setState idle
-2025-05-05 23:31:23.438 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown
-2025-05-05 23:31:23.439 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 3264]: crashed with code 15 and reason 'killed'
-2025-05-05 23:31:23.441 [info] Extension host with pid 3263 exited with code: 15, signal: unknown.
-2025-05-05 23:31:23.442 [error] [UtilityProcess id: 2, type: extensionHost, pid: 3263]: crashed with code 15 and reason 'killed'
-2025-05-05 23:31:23.442 [error] [UtilityProcess type: shared-process, pid: 3128]: crashed with code 15 and reason 'killed'
