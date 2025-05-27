@@ -9,7 +9,7 @@
     "height": 36,
     "modules-left": ["hyprland/window"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "pulseaudio", "cpu", "clock", "custom/power"],
+    "modules-right": ["bluetooth", "network", "tray", "pulseaudio", "cpu", "clock", "custom/power"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "persistent-workspaces": {
@@ -29,6 +29,15 @@
     "hyprland/window": {
         "format": "\uf105 {initialTitle}",
         "separate-outputs": true
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "", 
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click-right": "overskride"
     },
     "tray": {
         "icon-size": 21,
@@ -81,5 +90,18 @@
         },
         "on-click-right": "pavucontrol",
         "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"]
+    },
+    "network": {
+        "tooltip": true,
+        "format-wifi": " ",
+        "rotate": 0,
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "interval": 2,
+        "on-click-right": "iwgtk"
     }
 }
