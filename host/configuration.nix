@@ -23,11 +23,11 @@
      mako
      networkmanager
      unzip
-     (microsoft-edge.override {    
-       commandLineArgs = [
-        "--enable-wayland-ime"
-       ];
-     })
+    #  (microsoft-edge.override {    
+    #    commandLineArgs = [
+    #     "--enable-wayland-ime"
+    #    ];
+    #  })
      (vscode.override {
        commandLineArgs = [
         "--enable-wayland-ime"
@@ -50,7 +50,11 @@
     wechat-uos
     xarchiver
     feh
+    cliphist
   ];  
+
+
+
   services.xrdp.enable = true;
   services.xrdp.openFirewall = true;
   
