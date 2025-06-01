@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 let
-  fcitx5-pinyin-moegirl = pkgs.callPackage ../../packages/fcitx5-pinyin-moegirl { };
-  fcitx5-pinyin-zhwiki = pkgs.callPackage ../../packages/fcitx5-pinyin-zhwiki { };
+  fcitx5-pinyin-moegirl = pkgs.callPackage ../../../overlays/fcitx5-pinyin-moegirl { };
+  fcitx5-pinyin-zhwiki = pkgs.callPackage ../../../overlays/fcitx5-pinyin-zhwiki { };
 in
 {
   i18n = {

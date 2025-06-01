@@ -1,6 +1,13 @@
 { inputs, pkgs, ... }:
 {
-  # Enable fish
+  environment.systemPackages = with pkgs; [
+    fishPlugins.done
+    fishPlugins.fzf-fish
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fzf
+    fishPlugins.grc
+  ];
   programs.fish.enable = true;
   programs.bash = {
     interactiveShellInit = ''
@@ -11,12 +18,4 @@
       fi
     '';
   };
-  environment.systemPackages = with pkgs; [
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.hydro
-    fzf
-    fishPlugins.grc
-  ];
 }

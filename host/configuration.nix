@@ -2,9 +2,37 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
+   imports = [ 
+    # === GPU-specific configurations ===
+
+    /*
+      For drivers, we are leveraging nixos-hardware
+      Most common drivers are below, but you can see more options here: https://github.com/NixOS/nixos-hardware
+    */
+
+    #! EDIT THIS SECTION
+    # For NVIDIA setups
+    # inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+
+    # For AMD setups
+   inputs.nixos-hardware.nixosModules.common-gpu-amd
+
+    # === CPU-specific configurations ===
+    # For AMD CPUs
+    inputs.nixos-hardware.nixosModules.common-cpu-amd
+
+    # For Intel CPUs
+    #inputs.nixos-hardware.nixosModules.common-cpu-intel
+
+    # === Other common modules ===
+    inputs.nixos-hardware.nixosModules.common-pc
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
+
+    inputs.home-manager.nixosModules.home-manager
+  ];
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
@@ -69,6 +97,11 @@
     ];
     experimental-features = [ "nix-command" "flakes" ];
   };
-
+  users.users.visionary = {
+    isNormalUser = true;
+    description = "visionary";
+    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
+    shell = pkgs.fish;
+  };
   system.stateVersion = "25.05"; # Did you read the comment?
 }
