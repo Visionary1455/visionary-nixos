@@ -49,12 +49,15 @@
     ./base/open-ssh.nix
     #./base/nvidia.nix
     ./base/opengl.nix
-    ./base/sound.nix
+    ./base/audio.nix
     #./base/usb.nix
     ./base/bluetooth.nix
     ./base/fcitx5.nix
+    ./base/gaming.nix
+    ./base/hardware.nix
 
-    ./displaymanager/display-manager.nix
+    #./displaymanager/display-manager.nix
+    ./displaymanager/sddm.nix
 
     ./program/fish.nix 
     ./program/hyprland.nix 
