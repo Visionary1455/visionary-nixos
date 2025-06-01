@@ -30,7 +30,10 @@ in
   };
   imports = [
     ./base/mutable.nix
+    ./base/xdg.nix
+
     ./program/hyprland.nix
+    ./program/lockscreen.nix
     ./program/git.nix
     ./program/dolphin.nix 
     ./program/fastfetch.nix

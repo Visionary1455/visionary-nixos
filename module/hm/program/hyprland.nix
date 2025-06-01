@@ -23,9 +23,6 @@
     ".config/hypr/hyprpaper.conf" = {
       source = dotfile_dir + /.config/hypr/hyprpaper.conf;
     };
-    ".config/swaylock/config" = {
-      source = dotfile_dir + /.config/swaylock/config;
-    };
     # wlogout
     ".config/wlogout/colors-waybar.css" = {
       source = dotfile_dir + /.config/wlogout/colors-waybar.css;

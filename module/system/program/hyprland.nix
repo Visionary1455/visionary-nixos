@@ -16,7 +16,6 @@
   environment.systemPackages = with pkgs; [
     hyprland
     hyprpaper
-    swaylock
     waybar
     wlogout
     wofi
