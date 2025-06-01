@@ -50,29 +50,24 @@
      mako
      networkmanager
      unzip
-    #  (microsoft-edge.override {    
-    #    commandLineArgs = [
-    #     "--enable-wayland-ime"
-    #    ];
-    #  })
      (vscode.override {
        commandLineArgs = [
         "--enable-wayland-ime"
         "--ozone-platform-hint=wayland"
        ];
      })
-     (chromium.override {
-       enableWideVine = true;
-       commandLineArgs = [
-          "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
-          "--enable-features=VaapiIgnoreDriverChecks,VaapiVideoDecoder,PlatformHEVCDecoderSupport"
-          "--enable-features=UseMultiPlaneFormatForHardwareVideo"
-          "--ignore-gpu-blocklist"
-          "-enable-features=UseOzonePlatform"
-          "--ozone-platform=wayland"
-          "--enable-wayland-ime"
-        ];
-      })
+    #  (chromium.override {
+    #    enableWideVine = true;
+    #    commandLineArgs = [
+    #       "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
+    #       "--enable-features=VaapiIgnoreDriverChecks,VaapiVideoDecoder,PlatformHEVCDecoderSupport"
+    #       "--enable-features=UseMultiPlaneFormatForHardwareVideo"
+    #       "--ignore-gpu-blocklist"
+    #       "-enable-features=UseOzonePlatform"
+    #       "--ozone-platform=wayland"
+    #       "--enable-wayland-ime"
+    #     ];
+    #   })
     #jetbrains.clion
     wechat-uos
     xarchiver

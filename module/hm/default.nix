@@ -21,6 +21,7 @@ in
     ./program/git.nix
     ./program/dolphin.nix 
     ./program/fastfetch.nix
+    ./program/firefox.nix
 
     # Nix-index-database - for comma and command-not-found
     # inputs.nix-index-database.hmModules.nix-index
