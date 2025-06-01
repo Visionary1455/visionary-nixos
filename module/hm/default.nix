@@ -12,6 +12,7 @@ in
     
   };
   imports = [
+    ./base/mutable.nix
     ./program/hyprland.nix
     ./program/git.nix
     ./program/dolphin.nix 

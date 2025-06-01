@@ -40,8 +40,8 @@
       # stateful file for themes
       ".config/kdeglobals" = {
         source = dotfile_dir + /.config/kdeglobals;
-        # force = true;
-        # mutable = true;
+        force = true;
+        mutable = true;
       };
     };
 }
