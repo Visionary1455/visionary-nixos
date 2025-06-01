@@ -6,6 +6,19 @@ in
   home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
     mkdir -p "$HOME/.config/fastfetch/logo"
     mkdir -p "$HOME/.config/menus"
+    
+    mkdir -p "$HOME/.config/hypr/animations"
+    mkdir -p "$HOME/.config/hypr/themes"
+
+    touch "$HOME/.config/hypr/animations/theme.conf"
+    touch "$HOME/.config/hypr/themes/colors.conf"
+    touch "$HOME/.config/hypr/themes/theme.conf"
+    touch "$HOME/.config/hypr/themes/wallbash.conf"
+
+    chmod 644 "$HOME/.config/hypr/animations/theme.conf"
+    chmod 644 "$HOME/.config/hypr/themes/colors.conf"
+    chmod 644 "$HOME/.config/hypr/themes/theme.conf"
+    chmod 644 "$HOME/.config/hypr/themes/wallbash.conf"
   '';
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # home-manager

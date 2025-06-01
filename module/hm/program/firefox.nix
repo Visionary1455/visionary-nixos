@@ -20,13 +20,13 @@
       
       # Install extensions if enabled
       $DRY_RUN_CMD mkdir -p $VERBOSE_ARG ~/.mozilla/firefox
-      $DRY_RUN_CMD cp -r $VERBOSE_ARG ${dotfile_dir}/.config/firefox/extensions/* ~/.mozilla/
+      $DRY_RUN_CMD cp -rf $VERBOSE_ARG ${dotfile_dir}/.config/firefox/extensions/* ~/.mozilla/
       
       # Install userChrome.css if enabled
-      $DRY_RUN_CMD cp -r $VERBOSE_ARG ${dotfile_dir}/.config/firefox/userconfig/chrome/* "$PROFILE_DIR/chrome/"
+      $DRY_RUN_CMD cp -rf $VERBOSE_ARG ${dotfile_dir}/.config/firefox/userconfig/chrome/* "$PROFILE_DIR/chrome/"
       
       # Install user.js if enabled
-      $DRY_RUN_CMD cp -r $VERBOSE_ARG ${dotfile_dir}/.config/firefox/userconfig/user.js "$PROFILE_DIR/"
+      $DRY_RUN_CMD cp -rf $VERBOSE_ARG ${dotfile_dir}/.config/firefox/userconfig/user.js "$PROFILE_DIR/"
     fi
   '';
 }
