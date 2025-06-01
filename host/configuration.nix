@@ -38,45 +38,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     curl
-     lshw
-     grc
-    
-     wl-clipboard
-     kitty
-     mako
-     networkmanager
-     unzip
-     (vscode.override {
-       commandLineArgs = [
-        "--enable-wayland-ime"
-        "--ozone-platform-hint=wayland"
-       ];
-     })
-    #  (chromium.override {
-    #    enableWideVine = true;
-    #    commandLineArgs = [
-    #       "--enable-features=AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE"
-    #       "--enable-features=VaapiIgnoreDriverChecks,VaapiVideoDecoder,PlatformHEVCDecoderSupport"
-    #       "--enable-features=UseMultiPlaneFormatForHardwareVideo"
-    #       "--ignore-gpu-blocklist"
-    #       "-enable-features=UseOzonePlatform"
-    #       "--ozone-platform=wayland"
-    #       "--enable-wayland-ime"
-    #     ];
-    #   })
-    #jetbrains.clion
-    wechat-uos
-    xarchiver
-    feh
-    cliphist
-  ];  
-
-
-
   services.xrdp.enable = true;
   services.xrdp.openFirewall = true;
   

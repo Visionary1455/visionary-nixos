@@ -6,7 +6,7 @@ in
   home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
     mkdir -p "$HOME/.config/fastfetch/logo"
     mkdir -p "$HOME/.config/menus"
-    
+
     mkdir -p "$HOME/.config/hypr/animations"
     mkdir -p "$HOME/.config/hypr/themes"
 
@@ -35,6 +35,7 @@ in
     ./program/dolphin.nix 
     ./program/fastfetch.nix
     ./program/firefox.nix
+    ./program/notifications.nix
 
     # Nix-index-database - for comma and command-not-found
     # inputs.nix-index-database.hmModules.nix-index
