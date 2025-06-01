@@ -39,7 +39,7 @@
             verbose = true;
             useGlobalPkgs = true;
             useUserPackages = true;
-            backupFileExtension = "backup";
+            backupFileExtension = "backhm";
             extraSpecialArgs = {
               inherit dotfile_dir;
             };

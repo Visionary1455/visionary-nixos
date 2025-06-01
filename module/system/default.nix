@@ -18,7 +18,6 @@
 
     ./displaymanager/display-manager.nix
 
-    ./program/dolphin.nix 
     ./program/fish.nix 
     ./program/hyprland.nix 
     ./program/lsp.nix 

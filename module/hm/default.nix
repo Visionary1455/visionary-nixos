@@ -14,6 +14,7 @@ in
   imports = [
     ./program/hyprland.nix
     ./program/git.nix
+    ./program/dolphin.nix 
 
     # Nix-index-database - for comma and command-not-found
     # inputs.nix-index-database.hmModules.nix-index
