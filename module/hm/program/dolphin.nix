@@ -1,9 +1,6 @@
 { inputs, pkgs, dotfile_dir, lib, ... }:
 
 {
-  home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
-      mkdir -p "$HOME/.config/menus"
-    '';
   # Enable dolphin
   home.packages = with pkgs.kdePackages; [
       dolphin # KDE file manager
