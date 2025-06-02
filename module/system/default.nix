@@ -58,7 +58,7 @@
     #./displaymanager/display-manager.nix
     ./displaymanager/sddm.nix
 
-    ./program/fish.nix 
+    ./program/shell.nix 
     ./program/hyprland.nix 
     ./program/lsp.nix 
     ./program/v2raya.nix
