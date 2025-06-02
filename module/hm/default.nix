@@ -31,6 +31,7 @@ in
   imports = [
     ./base/mutable.nix
     ./base/xdg.nix
+    ./base/qt.nix
 
     ./program/hyprland.nix
     ./program/lockscreen.nix

@@ -8,6 +8,7 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     jetbrains-mono
+    nerd-fonts.jetbrains-mono
     nerd-font-patcher
     nerd-fonts.fira-code
     nerd-fonts.droid-sans-mono
