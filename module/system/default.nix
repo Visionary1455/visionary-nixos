@@ -43,13 +43,14 @@
     ./nixos/auto-upgrade.nix
     ./nixos/gc.nix
     ./nixos/fonts.nix
+    ./nixos/nix.nix
 
     ./base/networking.nix
     ./base/open-ssh.nix
     #./base/nvidia.nix
     ./base/opengl.nix
     ./base/audio.nix
-    #./base/usb.nix
+    ./base/usb.nix
     ./base/bluetooth.nix
     ./base/fcitx5.nix
     ./base/gaming.nix
