@@ -40,10 +40,6 @@
     ".config/fish/functions/fish_prompt.fish" = {
       source = dotfile_dir + /.config/fish/functions/fish_prompt.fish;
     };
-    #kitty
-    ".config/kitty/kitty.conf" = {
-      source = dotfile_dir + /.config/kitty/kitty.conf;
-    };
     #wofi
     ".config/wofi/config" = {
       source = dotfile_dir + /.config/wofi/config;

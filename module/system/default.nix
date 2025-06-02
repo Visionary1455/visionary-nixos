@@ -9,7 +9,6 @@
     grc
   
     wl-clipboard
-    kitty
     networkmanager
     unzip
     swaynotificationcenter
