@@ -33,13 +33,6 @@
     ".config/wlogout/style.css" = {
       source = dotfile_dir + /.config/wlogout/style.css;
     };
-    # fish
-    ".config/fish/config.fish" = {
-      source = dotfile_dir + /.config/fish/config.fish;
-    };
-    ".config/fish/functions/fish_prompt.fish" = {
-      source = dotfile_dir + /.config/fish/functions/fish_prompt.fish;
-    };
     #wofi
     ".config/wofi/config" = {
       source = dotfile_dir + /.config/wofi/config;

@@ -39,6 +39,7 @@ in
     ./program/fastfetch.nix
     ./program/firefox.nix
     ./program/notifications.nix
+    ./program/shell.nix
     ./program/terminals.nix
 
     # Nix-index-database - for comma and command-not-found
