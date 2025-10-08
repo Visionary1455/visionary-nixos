@@ -6,6 +6,7 @@ in
   home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
     mkdir -p "$HOME/.config/fastfetch/logo"
     mkdir -p "$HOME/.config/menus"
+    mkdir -p "$HOME/.config/waybar"
 
     mkdir -p "$HOME/.config/hypr/animations"
     mkdir -p "$HOME/.config/hypr/themes"

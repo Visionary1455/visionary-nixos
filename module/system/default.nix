@@ -32,7 +32,6 @@
     #     ];
     #   })
     #jetbrains.clion
-    wechat-uos
     xarchiver
     feh
     cliphist
