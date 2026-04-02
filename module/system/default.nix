@@ -35,6 +35,7 @@
     xarchiver
     feh
     cliphist
+    clash-nyanpasu
   ];  
 
   imports = [
@@ -49,20 +50,25 @@
     #./base/nvidia.nix
     ./base/opengl.nix
     ./base/audio.nix
-    ./base/usb.nix
+    #./base/usb.nix
     ./base/bluetooth.nix
     ./base/fcitx5.nix
     ./base/gaming.nix
     ./base/hardware.nix
 
-    #./displaymanager/display-manager.nix
-    ./displaymanager/sddm.nix
+    ./displaymanager/display-manager.nix
+    #./displaymanager/sddm.nix
 
     ./program/shell.nix 
     ./program/hyprland.nix 
     ./program/lsp.nix 
     ./program/v2raya.nix
+    
+    # 新增
+    # ./program/dms.nix
+    # ./program/flatpak-module.nix
+    # ./program/niri.nix
+    # ./program/noctalia.nix
+    # ./program/virtualization.nix
   ];
-  # Change runtime directory size
-  services.logind.extraConfig = "RuntimeDirectorySize=8G";
 }

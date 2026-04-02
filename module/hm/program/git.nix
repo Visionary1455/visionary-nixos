@@ -6,9 +6,11 @@
   ];
   programs.git = {
       enable = true;
-      userName = "visionary";
-      userEmail = "15282219250@163.com";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "visionary";
+          email = "15282219250@163.com";
+        };
         init.defaultBranch = "main";
         pull.rebase = false;
       };

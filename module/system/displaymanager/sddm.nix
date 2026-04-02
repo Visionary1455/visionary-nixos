@@ -17,7 +17,7 @@ in
 
   services.displayManager.sddm = {
     enable = true;
-    package = pkgs.libsForQt5.sddm;
+    #package = pkgs.libsForQt5.sddm;
     theme = sddm-candy.name;
     wayland = {
       enable = true;
