@@ -55,6 +55,7 @@
             useUserPackages = true;
             backupFileExtension = "backhm";
             extraSpecialArgs = {
+              inherit inputs;
               inherit dotfile_dir;
             };
             users.visionary = ./module/hm;
