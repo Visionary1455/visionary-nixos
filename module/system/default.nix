@@ -69,7 +69,6 @@
     # ./program/dms.nix
     # ./program/flatpak-module.nix
     # ./program/niri.nix
-    # ./program/noctalia.nix
     # ./program/virtualization.nix
   ];
 }
