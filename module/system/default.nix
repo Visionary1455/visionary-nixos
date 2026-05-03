@@ -36,6 +36,7 @@
     feh
     cliphist
     clash-nyanpasu
+    noctalia-shell
   ];  
 
   imports = [
@@ -56,8 +57,8 @@
     ./base/gaming.nix
     ./base/hardware.nix
 
-    ./displaymanager/display-manager.nix
-    #./displaymanager/sddm.nix
+    #./displaymanager/display-manager.nix
+    ./displaymanager/sddm.nix
 
     ./program/shell.nix 
     ./program/hyprland.nix 

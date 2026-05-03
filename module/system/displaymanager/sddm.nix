@@ -17,21 +17,21 @@ in
 
   services.displayManager.sddm = {
     enable = true;
-    #package = pkgs.libsForQt5.sddm;
+    # package = pkgs.libsForQt5.sddm;
     theme = sddm-candy.name;
     wayland = {
       enable = true;
     };
     extraPackages = with pkgs; [
-      libsForQt5.sddm
-      libsForQt5.sddm-kcm
-      libsForQt5.qtsvg
-      libsForQt5.qtmultimedia
-      libsForQt5.qtvirtualkeyboard
-      libsForQt5.qtquickcontrols2
-      libsForQt5.qtgraphicaleffects
-      libsForQt5.layer-shell-qt
-      libsForQt5.qt5.qtwayland
+      # libsForQt5.sddm
+      # libsForQt5.sddm-kcm
+      # libsForQt5.qt5.qtsvg
+      # libsForQt5.qt5.qtmultimedia
+      # libsForQt5.qt5.qtvirtualkeyboard
+      # libsForQt5.qt5.qtquickcontrols2
+      # libsForQt5.qt5.qtgraphicaleffects
+      # libsForQt5.qt5.layer-shell-qt
+      # libsForQt5.qt5.qtwayland
       sddm-candy
       Bibata-Modern-Ice
     ];
