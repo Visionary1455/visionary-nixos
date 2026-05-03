@@ -5,21 +5,6 @@ in
 {
   home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
     mkdir -p "$HOME/.config/fastfetch/logo"
-    mkdir -p "$HOME/.config/menus"
-    mkdir -p "$HOME/.config/waybar"
-
-    mkdir -p "$HOME/.config/hypr/animations"
-    mkdir -p "$HOME/.config/hypr/themes"
-
-    touch "$HOME/.config/hypr/animations/theme.conf"
-    touch "$HOME/.config/hypr/themes/colors.conf"
-    touch "$HOME/.config/hypr/themes/theme.conf"
-    touch "$HOME/.config/hypr/themes/wallbash.conf"
-
-    chmod 644 "$HOME/.config/hypr/animations/theme.conf"
-    chmod 644 "$HOME/.config/hypr/themes/colors.conf"
-    chmod 644 "$HOME/.config/hypr/themes/theme.conf"
-    chmod 644 "$HOME/.config/hypr/themes/wallbash.conf"
   '';
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # home-manager
@@ -34,8 +19,6 @@ in
     ./base/xdg.nix
     ./base/qt.nix
 
-    ./program/hyprland.nix
-    ./program/lockscreen.nix
     ./program/git.nix
     ./program/dolphin.nix 
     ./program/fastfetch.nix
@@ -43,7 +26,9 @@ in
     ./program/notifications.nix
     ./program/shell.nix
     ./program/terminals.nix
+
     ./program/noctalia.nix
+    ./program/niri.nix
 
     # Nix-index-database - for comma and command-not-found
     # inputs.nix-index-database.hmModules.nix-index

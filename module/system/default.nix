@@ -56,18 +56,18 @@
     ./base/gaming.nix
     ./base/hardware.nix
 
-    #./displaymanager/display-manager.nix
-    ./displaymanager/sddm.nix
+    ./displaymanager/display-manager.nix
+    # ./displaymanager/sddm.nix
 
     ./program/shell.nix 
-    ./program/hyprland.nix 
+    # ./program/hyprland.nix 
     ./program/lsp.nix 
     ./program/v2raya.nix
+    ./program/niri.nix
     
     # 新增
     # ./program/dms.nix
     # ./program/flatpak-module.nix
-    # ./program/niri.nix
     # ./program/virtualization.nix
   ];
 }
