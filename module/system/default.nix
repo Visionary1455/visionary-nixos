@@ -36,7 +36,6 @@
     feh
     cliphist
     clash-nyanpasu
-    noctalia-shell
   ];  
 
   imports = [

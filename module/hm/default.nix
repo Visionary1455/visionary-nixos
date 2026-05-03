@@ -43,7 +43,7 @@ in
     ./program/notifications.nix
     ./program/shell.nix
     ./program/terminals.nix
-    ./program/noctalia.nix
+    inputs.noctalia.homeModules.default
 
     # Nix-index-database - for comma and command-not-found
     # inputs.nix-index-database.hmModules.nix-index
