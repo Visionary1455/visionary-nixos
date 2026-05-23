@@ -102,6 +102,7 @@ layout {
 workspace "a" { }
 workspace "b" { }
 workspace "c" { }
+workspace "d" { }
 
 
 // ================ Noctalia 窗口规则 ================

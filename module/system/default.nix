@@ -7,6 +7,7 @@
     curl
     lshw
     grc
+    btop
   
     wl-clipboard
     networkmanager
@@ -35,7 +36,7 @@
     xarchiver
     feh
     cliphist
-    clash-nyanpasu
+    clash-verge-rev
   ];  
 
   imports = [
@@ -62,7 +63,6 @@
     ./program/shell.nix 
     # ./program/hyprland.nix 
     ./program/lsp.nix 
-    ./program/v2raya.nix
     ./program/niri.nix
     
     # 新增

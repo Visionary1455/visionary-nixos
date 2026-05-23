@@ -32,6 +32,7 @@
   environment.variables = {
     NIXPKGS_ALLOW_UNFREE = "1";
     GOPROXY = "https://goproxy.cn,direct";
+    WEBKIT_DISABLE_DMABUF_RENDERER = 0;
   };
 
   systemd.services.nix-daemon.environment = {
