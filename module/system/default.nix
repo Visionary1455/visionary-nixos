@@ -37,6 +37,7 @@
     feh
     cliphist
     clash-verge-rev
+    opencode
   ];  
 
   imports = [

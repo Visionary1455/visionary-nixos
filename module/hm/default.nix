@@ -19,17 +19,7 @@ in
     ./base/xdg.nix
     ./base/qt.nix
 
-    ./program/git.nix
-    ./program/dolphin.nix 
-    ./program/fastfetch.nix
-    ./program/firefox.nix
-    ./program/notifications.nix
-    ./program/shell.nix
-    ./program/terminals.nix
-
-    ./program/noctalia.nix
-    ./program/niri.nix
-
+    ./program
 
     # Nix-index-database - for comma and command-not-found
     # inputs.nix-index-database.hmModules.nix-index
