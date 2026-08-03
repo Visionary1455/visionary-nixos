@@ -1,19 +1,19 @@
-{ inputs, pkgs, lib, ... }:
+{ lib, ... }:
 let
-    USERNAME = "visionary";
+  USERNAME = "visionary";
 in
 {
+  # 创建 Hypr 相关目录（供 home.file 的 logo 目录使用）
   home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
     mkdir -p "$HOME/.config/fastfetch/logo"
   '';
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # home-manager
-  home = rec {
-    username = "${USERNAME}";
-    homeDirectory = lib.mkForce "/home/${USERNAME}";
-    stateVersion = lib.trivial.release;
-    
+
+  home = {
+    username = USERNAME;
+    homeDirectory = "/home/${USERNAME}";
+    stateVersion = "25.11";
   };
+
   imports = [
     ./base/mutable.nix
     ./base/xdg.nix

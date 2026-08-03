@@ -1,9 +1,8 @@
 { pkgs, ... }:
-
 {
-  # Enable networking
+  # 网络
   networking = {
-    hostName = "nixos"; # Define your hostname.
+    hostName = "visionary-computer"; # 与 flake.nix 中的主机配置名保持一致
     networkmanager.enable = true;
     # wireless = {
     #   enable = true;
@@ -25,8 +24,8 @@
     #   # };
     # };
   };
+
   environment.systemPackages = with pkgs; [
     iwgtk
-  ];  
-  services.connman.wifi.backend = "iwd";
+  ];
 }

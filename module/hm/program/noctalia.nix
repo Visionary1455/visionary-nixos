@@ -1,9 +1,7 @@
-# Home Manager configuration for a Hyprland-based desktop session.
+# Home Manager configuration for a noctalia-based desktop session.
 
 {
-  pkgs,
   inputs,
-  config,
   ...
 }:
 {

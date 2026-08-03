@@ -1,15 +1,14 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
+  # niri 设置
+  programs.niri.enable = true;
 
-# niri设置
-programs.niri.enable = true;
-
-environment.systemPackages = with pkgs; [   
-   bibata-cursors
+  environment.systemPackages = with pkgs; [
+    bibata-cursors
   ];
-environment.variables = {
+
+  environment.variables = {
     XCURSOR_THEME = "Bibata-Modern-Ice";
-    XCURSOR_SIZE = "24";  
+    XCURSOR_SIZE = "24";
   };
 }

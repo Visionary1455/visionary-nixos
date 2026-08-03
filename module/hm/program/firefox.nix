@@ -1,4 +1,9 @@
-{ config, lib, pkgs, dotfile_dir, ... }:
+{
+  pkgs,
+  lib,
+  dotfile_dir,
+  ...
+}:
 {
   home.packages = with pkgs; [
     firefox # browser

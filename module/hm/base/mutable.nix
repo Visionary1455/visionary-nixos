@@ -124,12 +124,11 @@ in
           ''
         );
 
-        command =
-          ''
-            export PATH="${pkgs.file}/bin:${pkgs.findutils}/bin:$PATH"
-            echo "Copying mutable home files for $HOME"
-          ''
-          + lib.concatLines (map toCommand mutableFiles);
+        command = ''
+          export PATH="${pkgs.file}/bin:${pkgs.findutils}/bin:$PATH"
+          echo "Copying mutable home files for $HOME"
+        ''
+        + lib.concatLines (map toCommand mutableFiles);
 
       in
       (lib.hm.dag.entryAfter [ "linkGeneration" ] command);

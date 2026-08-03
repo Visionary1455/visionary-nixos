@@ -1,9 +1,10 @@
 {
-  description = "Your new nix config";
+  description = "Visionary's NixOS configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,12 +19,10 @@
       url = "git+https://git.outfoxxed.me/quickshell/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,40 +30,40 @@
   };
 
   outputs =
-    { ... }@inputs:
-  let
-    system = "x86_64-linux";
-    HOSTNAME = "visionary-computer";
-    dotfile_dir = ./dotfile;
-    nixosConfig = inputs.nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = {
-        inherit inputs;
-        inherit dotfile_dir;
-      };
-      modules = [
-        ./host/configuration.nix
-        ./host/hardware-configuration.nix
-        
-        ./module/system
-        inputs.home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            verbose = true;
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            backupFileExtension = "backhm";
-            extraSpecialArgs = {
-              inherit inputs;
-              inherit dotfile_dir;
+    inputs@{ nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+      hostname = "visionary-computer";
+      dotfile_dir = ./dotfile;
+
+      nixosConfig = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit inputs dotfile_dir;
+        };
+        modules = [
+          ./host/configuration.nix
+          ./host/hardware-configuration.nix
+          ./module/system
+
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              verbose = true;
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backhm";
+              extraSpecialArgs = {
+                inherit inputs dotfile_dir;
+              };
+              users.visionary = ./module/hm;
             };
-            users.visionary = ./module/hm;
-          };
-        }
-      ];
+          }
+        ];
+      };
+    in
+    {
+      nixosConfigurations.${hostname} = nixosConfig;
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
     };
-  in
-  {
-    nixosConfigurations.${HOSTNAME} = nixosConfig;
-  };
 }

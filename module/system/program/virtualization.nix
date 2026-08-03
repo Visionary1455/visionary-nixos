@@ -1,5 +1,6 @@
 # virtualization.nix
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Only enable either docker or podman -- Not both
   virtualisation = {
     docker = {
@@ -57,7 +58,11 @@
   ];
 
   # Enable necessary kernel modules for VM performance
-  boot.kernelModules = ["kvm-amd" "kvm-intel" "vfio-pci"];
+  boot.kernelModules = [
+    "kvm-amd"
+    "kvm-intel"
+    "vfio-pci"
+  ];
 
   # Add boot kernel parameters for better graphics support
   boot.kernelParams = [

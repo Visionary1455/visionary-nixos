@@ -1,5 +1,5 @@
 { pkgs, ... }:
-let 
+let
   commit = "87217f9126f1cda44d5df6b6371a92f974f299a2";
 in
 pkgs.stdenv.mkDerivation {

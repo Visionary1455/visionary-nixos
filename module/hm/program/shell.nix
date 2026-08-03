@@ -1,4 +1,4 @@
-{ config, lib, pkgs, dotfile_dir, ... }:
+{ pkgs, dotfile_dir, ... }:
 
 {
   home.file = {

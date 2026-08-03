@@ -28,5 +28,5 @@
     terraform-ls
     #ansible-language-server
     hyprls
-  ];  
+  ];
 }

@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   xdg.configFile."opencode/AGENTS.md" = {

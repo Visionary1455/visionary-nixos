@@ -20,14 +20,14 @@
       ];
       # 增大下载缓存，防止大文件下载中断 (500MB)
       download-buffer-size = 524288000;
-    
+
       connect-timeout = 5;
       fallback = true;
     };
   };
   nix.extraOptions = ''
-     !include /etc/nix/github-access-tokens
-   '';
+    !include /etc/nix/github-access-tokens
+  '';
 
   environment.variables = {
     NIXPKGS_ALLOW_UNFREE = "1";
