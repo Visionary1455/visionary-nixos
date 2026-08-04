@@ -23,6 +23,10 @@
     #   #   };
     #   # };
     # };
+    firewall = {
+      allowedTCPPorts = [ 4096 ];
+      allowedUDPPorts = [ 4096 ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
