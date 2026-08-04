@@ -30,7 +30,8 @@
     })
 
     # 代理
-    clash-verge-rev
+    v2ray
+    v2rayn
 
     # AI 助手
     opencode
