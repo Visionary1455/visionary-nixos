@@ -1,4 +1,6 @@
 # Home Manager configuration for a noctalia-based desktop session.
+# noctalia v5：配置为 TOML 格式，选项名为 programs.noctalia。
+# 启动方式由 niri.nix 中的 spawn-at-startup "noctalia" 负责。
 
 {
   inputs,
@@ -9,92 +11,94 @@
     inputs.noctalia.homeModules.default
   ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
-    plugins = {
-      version = 2;
-      sources = [
-        {
-          enabled = true;
-          name = "Noctalia Plugins";
-          url = "https://github.com/noctalia-dev/noctalia-plugins";
-        }
-      ];
-      states = {
-        hostname = {
-          enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-        };
-      };
-    };
+
     settings = {
-      bar = {
-        position = "top";
-        density = "spacious";
-        widgets = {
-          left = [
-            { id = "Launcher"; }
-            { id = "plugin:hostname"; }
-            { id = "SystemMonitor"; }
-            { id = "MediaMini"; }
-          ];
-          center = [
-            {
-              id = "Workspace";
-              labelMode = "name";
-              characterCount = 8;
-              showLabelsOnlyWhenOccupied = false;
-              hideUnoccupied = false;
-            }
-          ];
-          right = [
-            {
-              id = "VPN";
-              displayMode = "alwaysShow";
-            }
-            {
-              formatHorizontal = "MMM dd, h:mm ap";
-              id = "Clock";
-            }
-            { id = "Tray"; }
-            { id = "NotificationHistory"; }
-            {
-              id = "Battery";
-              displayMode = "graphic";
-            }
-            { id = "Volume"; }
-            { id = "ControlCenter"; }
-          ];
+      shell = {
+        launcher = {
+          show_icons = true;
+          categories = true;
         };
       };
 
-      colorSchemes = {
-        predefinedScheme = "Rosepine";
-      };
-
-      location = {
-        use12hourFormat = true;
-        useFahrenheit = true;
-      };
-
-      idle = {
-        timeout = 300;
-        lockTimeout = 600;
-      };
-
-      notifications = {
-        position = "top-right";
-        timeout = 5000;
-      };
-
-      appLauncher = {
-        showIcons = true;
-        showSearch = true;
+      theme = {
+        mode = "dark";
+        source = "builtin";
+        builtin = "Rosé Pine";
       };
 
       wallpaper = {
-        enable = true;
-        fillMode = "fill";
+        enabled = true;
+        fill_mode = "crop";
+      };
+
+      notification = {
+        enable_daemon = true;
+        layer = "top";
+      };
+
+      idle = {
+        behavior = {
+          lock = {
+            timeout = 300;
+            action = "lock";
+            enabled = true;
+          };
+          "screen-off" = {
+            timeout = 600;
+            action = "screen_off";
+            enabled = true;
+          };
+        };
+      };
+
+      weather = {
+        enabled = false;
+        unit = "fahrenheit";
+      };
+
+      bar = {
+        main = {
+          position = "top";
+          thickness = 44;
+          widget_spacing = 8;
+          start = [
+            "launcher"
+            "sysmon"
+            "media"
+            "network"
+          ];
+          center = [
+            "workspaces"
+          ];
+          end = [
+            "clock"
+            "tray"
+            "notifications"
+            "battery"
+            "volume"
+            "control-center"
+            "session"
+          ];
+        };
+      };
+
+      widget = {
+        clock = {
+          format = "{:%b %d, %I:%M %p}";
+        };
+        workspaces = {
+          show_labels = true;
+          label_source = "name";
+          labels_only_when_occupied = false;
+          max_label_chars = 8;
+          hide_when_empty = false;
+        };
+        network = {
+          vpn_status = "both";
+          show_vpn_label = true;
+        };
       };
     };
   };

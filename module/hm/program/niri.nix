@@ -59,7 +59,8 @@
       }
 
       // ================ 启动时自动运行的程序 ================
-      spawn-at-startup  "noctalia-shell"
+      // noctalia v5 可执行文件更名为 noctalia
+      spawn-at-startup  "noctalia"
 
       // 桥接 X11(XEmbed) 托盘图标到 Wayland StatusNotifier，供 v2rayN 等 X11 应用使用
       spawn-at-startup  "snixembed" "--fork"

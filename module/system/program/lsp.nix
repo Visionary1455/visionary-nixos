@@ -2,15 +2,15 @@
 
 {
   environment.systemPackages = with pkgs; [
-    python311Packages.python-lsp-server
-    nodePackages_latest.nodemon
-    nodePackages_latest.typescript
-    nodePackages_latest.typescript-language-server
-    nodePackages_latest.vscode-langservers-extracted
-    nodePackages_latest.yaml-language-server
+    python312Packages.python-lsp-server
+    nodemon
+    typescript
+    typescript-language-server
+    vscode-langservers-extracted
+    yaml-language-server
     dockerfile-language-server
-    nodePackages_latest.bash-language-server
-    nodePackages_latest.graphql-language-service-cli
+    bash-language-server
+    graphql-language-service-cli
     vue-language-server
     lua-language-server
     marksman
