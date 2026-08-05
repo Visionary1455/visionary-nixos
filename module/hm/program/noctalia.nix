@@ -66,14 +66,15 @@
           start = [
             "launcher"
             "sysmon"
-            "media"
-            "network"
+            "taskbar"
           ];
           center = [
             "workspaces"
+            "media"
           ];
           end = [
             "clock"
+            "network"
             "tray"
             "notifications"
             "battery"
@@ -90,10 +91,14 @@
         };
         workspaces = {
           show_labels = true;
-          label_source = "name";
+          label_source = "id";
           labels_only_when_occupied = false;
           max_label_chars = 8;
           hide_when_empty = false;
+        };
+        taskbar = {
+          show_all_outputs = true;
+          show_active_indicator = true;
         };
         network = {
           vpn_status = "both";
