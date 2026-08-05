@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     # 基础工具
@@ -34,7 +34,7 @@
     v2rayn
 
     # AI 助手
-    opencode
+    (inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.opencode)
   ];
 
   imports = [
@@ -55,8 +55,8 @@
     ./base/gaming.nix
     ./base/hardware.nix
 
-    ./displaymanager/display-manager.nix
-    # ./displaymanager/sddm.nix
+    # ./displaymanager/display-manager.nix
+    ./displaymanager/sddm.nix
 
     ./program/shell.nix
     # ./program/hyprland.nix

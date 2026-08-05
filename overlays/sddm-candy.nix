@@ -15,6 +15,24 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out/share/sddm/themes/Candy
     cp -r * $out/share/sddm/themes/Candy
+    cd $out/share/sddm/themes/Candy
+
+    # nixos-26.05 的 sddm 为 Qt6 构建（sddm-greeter-qt6）。
+    # 声明主题的 Qt 版本，否则 SDDM 会去找已被移除的 Qt5 sddm-greeter，
+    # 导致主题无法显示（回退到默认主题）。
+    cat > metadata.desktop <<'EOF'
+[SddmGreeterTheme]
+QtVersion=6
+EOF
+
+    # Qt6 中 QtGraphicalEffects 已废弃，改用 Qt5Compat.GraphicalEffects
+    # （由 qt6Packages.qt5compat 提供）。
+    sed -i 's/^import QtGraphicalEffects 1\.0$/import Qt5Compat.GraphicalEffects/' \
+      Main.qml Components/Input.qml Components/SessionButton.qml Components/UserList.qml
+
+    # Qt6 的 QtQuick.VirtualKeyboard 不再提供 2.3 版本号，去掉版本号使用默认版本。
+    sed -i 's/^import QtQuick\.VirtualKeyboard 2\.3$/import QtQuick.VirtualKeyboard/' \
+      Components/VirtualKeyboard.qml
   '';
 
   meta = with pkgs.lib; {
