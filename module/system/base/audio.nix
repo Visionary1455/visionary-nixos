@@ -14,13 +14,11 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-    blueman.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
     bluez
     bluez-tools
-    blueman
     pipewire
     wireplumber
     pavucontrol
