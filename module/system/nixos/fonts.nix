@@ -15,5 +15,9 @@
     nerd-fonts.noto
     nerd-fonts.hack
     nerd-fonts.ubuntu
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.monaspace
+    nerd-fonts.victor-mono
+    nerd-fonts.agave
   ];
 }

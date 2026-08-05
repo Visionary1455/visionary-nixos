@@ -16,7 +16,6 @@
     libnotify
     cliphist
     feh
-    xarchiver
 
     # 输入法相关网络工具
     networkmanager

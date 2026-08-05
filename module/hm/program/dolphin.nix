@@ -1,9 +1,21 @@
 { pkgs, dotfile_dir, ... }:
 
+let
+  ark = pkgs.kdePackages.ark;
+  # Wrap dolphin so it can discover ark's compress/extract KFileItemAction plugins
+  dolphin = pkgs.kdePackages.dolphin.overrideAttrs (old: {
+    qtWrapperArgs = (old.qtWrapperArgs or [ ]) ++ [
+      "--prefix QT_PLUGIN_PATH : ${ark}/lib/qt-6/plugins"
+    ];
+  });
+in
+
 {
   # Enable dolphin
   home.packages = with pkgs.kdePackages; [
     dolphin # KDE file manager
+    ark # Archive manager (provides dolphin right-click compress/extract)
+    pkgs.p7zip # 7z backend for ark
     qtimageformats # Image format support for Qt5
     ffmpegthumbs # Video thumbnail support
     kde-cli-tools # KDE command line utilities
@@ -34,11 +46,10 @@
       source = dotfile_dir + /.config/menus/applications.menu;
     };
 
-    # stateful file for themes
+    # dolphin theme config, managed declaratively by home-manager
     ".config/kdeglobals" = {
       source = dotfile_dir + /.config/kdeglobals;
       force = true;
-      mutable = true;
     };
   };
 }
