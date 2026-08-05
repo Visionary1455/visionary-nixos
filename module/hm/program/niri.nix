@@ -58,12 +58,8 @@
           }
       }
 
-      // ================ 启动时自动运行的程序 ================
-      // noctalia v5 可执行文件更名为 noctalia
+      // 启动时自动运行的程序
       spawn-at-startup  "noctalia"
-
-      // 桥接 X11(XEmbed) 托盘图标到 Wayland StatusNotifier，供 v2rayN 等 X11 应用使用
-      spawn-at-startup  "snixembed" "--fork"
 
       // ================ 环境变量设置 ================
       environment {
@@ -162,10 +158,10 @@
           Mod+E hotkey-overlay-title="dolphin" { spawn "dolphin"; }
 
           // -------- Noctalia 特有绑定 --------
-          Mod+S hotkey-overlay-title="控制面板" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
-          Mod+Comma hotkey-overlay-title="设置" { spawn "noctalia-shell" "ipc" "call" "settings" "toggle"; }
-          Super+Alt+L hotkey-overlay-title="锁屏" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-          Mod+R hotkey-overlay-title="应用启动器" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+          Mod+S hotkey-overlay-title="控制面板" { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+          Mod+Comma hotkey-overlay-title="设置" { spawn "noctalia" "msg" "settings-toggle"; }
+          Super+Alt+L hotkey-overlay-title="锁屏" { spawn "noctalia" "msg" "session" "lock"; }
+          Mod+R hotkey-overlay-title="应用启动器" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
           Mod+Shift+Slash hotkey-overlay-title="捷键概览" { show-hotkey-overlay; }
 
           // -------- 焦点移动（HJKL / 方向键） --------
