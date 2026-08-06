@@ -105,11 +105,11 @@
       }
 
       // ================ 工作区定义 ================
-      workspace 1 { }
-      workspace 2 { }
-      workspace 3 { }
-      workspace 4 { }
-      workspace 5 { }
+      workspace "1" { }
+      workspace "2" { }
+      workspace "3" { }
+      workspace "4" { }
+      workspace "5" { }
 
 
       // ================ Noctalia 窗口规则 ================
@@ -130,7 +130,7 @@
       // Firefox 窗口规则
       window-rule {
           match title="Firefox"
-          open-on-workspace 3
+          open-on-workspace "3"
           open-maximized true
       }
 

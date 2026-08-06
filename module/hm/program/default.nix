@@ -6,7 +6,6 @@
     ./dolphin.nix
     ./fastfetch.nix
     ./firefox.nix
-    ./notifications.nix
     ./opencode.nix
     ./shell.nix
     ./terminals.nix
