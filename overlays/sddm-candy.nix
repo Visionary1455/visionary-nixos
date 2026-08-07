@@ -33,6 +33,21 @@ EOF
     # Qt6 的 QtQuick.VirtualKeyboard 不再提供 2.3 版本号，去掉版本号使用默认版本。
     sed -i 's/^import QtQuick\.VirtualKeyboard 2\.3$/import QtQuick.VirtualKeyboard/' \
       Components/VirtualKeyboard.qml
+
+    # --- Qt6 下用户图标错位修复（参考维护者 eucalyptus-drop 分支） ---
+    # QQC2 的 ComboBox 默认会把当前用户名作为 displayText 画在框内（ForceLastUser=true
+    # 时显示"visionary"），首字母会与 User 图标重叠/露在图标一侧，看起来像图标错位。
+    # 清空 displayText，只保留用户图标。
+    sed -i '/^            id: selectUser$/a\            displayText: ""' Components/Input.qml
+    # Qt6 的 Button 默认带背景（圆角矩形色块），flat: true 去掉该背景，
+    # 使 User 图标按主题设计干净地显示在输入框左侧。
+    sed -i '/^                    enabled: false$/a\                    flat: true' Components/Input.qml
+    sed -i '/^                enabled: false$/a\                flat: true' Components/UserList.qml
+
+    # 修复 SystemButtons.qml 已知 bug：index=0 时 children[index-1]=children[-1] 为
+    # undefined，会打印 "Unable to assign [undefined] to QQuickItem*"。改为首尾循环。
+    sed -i 's/^            KeyNavigation.left: parent\.children\[index-1\]$/            KeyNavigation.left: parent.children[index > 0 ? index - 1 : parent.children.length - 1]/' \
+      Components/SystemButtons.qml
   '';
 
   meta = with pkgs.lib; {

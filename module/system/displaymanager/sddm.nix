@@ -24,6 +24,10 @@ in
     theme = sddm-candy.name;
     wayland = {
       enable = true;
+      # 默认合成器 weston(--shell=kiosk) 不渲染光标且输入投递异常，
+      # 导致登录界面光标不可见、鼠标点击无响应。改用 kwin_wayland：
+      # kwin 自行渲染光标（含 XCURSOR_THEME/PATH 主题加载）并正常处理输入。
+      compositor = "kwin";
     };
     extraPackages = with pkgs; [
       sddm-candy
@@ -42,7 +46,22 @@ in
       Wayland = {
         EnableHiDPI = true;
       };
+      # 模块在 compositor=kwin 时会自动设置 GreeterEnvironment=layer-shell；
+      # 这里覆盖该值并补充 XCURSOR_PATH，使 sddm-greeter-qt6 能加载 Bibata 光标主题。
+      # （sddm.conf 用逗号分隔多个环境变量，XCURSOR_PATH 内含冒号不影响解析）
+      General = {
+        GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell,XCURSOR_PATH=/run/current-system/sw/share/icons";
+      };
     };
+  };
+
+  # environment.sessionVariables 不会注入系统服务，而 sddm 守护进程（display-manager.service）
+  # 默认环境里没有 XCURSOR_* 变量，kwin 合成器（由 sddm-helper 继承该环境）将无法解析光标主题。
+  # 因此把光标主题变量显式注入 display-manager.service 环境。
+  systemd.services.display-manager.environment = {
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
+    XCURSOR_PATH = "/run/current-system/sw/share/icons";
   };
 
   # 默认会话：本机实际使用的桌面环境为 niri（hyprland 未启用）
