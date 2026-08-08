@@ -2,8 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     # 基础工具
-    vim
-    wget
+    vim    wget
     curl
     unzip
     lshw
@@ -68,4 +67,8 @@
     # ./program/flatpak-module.nix
     # ./program/virtualization.nix
   ];
+
+  # 开启 visionar's linger，使 home-manager 的用户级服务
+  # （如 module/hm/program/ddns-go.nix 中的 ddns-go）在开机后无需登录即可自启
+  users.users.visionary.linger = true;
 }

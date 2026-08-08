@@ -3,6 +3,8 @@
 {
   imports = [
     ./git.nix
+    ./bat.nix
+    ./ddns-go.nix
     ./dolphin.nix
     ./fastfetch.nix
     ./firefox.nix
