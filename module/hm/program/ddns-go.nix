@@ -66,12 +66,13 @@ in
     dnsconf:
       - name: 阿里云
         ipv4:
-          enable: false
-          gettype: url
+          enable: true
+          gettype: netInterface
           url: https://4.ipw.cn
-          netinterface: ""
+          netinterface: tailscale0
           cmd: ""
-          domains: []
+          domains:
+            - nixosv4.tangbk.top
         ipv6:
           enable: true
           gettype: url
@@ -80,7 +81,7 @@ in
           cmd: ""
           ipv6reg: ""
           domains:
-            - nixos.tangbk.top
+            - nixosv6.tangbk.top
         dns:
           name: alidns
           id: ${accessKeyId}
