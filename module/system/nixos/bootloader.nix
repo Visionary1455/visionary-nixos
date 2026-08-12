@@ -9,6 +9,8 @@
   boot.kernelPackages =
     inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.linuxPackages_7_1;
   boot.loader.systemd-boot.enable = true;
+  # 限制保留的启动条目数，防止 ESP 分区被旧内核/initrd 占满
+  boot.loader.systemd-boot.configurationLimit = 8;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 2;
   boot.initrd.enable = true;

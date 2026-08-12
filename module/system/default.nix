@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
+let
+  # 微软官方 CDN 下载地址，用于绕过被墙的 update.code.visualstudio.com
+  # 注意：VSCode 升级时需同步更新该 URL（commit 与 build 号会变），hash 由 nixpkgs 记录
+  vscodeCdnUrl = "https://vscode.download.prss.microsoft.com/dbazure/download/stable/8b640eef5a6c6089c029249d48efa5c99adf7d51/code-stable-x64-1778006615.tar.gz";
+in
 {
   environment.systemPackages = with pkgs; [
     # 基础工具
@@ -25,6 +30,16 @@
         "--enable-wayland-ime"
         "--ozone-platform-hint=wayland"
       ];
+      # 仅替换主程序下载地址；vscode-server（commit: 前缀）保持原样
+      fetchurl =
+        args:
+        pkgs.fetchurl (
+          args
+          // lib.optionalAttrs (
+            lib.hasPrefix "https://update.code.visualstudio.com/" args.url
+            && !lib.hasPrefix "https://update.code.visualstudio.com/commit:" args.url
+          ) { url = vscodeCdnUrl; }
+        );
     })
 
     # 代理
