@@ -34,7 +34,7 @@ $time\
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
-# You can also replace your username with a neat symbol like  or disable this
+# You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
 show_always = true
@@ -63,10 +63,10 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 # Keep in mind that the order matters. For example:
-# "Important Documents" = " 󰈙󰈙"
+# "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
 # So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important 󰈙 " = " 󰈙 "
+# "Important 󰈙 " = " 󰈙 "
 
 [c]
 symbol = " "
@@ -94,7 +94,7 @@ style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#FCA17D"
 format = '[ $symbol $branch ]($style)'
 
