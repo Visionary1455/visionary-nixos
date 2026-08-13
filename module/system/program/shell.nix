@@ -7,6 +7,12 @@
     fishPlugins.hydro
     fzf
     fishPlugins.grc
+    # 现代命令替代：grep → rg、ls → eza、cd → zoxide、df/du → duf
+    # 别名在 dotfile/.config/fish/config.fish 中定义
+    ripgrep
+    eza
+    zoxide
+    duf
   ];
   programs.fish.enable = true;
   programs.bash = {
