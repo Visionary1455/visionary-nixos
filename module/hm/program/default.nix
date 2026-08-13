@@ -13,5 +13,6 @@
     ./terminals.nix
     ./noctalia.nix
     ./niri.nix
+    ./yazi.nix
   ];
 }
