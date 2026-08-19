@@ -148,7 +148,7 @@
       binds {
           // -------- 启动器与系统应用 --------
           Mod+T hotkey-overlay-title="打开 (Kitty)" { spawn "kitty"; }
-          Mod+B hotkey-overlay-title="chrome" { spawn "chrome"; }
+          Mod+B hotkey-overlay-title="chrome" { spawn "google-chrome"; }
           Mod+E hotkey-overlay-title="dolphin" { spawn "dolphin"; }
 
           // -------- Noctalia 特有绑定 --------
