@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, dotfile_dir, ... }:
 
 {
   home.packages = with pkgs; [
@@ -16,9 +16,24 @@
     '';
   };
 
+  # i-have-adhd 插件文件（ADHD 友好输出风格，按需启用 /i-have-adhd）
+  xdg.configFile."opencode/vendor/i-have-adhd/.opencode/plugins/i-have-adhd.mjs".source =
+    dotfile_dir + /.config/opencode/vendor/i-have-adhd/.opencode/plugins/i-have-adhd.mjs;
+  xdg.configFile."opencode/vendor/i-have-adhd/.opencode/command/i-have-adhd.md".source =
+    dotfile_dir + /.config/opencode/vendor/i-have-adhd/.opencode/command/i-have-adhd.md;
+  xdg.configFile."opencode/vendor/i-have-adhd/skills/i-have-adhd/SKILL.md".source =
+    dotfile_dir + /.config/opencode/vendor/i-have-adhd/skills/i-have-adhd/SKILL.md;
+
+  # grill-me skill（压力测试计划/设计，按需启用 /grill-me）
+  xdg.configFile."opencode/vendor/grill-me/skills/grill-me/SKILL.md".source =
+    dotfile_dir + /.config/opencode/vendor/grill-me/skills/grill-me/SKILL.md;
+  xdg.configFile."opencode/vendor/grill-me/skills/grilling/SKILL.md".source =
+    dotfile_dir + /.config/opencode/vendor/grill-me/skills/grilling/SKILL.md;
+
   # opencode server 端插件（npm 包由 opencode 启动时自动安装到 ~/.cache/opencode/node_modules）：
   # - oh-my-opencode：背景代理/LSP/MCP 工具全家桶（当前 GitHub 已改名 oh-my-openagent，npm 仍叫 oh-my-opencode）
   # - opencode-browser：集成 Browser MCP 的浏览器自动化，需配合浏览器中的 Browser MCP 扩展使用
+  # - i-have-adhd：ADHD 友好输出风格插件（按需启用，输入 /i-have-adhd 激活）
   xdg.configFile."opencode/opencode.jsonc" = {
     force = true;
     text = ''
@@ -26,7 +41,8 @@
         "$schema": "https://opencode.ai/config.json",
         "plugin": [
           "oh-my-opencode",
-          "opencode-browser"
+          "opencode-browser",
+          "${config.home.homeDirectory}/.config/opencode/vendor/i-have-adhd/.opencode/plugins/i-have-adhd.mjs"
         ],
         "mcp": {
           "browsermcp": {
