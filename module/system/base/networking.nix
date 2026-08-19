@@ -29,6 +29,14 @@
     };
   };
 
+  # 代理环境变量（v2rayN 默认监听 10808 端口）
+  environment.variables = {
+    http_proxy = "http://127.0.0.1:10808";
+    https_proxy = "http://127.0.0.1:10808";
+    all_proxy = "socks5://127.0.0.1:10808";
+    no_proxy = "localhost,127.0.0.1,::1";
+  };
+
   environment.systemPackages = with pkgs; [
     iwgtk
   ];

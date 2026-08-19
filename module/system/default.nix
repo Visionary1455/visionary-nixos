@@ -45,6 +45,9 @@ in
     # 代理
     v2ray
     v2rayn
+    xray
+    v2ray-geoip
+    v2ray-domain-list-community
 
     # AI 助手
     (inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.opencode)
