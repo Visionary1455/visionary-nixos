@@ -262,14 +262,30 @@
       wallpaper = ""
 
       [lockscreen_widgets]
-      enabled = false
+      enabled = true
       schema_version = 2
-      widget_order = [ "lockscreen-login-box@DP-1" ]
+      widget_order = [ "lockscreen-clock@DP-1", "lockscreen-login-box@DP-1" ]
 
           [lockscreen_widgets.grid]
           cell_size = 16
           major_interval = 4
           visible = true
+
+          [lockscreen_widgets.widget."lockscreen-clock@DP-1"]
+          box_height = 200.0
+          box_width = 400.0
+          cx = 1280.0
+          cy = 620.0
+          enabled = true
+          output = "DP-1"
+          rotation = 0.0
+          type = "clock"
+
+              [lockscreen_widgets.widget."lockscreen-clock@DP-1".settings]
+              background_opacity = 0.4
+              center_text = true
+              format = "{:%H:%M}"
+              timezone = ""
 
           [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
           box_height = 196.0
