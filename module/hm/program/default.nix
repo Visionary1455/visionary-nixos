@@ -4,10 +4,10 @@
   imports = [
     ./git.nix
     ./bat.nix
+    ./chrome.nix
     ./ddns-go.nix
     ./dolphin.nix
     ./fastfetch.nix
-    ./firefox.nix
     ./opencode.nix
     ./shell.nix
     ./terminals.nix

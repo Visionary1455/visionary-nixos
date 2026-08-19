@@ -64,7 +64,7 @@
       // ================ 环境变量设置 ================
       environment {
           // Wayland相关环境变量
-          MOZ_ENABLE_WAYLAND "1"   // Firefox使用Wayland
+          MOZ_ENABLE_WAYLAND "1"   // Chrome使用Wayland
           XDG_SESSION_TYPE "wayland"
           GDK_BACKEND "wayland"    // GTK应用使用Wayland
 
@@ -127,13 +127,6 @@
           honor-xdg-activation-with-invalid-serial
       }
 
-      // Firefox 窗口规则
-      window-rule {
-          match title="Firefox"
-          open-on-workspace "3"
-          open-maximized true
-      }
-
       /*
       // ================ 显示输出配置 (当前禁用) ================
       output "DP-3" {
@@ -155,7 +148,7 @@
       binds {
           // -------- 启动器与系统应用 --------
           Mod+T hotkey-overlay-title="打开 (Kitty)" { spawn "kitty"; }
-          Mod+B hotkey-overlay-title="firefox" { spawn "firefox"; }
+          Mod+B hotkey-overlay-title="chrome" { spawn "chrome"; }
           Mod+E hotkey-overlay-title="dolphin" { spawn "dolphin"; }
 
           // -------- Noctalia 特有绑定 --------

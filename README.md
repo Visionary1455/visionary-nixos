@@ -101,7 +101,7 @@ nix fmt
 | `program/dolphin.nix` | Dolphin + ark 压缩集成 + KDE 主题，目录默认打开器 |
 | `program/yazi.nix` | yazi 终端文件管理器 + 预览依赖（PDF/视频/图片/压缩包） |
 | `program/fastfetch.nix` | 系统信息展示（含 logo） |
-| `program/firefox.nix` | Firefox（Wayland）+ userChrome/user.js + 扩展 |
+| `program/chrome.nix` | chrome+ userChrome/user.js + 扩展 |
 | `program/niri.nix` | niri 的 config.kdl（内联管理） |
 | `program/noctalia.nix` | Noctalia shell 全量配置 |
 | `program/ddns-go.nix` | ddns-go 用户级服务 + 配置（凭据从仓库外 CSV 注入） |
