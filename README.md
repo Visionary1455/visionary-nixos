@@ -11,7 +11,7 @@
 - **文件管理**：Dolphin（GUI，含 ark/KIO 全家桶）+ yazi（终端 TUI，带 PDF/视频/图片/压缩包预览）
 - **开发工具**：VSCode（Wayland IME + 微软 CDN 绕过）、opencode（AI 助手，常驻 server 服务）、全套 LSP（nix/nil、gopls、zls、typescript、lua、python 等）
 - **网络与远程**：NetworkManager、tailscale（子网路由）、OpenSSH、xrdp 远程桌面、v2ray/v2rayN（XWayland）
-- **服务**：ddns-go（阿里云 DDNS，IPv4/IPv6 双栈）、opencode server（端口 4096）
+- **服务**：ddns-go（阿里云 DDNS，IPv4/IPv6 双栈）、opencode server（端口 4096）、xray（本地代理服务）
 - **硬件与系统**：nixos-hardware CPU/GPU 模块、PipeWire 音频、蓝牙（overskride）、硬件视频加速（Intel VAAPI）、禁用睡眠
 - **游戏**：Steam（gamescope 会话）+ Lutris + MangoHud
 - **Nix 优化**：清华/USTC 镜像源、自动 GC（14 天）、每周自动升级、500MB 下载缓冲、`auto-optimise-store`
@@ -106,6 +106,7 @@ nix fmt
 | `program/noctalia.nix` | Noctalia shell 全量配置 |
 | `program/ddns-go.nix` | ddns-go 用户级服务 + 配置（凭据从仓库外 CSV 注入） |
 | `program/opencode.nix` | opencode 配置（server/TUI 插件、AGENTS.md） |
+| `program/xray.nix` | xray 用户级服务（配置软链自 dotfile，启动前 `-test` 校验） |
 
 ### overlays（包派生）
 
@@ -147,6 +148,9 @@ journalctl --user -u ddns-go -f
 
 # opencode server（端口 4096）
 journalctl --user -u opencode-server -f
+
+# xray 用户级服务日志
+journalctl --user -u xray -f
 ```
 
 ## 注意事项
@@ -155,7 +159,7 @@ journalctl --user -u opencode-server -f
 - **AccessKey 保密**：阿里云密钥只存在 `~/.config/ddns-go/AccessKey.csv`（格式：`AccessKey ID,AccessKey Secret`），不要写进任何 `.nix` 文件。
 - **unstable 引用**：内核与 opencode 来自 `nixpkgs-unstable`，引用统一用 `inputs.nixpkgs-unstable.legacyPackages.<system>`。
 - **`mutable` 文件**：`mutable = true` 的文件被复制而非软链接，且**必须同时 `force = true`**；从配置移除后目标文件不会自动删除。
-- **linger**：用户级服务（ddns-go、opencode-server）开机自启依赖 `users.users.visionary.linger = true`。
+- **linger**：用户级服务（ddns-go、opencode-server、xray）开机自启依赖 `users.users.visionary.linger = true`。
 - **vscodeCdnUrl**：VSCode 升级后 CDN URL 的 commit/build 号会变，需在 `module/system/default.nix` 中同步更新。
 - **XWayland**：niri 25.08+ 无内嵌 XWayland，由 `xwayland-satellite` 提供，v2rayN 等 X11 应用依赖。
 - **硬件配置**：`host/hardware-configuration.nix` 由 `nixos-generate-config` 自动生成，勿手改。

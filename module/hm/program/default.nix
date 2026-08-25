@@ -14,5 +14,6 @@
     ./noctalia.nix
     ./niri.nix
     ./yazi.nix
+    ./xray.nix
   ];
 }
