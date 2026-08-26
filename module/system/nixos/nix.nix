@@ -11,7 +11,7 @@
       ];
       substituters = [
         "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
+        "https://mirror.iscas.ac.cn/nix-channels/store"
         "https://cache.nixos.org/"
       ];
       trusted-public-keys = [
