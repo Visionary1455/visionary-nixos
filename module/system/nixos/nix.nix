@@ -7,6 +7,7 @@
       experimental-features = [
         "nix-command"
         "flakes"
+        "configurable-impure-env"
       ];
       substituters = [
         "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
@@ -23,6 +24,10 @@
 
       connect-timeout = 5;
       fallback = true;
+
+      # 允许 GOPROXY 穿透沙箱（解决国内网络 proxy.golang.org 不可达问题）
+      # impure-env 仅影响构建时环境，不破坏整体纯度
+      "impure-env" = "GOPROXY = https://goproxy.cn,direct";
     };
   };
   nix.extraOptions = ''

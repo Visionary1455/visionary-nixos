@@ -27,6 +27,8 @@ in
   };
 
   imports = [
+    ./sops.nix
+
     ./base/mutable.nix
     ./base/xdg.nix
     ./base/qt.nix

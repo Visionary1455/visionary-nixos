@@ -1,0 +1,7 @@
+keys:
+  - &visionary age1gp6fdww3djwhwp6z8k5rxrzmvevhlk7ana7ygpvdyjafqudevvtqtxjn6e
+creation_rules:
+  - path_regex: sops/.*\.yaml$
+    key_groups:
+      - age:
+          - *visionary

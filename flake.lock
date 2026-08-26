@@ -208,7 +208,28 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "noctalia": "noctalia",
-        "quickshell": "quickshell"
+        "quickshell": "quickshell",
+        "sops-nix": "sops-nix"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786629091,
+        "narHash": "sha256-gkig4nPi1CWc4Z50GBsjE4ygSE7hMpl/TwID2an2Cck=",
+        "ref": "refs/heads/master",
+        "rev": "a8627b21b9107c5711c96b84f32a9a4b3d45295f",
+        "revCount": 1236,
+        "type": "git",
+        "url": "https://gh-proxy.com/https://github.com/Mic92/sops-nix"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gh-proxy.com/https://github.com/Mic92/sops-nix"
       }
     }
   },
