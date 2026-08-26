@@ -1,4 +1,9 @@
-{ pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 let
   # 微软官方 CDN 下载地址，用于绕过被墙的 update.code.visualstudio.com
   # 注意：VSCode 升级时需同步更新该 URL（commit 与 build 号会变），hash 由 nixpkgs 记录
@@ -7,7 +12,8 @@ in
 {
   environment.systemPackages = with pkgs; [
     # 基础工具
-    vim    wget
+    vim
+    wget
     curl
     unzip
     lshw
@@ -43,11 +49,7 @@ in
     })
 
     # 代理
-    v2ray
-    v2rayn
     xray
-    v2ray-geoip
-    v2ray-domain-list-community
 
     # AI 助手
     (inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.opencode)
@@ -84,6 +86,8 @@ in
     # ./program/dms.nix
     # ./program/flatpak-module.nix
     # ./program/virtualization.nix
+
+    ./program/clash-verge.nix
   ];
 
   # 开启 visionar's linger，使 home-manager 的用户级服务
