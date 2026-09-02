@@ -63,7 +63,6 @@ in
     ./nixos/nix.nix
 
     ./base/networking.nix
-    ./base/tailscale.nix
     ./base/open-ssh.nix
     # ./base/nvidia.nix
     ./base/opengl.nix

@@ -24,13 +24,12 @@ in
       dnsconf:
         - name: 阿里云
           ipv4:
-            enable: true
-            gettype: netInterface
+            enable: false
+            gettype: url
             url: https://4.ipw.cn
-            netinterface: tailscale0
+            netinterface: ""
             cmd: ""
-            domains:
-              - nixosv4.tangbk.top
+            domains: []
           ipv6:
             enable: true
             gettype: url
