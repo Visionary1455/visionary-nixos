@@ -13,6 +13,7 @@
     ./terminals.nix
     ./noctalia.nix
     ./niri.nix
+    ./wayvnc.nix
     ./yazi.nix
     ./xray.nix
   ];
