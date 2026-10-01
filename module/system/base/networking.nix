@@ -24,7 +24,12 @@
     #   # };
     # };
     firewall = {
-      allowedTCPPorts = [ 4096 ];
+      # 4096: opencode server（Basic Auth）
+      # 5900: wayvnc VNC 服务端（见 module/hm/program/wayvnc.nix）
+      allowedTCPPorts = [
+        4096
+        5900
+      ];
       allowedUDPPorts = [ 4096 ];
     };
   };
