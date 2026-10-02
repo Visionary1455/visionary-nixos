@@ -12,6 +12,7 @@
     ./shell.nix
     ./terminals.nix
     ./noctalia.nix
+    ./neovim.nix
     ./niri.nix
     ./wayvnc.nix
     ./yazi.nix
