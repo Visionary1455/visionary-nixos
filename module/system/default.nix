@@ -79,6 +79,7 @@ in
     ./program/shell.nix
     # ./program/hyprland.nix
     ./program/lsp.nix
+    ./program/cpp.nix
     ./program/niri.nix
 
     # 新增（默认禁用）
