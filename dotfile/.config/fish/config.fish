@@ -1,3 +1,11 @@
+# 编辑器统一使用 neovim。
+# home-manager 的 programs.neovim.defaultEditor 只写
+# /etc/profiles/per-user/visionary/etc/profile.d/hm-session-vars.sh，而 fish 不读取
+# POSIX 的 profile.d，所以 EDITOR/VISUAL 必须在这里显式导出（-g 全局、-x 传给子进程）。
+# 同时覆盖掉登录时残留在 systemd user 环境里的 EDITOR=nano。
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source

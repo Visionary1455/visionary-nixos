@@ -31,9 +31,26 @@
     ];
 
     settings = {
-      manager = {
+      # 注意段名：yazi 26.x 已把 [manager] 改名为 [mgr]（home-manager 的 option 示例里
+      # 也是 mgr）。写成 manager 不会报错，但整段会被静默丢弃。
+      mgr = {
         # 不区分大小写的自然排序（与 Dolphin 默认一致）
         sort_sensitive = false;
+      };
+
+      # 显式指定 nvim 作为文本编辑器，不依赖 $EDITOR。
+      # yazi 默认的 edit opener 是 `${EDITOR:-vi} %s`：$EDITOR 为空时退回 vi，
+      # 而 fish 侧的 $EDITOR 由 dotfile 单独导出，两者任一失配都会让 yazi 拉起错的编辑器。
+      opener = {
+        edit = [
+          {
+            run = "nvim %s";
+            desc = "nvim";
+            for = "unix";
+            # 阻塞式：yazi 等 nvim 退出后再接管终端，关闭后仍停留在原目录
+            block = true;
+          }
+        ];
       };
     };
   };
