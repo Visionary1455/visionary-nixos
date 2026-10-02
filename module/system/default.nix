@@ -12,7 +12,11 @@ in
 {
   environment.systemPackages = with pkgs; [
     # 基础工具
-    vim
+    # 编辑器统一使用 neovim（nvim 命令由 home-manager 的 programs.neovim 提供），
+    # 经典 vim 已移除，不提供 vim/vi 兼容命令。
+    # 但 xxd 本是 vim 包的 propagated output，直接删掉 vim 会连带让它从系统 PATH 消失，
+    # 因此显式保留 vim 的独立 xxd 输出——它只是十六进制查看/转换工具，与 vim 本身无关。
+    vim.xxd
     wget
     curl
     unzip
