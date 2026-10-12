@@ -6,7 +6,7 @@
   # `nix-store --optimize` for finding and eliminating redundant copies of identical store paths
   # `nix-store --gc` for optimizing the nix store and removing unreferenced and obsolete store paths
   # `nix-collect-garbage -d` for deleting old generations of user profiles
-  nix.settings.auto-optimise-store = true;
+  # 注意：auto-optimise-store 已在 nixos/nix.nix 的 nix.settings 中统一设置，勿在此重复。
   nix.optimise.automatic = true;
   nix.gc = {
     automatic = true;

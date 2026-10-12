@@ -1,6 +1,18 @@
 {
   description = "Visionary's NixOS configuration";
 
+  # 让首次 `nixos-rebuild`（此时系统级 nix.settings 尚未生效）也走国内镜像。
+  # extra- 前缀是「追加」而非覆盖：默认的 cache.nixos.org 仍保留，镜像内容由
+  # 默认信任的 cache.nixos.org-1 签名，因此无需额外公钥即可使用。
+  # 注意：这类设置不在 Nix 的白名单内，需要 `accept-flake-config` 才会自动生效，
+  # 否则交互式会提示、非交互式会忽略（见 module/system/nixos/nix.nix）。
+  nixConfig = {
+    extra-substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://mirror.iscas.ac.cn/nix-channels/store"
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -13,10 +25,6 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     quickshell = {
       url = "git+https://git.outfoxxed.me/quickshell/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -75,6 +83,11 @@
     in
     {
       nixosConfigurations.${hostname} = nixosConfig;
+
+      # nix flake check 会求值（并可构建）该检查，等价于构建完整系统闭包，
+      # 因此本地快速校验请用 `nix flake check --no-build`。
+      checks.${system}.default = nixosConfig.config.system.build.toplevel;
+
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
     };
 }

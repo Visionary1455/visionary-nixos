@@ -4,6 +4,10 @@
   nix = {
     settings = {
       auto-optimise-store = true;
+      # 允许 flake 自带的 nixConfig 无需交互确认即生效（本仓库用它在系统 nix.settings
+      # 生效前也走国内镜像，见 flake.nix 的 nixConfig）。代价是任何被求值的 flake 都能
+      # 设置 nix.conf 项（含 substituters），若只信任本仓库可改为手动确认一次。
+      accept-flake-config = true;
       experimental-features = [
         "nix-command"
         "flakes"

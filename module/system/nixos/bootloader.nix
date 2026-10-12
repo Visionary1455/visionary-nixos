@@ -6,7 +6,10 @@
 
 {
   # Bootloader.
-  boot.kernelPackages = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.linuxPackages_7_1;
+  # 内核来自 nixpkgs-unstable（稳定分支里没有 linuxPackages_7_1），
+  # 用 pkgs.stdenv.hostPlatform.system 而非硬编码架构，与其他模块保持一致。
+  boot.kernelPackages =
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.linuxPackages_7_1;
   boot.loader.systemd-boot.enable = true;
   # 限制保留的启动条目数，防止 ESP 分区被旧内核/initrd 占满
   boot.loader.systemd-boot.configurationLimit = 8;

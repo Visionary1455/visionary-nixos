@@ -10,25 +10,31 @@
 - **终端与 Shell**：kitty + fish + starship（Catppuccin 主题）
 - **文件管理**：Dolphin（GUI，含 ark/KIO 全家桶）+ yazi（终端 TUI，带 PDF/视频/图片/压缩包预览）
 - **开发工具**：VSCode（Wayland IME + 微软 CDN 绕过）、opencode（AI 助手，常驻 server 服务）、Neovim（clangd LSP + lldb-dap 调试 + clang-format）、全套 LSP（nix/nil、gopls、zls、typescript、lua、python 等）
-- **网络与远程**：NetworkManager、tailscale（子网路由）、OpenSSH、xrdp 远程桌面、Clash Verge Rev（mihomo 内核，TUN 模式）
+- **网络与远程**：NetworkManager、OpenSSH、xrdp 远程桌面、Clash Verge Rev（mihomo 内核，TUN 模式）
 - **服务**：ddns-go（阿里云 DDNS，IPv4/IPv6 双栈）、opencode server（端口 4096）、xray（本地代理服务）
 - **硬件与系统**：nixos-hardware CPU/GPU 模块、PipeWire 音频、蓝牙（overskride）、硬件视频加速（Intel VAAPI）、禁用睡眠
 - **游戏**：Steam（gamescope 会话）+ Lutris + MangoHud
-- **Nix 优化**：清华/USTC 镜像源、自动 GC（14 天）、每周自动升级、500MB 下载缓冲、`auto-optimise-store`
+- **Nix 优化**：清华/ISCAS 镜像源（flake `nixConfig` + 系统级，首次 rebuild 即生效）、自动 GC（14 天）、每周自动升级、500MB 下载缓冲、`auto-optimise-store`
 
 ## 快速开始
 
-部署/重建（必须带 `--impure`，原因见下方[注意事项](#注意事项)）：
+部署/重建（首次建议加 `--accept-flake-config`，让 `flake.nix` 的 `nixConfig` 国内镜像在系统 nix.conf 生效前即可用）：
 
 ```bash
-sudo nixos-rebuild switch --impure --flake .
+# 首次部署
+sudo nixos-rebuild switch --accept-flake-config --flake .
+# 之后：accept-flake-config 已写入 /etc/nix/nix.conf，无需再加
+sudo nixos-rebuild switch --flake .
 ```
 
 纯语法检查（求值整个系统配置，不需要 root）：
 
 ```bash
-nix flake check --no-build --impure
+nix flake check --no-build
 ```
+
+> 纯模式只读取 git 已跟踪的文件。新增文件若尚未 `git add`，`nix flake check` 会报 "path does not exist"，
+> 此时可临时改用 `nix flake check path:. --no-build` 或先 `git add`。
 
 格式化（formatter 为 `nixfmt`）：
 
@@ -70,8 +76,7 @@ nix fmt
 | `nixos/gc.nix` | 每周自动 GC（保留 14 天）、自动优化 store |
 | `nixos/auto-upgrade.nix` | 每周自动升级并更新 flake.lock |
 | `nixos/fonts.nix` | Noto + Nerd Fonts 全家桶 |
-| `base/networking.nix` | NetworkManager、防火墙放行 4096 |
-| `base/tailscale.nix` | tailscale server 模式、宣告 `192.168.0.0/24` 子网路由 |
+| `base/networking.nix` | NetworkManager、防火墙放行 4096（TCP）与 5900 |
 | `base/open-ssh.nix` | OpenSSH，仅允许 visionary 用户 |
 | `base/opengl.nix` | 硬件图形加速（32 位 + Intel VAAPI/NVDEC 驱动） |
 | `base/audio.nix` | PipeWire + WirePlumber + 蓝牙音频工具 |
@@ -107,7 +112,7 @@ nix fmt
 | `program/niri.nix` | niri 的 config.kdl（内联管理） |
 | `program/neovim.nix` | Neovim + 插件（pkgs.vimPlugins，23 项 = 19 个插件 + 4 个 treesitter 语法）+ Lua 配置镜像到 `~/.config/nvim` |
 | `program/noctalia.nix` | Noctalia shell 全量配置 |
-| `program/ddns-go.nix` | ddns-go 用户级服务 + 配置（凭据从仓库外 CSV 注入） |
+| `program/ddns-go.nix` | ddns-go 用户级服务 + 配置（凭据经 sops-nix 模板注入） |
 | `program/opencode.nix` | opencode 配置（server/TUI 插件、AGENTS.md） |
 | `program/xray.nix` | xray 用户级服务（sops-nix 注入凭据，启动前 `-test` 校验） |
 
@@ -180,8 +185,8 @@ nvim src/main.cpp
 ## 常用命令
 
 ```bash
-# 部署
-sudo nixos-rebuild switch --impure --flake .
+# 部署（纯求值，无需 --impure）
+sudo nixos-rebuild switch --flake .
 
 # 查看系统代数并回滚
 sudo nixos-rebuild list-generations
@@ -193,8 +198,8 @@ sudo nix-collect-garbage -d
 # ddns-go 用户级服务日志
 journalctl --user -u ddns-go -f
 
-# opencode server（端口 4096）
-journalctl --user -u opencode-server -f
+# opencode server（端口 4096，服务名 opencode2-serve）
+journalctl --user -u opencode2-serve -f
 
 # xray 用户级服务日志
 journalctl --user -u xray -f
@@ -202,11 +207,12 @@ journalctl --user -u xray -f
 
 ## 注意事项
 
-- **必须 `--impure` 部署**：`module/hm/program/ddns-go.nix` 用 `builtins.readFile` 读取仓库外的 `~/.config/ddns-go/AccessKey.csv`，纯模式下 flake 求值会报 "absolute path forbidden"。
-- **AccessKey 保密**：阿里云密钥只存在 `~/.config/ddns-go/AccessKey.csv`（格式：`AccessKey ID,AccessKey Secret`），不要写进任何 `.nix` 文件。
+- **无需 `--impure`**：本机凭据由 sops-nix 在 activation 阶段解密注入（`sops.templates` + `sops.placeholder`），ddns-go/xray/opencode 均已改为该方式，纯求值即可部署。纯模式下 flake 只读取 git 已跟踪的文件，新增文件请先 `git add`（或临时用 `path:.`）。
+- **国内镜像（flake `nixConfig`）**：`flake.nix` 顶层的 `nixConfig.extra-substituters` 让系统 nix.conf 生效前也走清华/ISCAS 镜像。该设置不在 Nix 白名单内，需 `accept-flake-config` 才自动生效：`module/system/nixos/nix.nix` 已设 `accept-flake-config = true`，但**首次** rebuild 时它尚未写入 `/etc/nix/nix.conf`，故首次请加 `--accept-flake-config`（或对交互提示回答 `y`）。
+- **凭据保密**：所有密钥加密存于 `sops/secrets.yaml`（可安全入库），age 私钥在 `~/.config/sops/age/keys.txt`（严禁入库）。修改凭据后 `sops -e -i sops/secrets.yaml` 再 rebuild。
 - **unstable 引用**：内核来自 `nixpkgs-unstable`，引用统一用 `inputs.nixpkgs-unstable.legacyPackages.<system>`。opencode 2（V2 CLI，命令名 `opencode2`）来自 flake input `llm-agents`（`github:numtide/llm-agents.nix`），不加 `nixpkgs.follows`（见 AGENTS.md）。
 - **`mutable` 文件**：`mutable = true` 的文件被复制而非软链接，且**必须同时 `force = true`**；从配置移除后目标文件不会自动删除。
-- **linger**：用户级服务（ddns-go、opencode-server、xray）开机自启依赖 `users.users.visionary.linger = true`。
+- **linger**：用户级服务（ddns-go、opencode2-serve、xray）开机自启依赖 `users.users.visionary.linger = true`。
 - **vscodeCdnUrl**：VSCode 升级后 CDN URL 的 commit/build 号会变，需在 `module/system/default.nix` 中同步更新。
 - **XWayland**：niri 25.08+ 无内嵌 XWayland，由 `xwayland-satellite` 提供，X11 应用依赖。
 - **硬件配置**：`host/hardware-configuration.nix` 由 `nixos-generate-config` 自动生成，勿手改。
@@ -227,4 +233,3 @@ journalctl --user -u xray -f
 | nixos-hardware | `github:NixOS/nixos-hardware` | `master` |
 | noctalia | `github:noctalia-dev/noctalia-shell` | — |
 | quickshell / dms | outfoxxed / AvengeMedia | — |
-| nix-index-database | `github:nix-community/nix-index-database` | — |

@@ -12,8 +12,8 @@
     inputs.nixos-hardware.nixosModules.common-gpu-amd
 
     # === CPU 配置 ===
-    # 本机为 Intel CPU（见 hardware-configuration.nix 中 kvm-intel）
-    # inputs.nixos-hardware.nixosModules.common-cpu-intel
+    # 本机为 AMD CPU/核显（故启用 common-cpu-amd / common-gpu-amd）
+    # Intel: inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-cpu-amd
 
     # === 其他通用模块 ===

@@ -24,6 +24,8 @@ in
     ./program
 
     # Nix-index-database - for comma and command-not-found
+    # 注：对应的 flake input 已移除；如需启用，先恢复 flake.nix 中的
+    # nix-index-database input，再取消下一行注释。
     # inputs.nix-index-database.hmModules.nix-index
   ];
 }
