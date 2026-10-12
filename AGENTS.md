@@ -13,10 +13,10 @@
 
 ## 目录结构
 
-- `host/` — 主机级配置：`configuration.nix`（nixos-hardware GPU/CPU 模块、xrdp、禁用睡眠）、`hardware-configuration.nix`（自动生成，一般勿手改；当前已将 Intel 专属的 `kvm-intel`/`hardware.cpu.intel.updateMicrocode` 手工改为 AMD，若日后用 `nixos-generate-config` 重新生成会被覆盖回 Intel，需重新改）。本机为 AMD CPU/核显，故 `configuration.nix` 启用 `common-cpu-amd`/`common-gpu-amd`。
+- `host/` — 主机级配置：`nixos-system.nix` 负责组合 NixOS 与 Home Manager 模块；`configuration.nix` 声明 nixos-hardware CPU/GPU、xrdp、禁用睡眠等；`hardware-configuration.nix` 自动生成，一般勿手改。本机为 AMD CPU/核显，`configuration.nix` 启用 `common-cpu-amd`/`common-gpu-amd`；硬件文件里的 `kvm-amd` 与 AMD 微码项为手工修正，重新运行 `nixos-generate-config` 会覆盖回 Intel 项，需再次改为 AMD。
 - `module/system/` — NixOS 模块。flak 中通过 `./module/system` 目录导入，实际聚合入口是 `module/system/default.nix`：新增/启用模块在此集中 `imports`，禁用一律用注释，不要删除文件。
 - `module/hm/` — home-manager 模块（`users.visionary = ./module/hm`），聚合入口 `module/hm/default.nix`。
-- `dotfile/` — 镜像用户主目录的原始文件。模块通过 specialArg `dotfile_dir` 引用，例：`source = dotfile_dir + /.config/kitty/kitty.conf`。
+- `dotfile/` — 镜像用户主目录的原始文件。仅 Home Manager 模块通过 `home-manager.extraSpecialArgs.dotfile_dir` 引用（定义在 `host/nixos-system.nix`），例：`source = dotfile_dir + /.config/kitty/kitty.conf`；不要把它加入 NixOS 级 `specialArgs`，系统模块不使用该路径。
 - `overlays/` — **不是 nixpkgs overlay**，是 `callPackage` 风格的包派生，用 `pkgs.callPackage ../../../overlays/xxx.nix {}` 引入（见 `sddm.nix`）。
 
 ## 易错点
@@ -45,7 +45,7 @@
 - `extraPackages` 决定 nvim wrapper 的 PATH 后缀，`clangd`/`clang-format`/`lldb-dap`/`fzf` 都要靠它才能被找到；新增依赖外部二进制的插件时同步加进去。
 - clangd 没有 `compile_commands.json` 会退回启发式模式；`dotfile/.config/nvim/lua/plugins/lsp.lua` 的 `find_compile_commands` 定位后传 `--compile-commands-dir`，重新生成数据库后用 `:ClangdSetDb` 刷新。**查找必须同时看常见构建子目录**：CMake 默认把数据库写在 `build/` 里，只逐级向上找是找不到的。向上查找仍需防 `/` 死循环（父目录等于自身时返回 nil）。
 - clangd 的编译数据库**只在启动时按 cwd 求值一次**是不够的：从工程目录之外启动 nvim 时首屏拿不到它。`lsp.lua` 因此在打开 C/C++ 文件时（`BufReadPost`/`BufNewFile`）按该缓冲区重算，目录变化才重启客户端，避免每次切文件重建索引。
-- 新增文件后 `nix flake check` 会报 "path does not exist"：未提交的文件不在 git 快照里，用 `nix flake check path:. --no-build --impure` 求值。
+- 新增文件后纯模式 flake 可能报 "path does not exist"：Git flake 源不会包含未跟踪文件，需先 `git add <file>`，或临时用 `nix flake check path:. --no-build` 求值（新增文件不需要 `--impure`）。
 - **插件配置有静默回退，不报错但没生效**：catppuccin 2.0 的 lualine 主题按 flavour 分别导出（`catppuccin-mocha` 等），写 `theme = 'catppuccin'` 会静默回退 `auto`；lualine 的 `extensions` 只接受扩展名（`nvim-tree`、`neo-tree`），`nvim-tree/indent` 这种"扩展/组件"写法会触发 `Invalid filename` 断言失败。排查这类问题用 `:lua require('lualine.utils.notices').show_notices()`——notice 存在模块内的 local 变量里，`LualineNotices` 命令在 headless 下不一定已注册。
 - **写补全测试时别断言 label 的原始前缀**：clangd 返回的 `CompletionList` 里，非精确前缀匹配的候选项 label 会带一个**前导空格**（如输入 `gr` 得到 `" greet"`，`kind=3`），用于让客户端区分模糊匹配；断言必须 `vim.trim` 后再比对，否则会误判"补全没生效"。另外两点：clangd 返回的是 `CompletionList`（`{items=..., isIncomplete=...}`）而非 `CompletionItem[]`，直接对 `result` 取 `#` 恒为 0，要先取 `result.items`；改完缓冲区立刻发 `textDocument/completion` 会拿到 `didChange` 之前的结果，需先用轻量请求轮询确认 clangd 已同步。
 - **headless 下测不了高亮是否真的上色**：`nvim --headless` 没有 UI 附着就不执行 redraw，高亮器不会应用任何 extmark，所以 `get_captures_at_cursor()` 和 `nvim_buf_get_extmarks()` 对**正常高亮**的文件同样返回空——不能用来判断"高亮有没有生效"。可靠做法是数查询实际匹配的捕获数：`vim.treesitter.query.get(ft, 'highlights')` 为 `nil` 就是没有查询（高亮必然失效），再用 `q:iter_captures(tree:root(), buf, 0, -1)` 数个数；或直接看 `:checkhealth vim.treesitter` 的 "Treesitter queries" 段。另外 `packloadall` 对已经被自动加载过的包不会重新加载，模拟"换了一套 generation"必须**替换** `packpath`（`--cmd 'set packpath=...'`），用 `^=` 追加会被旧 pack 抢先。

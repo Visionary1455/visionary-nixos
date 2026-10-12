@@ -12,9 +12,9 @@
 - **开发工具**：VSCode（Wayland IME + 微软 CDN 绕过）、opencode（AI 助手，常驻 server 服务）、Neovim（clangd LSP + lldb-dap 调试 + clang-format）、全套 LSP（nix/nil、gopls、zls、typescript、lua、python 等）
 - **网络与远程**：NetworkManager、OpenSSH、xrdp 远程桌面、Clash Verge Rev（mihomo 内核，TUN 模式）
 - **服务**：ddns-go（阿里云 DDNS，IPv4/IPv6 双栈）、opencode server（端口 4096）、xray（本地代理服务）
-- **硬件与系统**：nixos-hardware CPU/GPU 模块、PipeWire 音频、蓝牙（overskride）、硬件视频加速（Intel VAAPI）、禁用睡眠
+- **硬件与系统**：AMD CPU/核显（nixos-hardware）、Mesa 图形栈、PipeWire 音频、蓝牙（overskride）、禁用睡眠
 - **游戏**：Steam（gamescope 会话）+ Lutris + MangoHud
-- **Nix 优化**：清华/ISCAS 镜像源（flake `nixConfig` + 系统级，首次 rebuild 即生效）、自动 GC（14 天）、每周自动升级、500MB 下载缓冲、`auto-optimise-store`
+- **Nix 优化**：清华/ISCAS 镜像源（flake `nixConfig` + 系统级；首次部署需 `--accept-flake-config`）、自动 GC（14 天）、每周自动升级、500MB 下载缓冲、store 自动优化
 
 ## 快速开始
 
@@ -47,23 +47,32 @@ nix fmt
 ## 目录结构
 
 ```
-├── flake.nix                    # flake 入口：inputs、system、specialArgs
+├── flake.nix                    # flake 入口：inputs、outputs、系统标识
 ├── host/
-│   ├── configuration.nix        # 主机级配置：硬件模块、xrdp、禁用睡眠、用户组
-│   └── hardware-configuration.nix  # 自动生成，勿手改
+│   ├── nixos-system.nix         # 组装 NixOS 与 Home Manager 主机配置
+│   ├── configuration.nix        # 主机级配置：AMD 硬件模块、xrdp、禁用睡眠、用户组
+│   └── hardware-configuration.nix # 自动生成；AMD 项手工修正，重生成会回退为 Intel
 ├── module/
 │   ├── system/                  # NixOS 模块（聚合入口 default.nix）
 │   │   ├── base/                # 基础：网络、蓝牙、音频、输入法、游戏、硬件
 │   │   ├── nixos/               # bootloader、nix 设置、GC、自动升级、字体
 │   │   ├── displaymanager/      # SDDM
 │   │   └── program/             # niri、shell、LSP、虚拟化、Flatpak 等
-│   └── hm/                      # home-manager 模块（users.visionary）
+│   └── hm/                      # home-manager 模块（用户配置与导入聚合）
 │       ├── base/                # mutable 文件扩展、XDG、Qt 主题
-│       └── program/             # 各程序配置：bat、dolphin、yazi、opencode 等
-├── dotfile/                     # 镜像用户主目录的原始文件（通过 specialArg dotfile_dir 引用）
+│       ├── program/             # 各程序配置：bat、dolphin、yazi、opencode 等
+│       └── sops.nix             # 用户机密的 sops-nix 配置
+├── dotfile/                     # 用户原始配置；由 Home Manager 的 dotfile_dir 参数引用
 ├── overlays/                    # callPackage 风格包派生（非 nixpkgs overlay）
 └── AGENTS.md                    # 开发指南与易错点
 ```
+
+### Flake 配置流向
+
+- `flake.nix` 声明 inputs，并导出 `nixosConfigurations.visionary-computer`、系统检查和 formatter。
+- `host/nixos-system.nix` 负责拼装主机配置、硬件配置、`module/system` 和 Home Manager。
+- `inputs` 通过 NixOS 的 `specialArgs` 与 Home Manager 的 `extraSpecialArgs` 传递；`dotfile_dir` 仅通过 `home-manager.extraSpecialArgs` 提供给用户模块，系统模块不依赖它。
+- 系统模块聚合入口是 `module/system/default.nix`；Home Manager 聚合入口是 `module/hm/default.nix` 和 `module/hm/program/default.nix`。
 
 ## 模块说明
 
@@ -71,14 +80,15 @@ nix fmt
 
 | 文件 | 说明 |
 | --- | --- |
+| `default.nix` | 系统模块聚合入口：集中导入启用中的模块 |
 | `nixos/bootloader.nix` | systemd-boot、unstable 内核 `linuxPackages_7_1`、启动条目上限 8 |
-| `nixos/nix.nix` | flake 实验特性、清华/USTC 镜像、GitHub token 引入、GOPROXY |
-| `nixos/gc.nix` | 每周自动 GC（保留 14 天）、自动优化 store |
+| `nixos/nix.nix` | Nix 设置：实验特性、清华/ISCAS 镜像、GitHub token 引入、GOPROXY、store 自动优化 |
+| `nixos/gc.nix` | 每周自动 GC（保留 14 天）与定期 store 优化 |
 | `nixos/auto-upgrade.nix` | 每周自动升级并更新 flake.lock |
 | `nixos/fonts.nix` | Noto + Nerd Fonts 全家桶 |
 | `base/networking.nix` | NetworkManager、防火墙放行 4096（TCP）与 5900 |
 | `base/open-ssh.nix` | OpenSSH，仅允许 visionary 用户 |
-| `base/opengl.nix` | 硬件图形加速（32 位 + Intel VAAPI/NVDEC 驱动） |
+| `base/opengl.nix` | 图形栈与视频驱动包（Mesa、Intel VAAPI、NVIDIA VAAPI；本机使用 AMD 核显） |
 | `base/audio.nix` | PipeWire + WirePlumber + 蓝牙音频工具 |
 | `base/bluetooth.nix` | 蓝牙（关闭开机自启）、overskride |
 | `base/fcitx5.nix` | fcitx5 输入法 + 中文字体优化 + 区域设置 |
@@ -98,9 +108,11 @@ nix fmt
 
 | 文件 | 说明 |
 | --- | --- |
+| `default.nix` | 用户级配置入口：设置用户信息并导入基础模块与程序集合 |
 | `base/mutable.nix` | 自定义 `mutable` 选项：可写文件复制而非软链接 |
 | `base/xdg.nix` | XDG 基目录与用户目录、Portal、mime 应用 |
 | `base/qt.nix` | Qt5/Qt6 主题（qt5ct/qt6ct/Kvantum）、Colloid 图标、Nerd Fonts |
+| `sops.nix` | Home Manager 侧 sops-nix 设置与密钥文件位置 |
 | `program/git.nix` | Git 全局配置 |
 | `program/bat.nix` | bat（带语法高亮的 cat） |
 | `program/shell.nix` | starship 提示符、fish 配置（`rebuild` 命令） |
@@ -114,6 +126,7 @@ nix fmt
 | `program/noctalia.nix` | Noctalia shell 全量配置 |
 | `program/ddns-go.nix` | ddns-go 用户级服务 + 配置（凭据经 sops-nix 模板注入） |
 | `program/opencode.nix` | opencode 配置（server/TUI 插件、AGENTS.md） |
+| `program/wayvnc.nix` | wayvnc 用户服务与图形会话绑定 |
 | `program/xray.nix` | xray 用户级服务（sops-nix 注入凭据，启动前 `-test` 校验） |
 
 ### overlays（包派生）
@@ -175,7 +188,7 @@ nvim src/main.cpp
    - 系统模块 → `module/system/default.nix` 的 `imports`
    - 用户模块 → `module/hm/program/default.nix` 的 `imports`
 3. 禁用模块一律**注释掉** import 行，不要删除文件
-4. 需要引用 `dotfile/` 下的文件时，使用 specialArg `dotfile_dir`：
+4. 需要引用 `dotfile/` 下的文件时，在 Home Manager 模块中使用 `dotfile_dir`（由 `host/nixos-system.nix` 的 `home-manager.extraSpecialArgs` 注入）：
    ```nix
    home.file.".config/xxx/yyy" = {
      source = dotfile_dir + /.config/xxx/yyy;
@@ -215,7 +228,7 @@ journalctl --user -u xray -f
 - **linger**：用户级服务（ddns-go、opencode2-serve、xray）开机自启依赖 `users.users.visionary.linger = true`。
 - **vscodeCdnUrl**：VSCode 升级后 CDN URL 的 commit/build 号会变，需在 `module/system/default.nix` 中同步更新。
 - **XWayland**：niri 25.08+ 无内嵌 XWayland，由 `xwayland-satellite` 提供，X11 应用依赖。
-- **硬件配置**：`host/hardware-configuration.nix` 由 `nixos-generate-config` 自动生成，勿手改。
+- **硬件配置**：`host/hardware-configuration.nix` 由 `nixos-generate-config` 自动生成；当前手工将 `kvm-intel`/Intel 微码改为 AMD。重新生成会覆盖回 Intel 项，之后需再次改为 `kvm-amd`/AMD 微码。
 - **Neovim 配置归属**：`~/.config/nvim` 整个目录由 `dotfile/.config/nvim` 软链接而来，home-manager 不会往里写文件（模块里开了 `sideloadInitLua`）。**不要给插件加 `config = ...`**，否则 home-manager 会重新启用 `init.lua` 写入并与目录软链接冲突。
 - **Neovim 插件来源**：全部取自 `pkgs.vimPlugins`，属性名带 `-nvim` 后缀（`conform-nvim`、`which-key-nvim`、`gitsigns-nvim`…）。**没有用 lazy.nvim**：`nix-community/neovim-flake` 已 404、`folke/lazy.nvim` 与 `LazyVim` 的 flake.nix 均已移除。
 - **clangd 依赖编译数据库**：没有 `compile_commands.json` 时 clangd 退回启发式模式，头文件解析与重构会失效。CMake 工程用 `cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_EXPORT_COMPILE_COMMANDS=ON` 构建。查找逻辑在 `lua/plugins/lsp.lua` 的 `find_compile_commands`：每一级目录既看自身，也看 `build/`、`out/` 等常见构建子目录（CMake 默认写在 `build/` 子目录里，只向上找是找不到的）。重新生成数据库后用 `:ClangdSetDb` 刷新。
@@ -232,4 +245,6 @@ journalctl --user -u xray -f
 | home-manager | `github:nix-community/home-manager` | `release-26.05` |
 | nixos-hardware | `github:NixOS/nixos-hardware` | `master` |
 | noctalia | `github:noctalia-dev/noctalia-shell` | — |
-| quickshell / dms | outfoxxed / AvengeMedia | — |
+| quickshell | `git+https://git.outfoxxed.me/quickshell/quickshell` | — |
+| dms | `github:AvengeMedia/DankMaterialShell` | — |
+| sops-nix | `git+https://gh-proxy.com/https://github.com/Mic92/sops-nix` | — |
