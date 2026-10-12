@@ -53,32 +53,8 @@
     let
       system = "x86_64-linux";
       hostname = "visionary-computer";
-      dotfile_dir = ./dotfile;
-
-      nixosConfig = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit inputs dotfile_dir;
-        };
-        modules = [
-          ./host/configuration.nix
-          ./host/hardware-configuration.nix
-          ./module/system
-
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              verbose = true;
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "backhm";
-              extraSpecialArgs = {
-                inherit inputs dotfile_dir;
-              };
-              users.visionary = ./module/hm;
-            };
-          }
-        ];
+      nixosConfig = import ./host/nixos-system.nix {
+        inherit inputs nixpkgs system;
       };
     in
     {
