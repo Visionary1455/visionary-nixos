@@ -33,6 +33,11 @@
       url = "git+https://gh-proxy.com/https://github.com/Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # opencode 2（V2 CLI，安装为 opencode2 命令，nixpkgs 里的 opencode 仍是 1.x）。
+    # 不做 nixpkgs follows：本仓库锁定的 nixpkgs-unstable 较旧、缺
+    # installAgentSkills 等参数，而该 flake 求值 packages 集合时会强制求值全部
+    # 包的 meta，导致整个集合求值失败；沿用其自带的 nixpkgs 即可。
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =

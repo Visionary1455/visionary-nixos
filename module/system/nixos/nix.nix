@@ -27,7 +27,8 @@
 
       # 允许 GOPROXY 穿透沙箱（解决国内网络 proxy.golang.org 不可达问题）
       # impure-env 仅影响构建时环境，不破坏整体纯度
-      "impure-env" = "GOPROXY = https://goproxy.cn,direct";
+      # 注意：每项必须写成 name=value，= 两侧不能有空格，否则会被静默解析成空映射
+      "impure-env" = "GOPROXY=https://goproxy.cn,direct";
     };
   };
   nix.extraOptions = ''

@@ -55,8 +55,9 @@ in
     # 代理
     xray
 
-    # AI 助手
-    (inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.opencode)
+    # AI 助手：opencode 2（V2，numtide/llm-agents.nix，命令名为 opencode2；
+    # nixpkgs 的 opencode 仍停留在 1.x）
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
   ];
 
   imports = [

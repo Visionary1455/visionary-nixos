@@ -204,7 +204,7 @@ journalctl --user -u xray -f
 
 - **必须 `--impure` 部署**：`module/hm/program/ddns-go.nix` 用 `builtins.readFile` 读取仓库外的 `~/.config/ddns-go/AccessKey.csv`，纯模式下 flake 求值会报 "absolute path forbidden"。
 - **AccessKey 保密**：阿里云密钥只存在 `~/.config/ddns-go/AccessKey.csv`（格式：`AccessKey ID,AccessKey Secret`），不要写进任何 `.nix` 文件。
-- **unstable 引用**：内核与 opencode 来自 `nixpkgs-unstable`，引用统一用 `inputs.nixpkgs-unstable.legacyPackages.<system>`。
+- **unstable 引用**：内核来自 `nixpkgs-unstable`，引用统一用 `inputs.nixpkgs-unstable.legacyPackages.<system>`。opencode 2（V2 CLI，命令名 `opencode2`）来自 flake input `llm-agents`（`github:numtide/llm-agents.nix`），不加 `nixpkgs.follows`（见 AGENTS.md）。
 - **`mutable` 文件**：`mutable = true` 的文件被复制而非软链接，且**必须同时 `force = true`**；从配置移除后目标文件不会自动删除。
 - **linger**：用户级服务（ddns-go、opencode-server、xray）开机自启依赖 `users.users.visionary.linger = true`。
 - **vscodeCdnUrl**：VSCode 升级后 CDN URL 的 commit/build 号会变，需在 `module/system/default.nix` 中同步更新。
@@ -222,6 +222,7 @@ journalctl --user -u xray -f
 | --- | --- | --- |
 | nixpkgs | `github:nixos/nixpkgs` | `nixos-26.05` |
 | nixpkgs-unstable | `github:NixOS/nixpkgs` | `nixos-unstable` |
+| llm-agents | `github:numtide/llm-agents.nix` | — |
 | home-manager | `github:nix-community/home-manager` | `release-26.05` |
 | nixos-hardware | `github:NixOS/nixos-hardware` | `master` |
 | noctalia | `github:noctalia-dev/noctalia-shell` | — |

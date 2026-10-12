@@ -7,8 +7,12 @@
 
 {
   home.packages = with pkgs; [
-    # opencode-browser 插件依赖 Browser MCP（通过 npx 启动），需要 nodejs/npx
+    # opencode-browser 插件依赖 Browser MCP（通过 npx 启动），需要 nodejs/npx；
+    # @browsermcp/mcp 每次启动都会执行 `lsof -ti:9009 | xargs kill -9` 清理占端口的旧实例
+    # （单实例设计：后启动者接管），缺 lsof 时新实例会挂死在"等待端口释放"循环里，
+    # opencode 侧表现为 mcp connect failed "Request timed out"（30s 超时）
     nodejs
+    lsof
   ];
 
   xdg.configFile."opencode/AGENTS.md" = {
