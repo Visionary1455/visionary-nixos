@@ -47,7 +47,7 @@ in
   # opencode server 配置。
   # npm 插件由 opencode 启动时自动安装到 ~/.cache/opencode/node_modules，不经过 nix store。
   # - oh-my-opencode-slim：多智能体编排插件（orchestrator/explorer/oracle/librarian/designer/fixer
-  #   等）。V2 会优先解析包的 `./server` 子路径（自包含 bundle），v2.0.7+ 可用（本机 v2.0.26）。
+  #   等）。V2 会优先解析包的 `./server` 子路径（自包含 bundle），v2.0.7+ 可用（本机 v2.1.0）。
   #   **必须锁精确版本**：V2 对未锁版本的 npm 插件每次启动都会自动升级，写 `@latest` 等于静默升级；
   #   锁定条目才是真正的版本锁。其模型配置见下方 oh-my-opencode-slim.jsonc。
   xdg.configFile."opencode/opencode.jsonc" = {
