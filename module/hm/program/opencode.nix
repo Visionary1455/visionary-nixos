@@ -55,7 +55,14 @@ in
     text = ''
       {
         "$schema": "https://opencode.ai/config.json",
-        "plugin": ["oh-my-opencode-slim@3.0.4"]
+        "plugin": ["oh-my-opencode-slim@3.0.4"],
+
+        // 实验特性（opencode 2.1.0+）：向模型提供 todowrite 工具，
+        // 并在会话视图与侧边栏显示任务列表。
+        // 默认权限策略为 allow，无需额外 permission 规则。
+        "experimental": {
+          "todo": true
+        }
       }
     '';
   };
