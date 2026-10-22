@@ -21,3 +21,12 @@ if status is-interactive
 end
 
 set -U fish_greeting
+
+# 仅在交互式 SSH 登录时自动接入 tmux 的 main 会话（服务见 module/hm/program/tmux.nix）：
+# 本地 kitty 窗口行为完全不变（不自动 attach、无嵌套），tmux 内的 shell 仍是 fish。
+# 需要一次「裸」SSH 登录（不进 tmux）时：NO_TMUX=1 ssh visionary@10.10.10.10
+if status is-interactive; and set -q SSH_CONNECTION; and not set -q TMUX; and not set -q NO_TMUX
+    if command -q tmux
+        tmux new-session -A -s main
+    end
+end

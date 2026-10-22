@@ -11,6 +11,7 @@
     ./opencode.nix
     ./shell.nix
     ./terminals.nix
+    ./tmux.nix
     ./noctalia.nix
     ./neovim.nix
     ./niri.nix
