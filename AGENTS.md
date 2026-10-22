@@ -16,6 +16,7 @@
 - `host/` — 主机级配置：`identity.nix` 是主机名/架构/用户名/`stateVersion` 的唯一来源；`nixos-system.nix` 组装 NixOS 模块与 `specialArgs`；`home-manager.nix` 接入 Home Manager；`configuration.nix` 声明 nixos-hardware CPU/GPU、xrdp、禁用睡眠等；`hardware-configuration.nix` 自动生成，一般勿手改。本机为 AMD CPU/核显，`configuration.nix` 启用 `common-cpu-amd`/`common-gpu-amd`；硬件文件里的 `kvm-amd` 与 AMD 微码项为手工修正，重新运行 `nixos-generate-config` 会覆盖回 Intel 项，需再次改为 AMD。
 - `module/system/` — NixOS 模块。flak 中通过 `./module/system` 目录导入，实际聚合入口是 `module/system/default.nix`：新增/启用模块在此集中 `imports`，禁用一律用注释，不要删除文件。
 - `module/hm/` — home-manager 模块（`users.<identity.username> = ./module/hm`），聚合入口 `module/hm/default.nix`；用户名与 `stateVersion` 从 `identity` 读取，不要重新硬编码。
+- `ripgrep` 已由 `module/system/program/shell.nix` 安装，fish 交互式 shell 在 `dotfile/.config/fish/config.fish` 里已有 `alias grep='rg'`；不要替换系统 `grep` 二进制（大量脚本依赖 GNU grep 语义）。`lazygit` 由 `module/hm/program/git.nix` 的 `programs.lazygit.enable` 提供。
 - `dotfile/` — 镜像用户主目录的原始文件。仅 Home Manager 模块通过 `home-manager.extraSpecialArgs.dotfile_dir` 引用（定义在 `host/home-manager.nix`），例：`source = dotfile_dir + /.config/kitty/kitty.conf`；不要把它加入 NixOS 级 `specialArgs`，系统模块不使用该路径。
 - `overlays/` — **不是 nixpkgs overlay**，是 `callPackage` 风格的包派生，用 `pkgs.callPackage ../../../overlays/xxx.nix {}` 引入（见 `sddm.nix`）。
 

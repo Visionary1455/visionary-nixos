@@ -15,4 +15,7 @@
       pull.rebase = false;
     };
   };
+
+  # TUI Git 客户端（终端内查看提交、分支、暂存与 diff）
+  programs.lazygit.enable = true;
 }
