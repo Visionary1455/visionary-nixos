@@ -45,10 +45,10 @@
   programs.lazygit = {
     enable = true;
     # lazygit 0.61.x 使用 pagers 数组；旧版 git.paging.pager 已不再使用。
-    # lazygit 捕获 pager 输出（非 TTY），delta 会自动退回单栏，因此必须显式
-    # 传 --side-by-side；{{columnWidth}} 由 lazygit 替换为主面板宽度。
+    # lazygit 会把 pager 放进与补丁面板等宽的 PTY，delta 能直接读到真实宽度；
+    # 不要传 --width={{columnWidth}}：该占位符是半宽，会让补丁只占面板一半。
     settings.git.pagers = [
-      { pager = "delta --paging=never --side-by-side --width={{columnWidth}}"; }
+      { pager = "delta --paging=never --side-by-side"; }
     ];
   };
 }

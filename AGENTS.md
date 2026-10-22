@@ -17,7 +17,7 @@
 - `module/system/` — NixOS 模块。flak 中通过 `./module/system` 目录导入，实际聚合入口是 `module/system/default.nix`：新增/启用模块在此集中 `imports`，禁用一律用注释，不要删除文件。
 - `module/hm/` — home-manager 模块（`users.<identity.username> = ./module/hm`），聚合入口 `module/hm/default.nix`；用户名与 `stateVersion` 从 `identity` 读取，不要重新硬编码。
 - `ripgrep` 已由 `module/system/program/shell.nix` 安装，fish 交互式 shell 在 `dotfile/.config/fish/config.fish` 里已有 `alias grep='rg'`；不要替换系统 `grep` 二进制（大量脚本依赖 GNU grep 语义）。`lazygit` 由 `module/hm/program/git.nix` 的 `programs.lazygit.enable` 提供。
-- **delta/lazygit 分栏**：delta 0.19.x 只读 `~/.gitconfig`，而 Home Manager 的 Git 配置写在 `~/.config/git/config`，所以 `module/hm/program/git.nix` 把 `programs.delta.options` 额外镜像到 `~/.gitconfig`；删除它会让 delta 退回单栏。lazygit 0.61 使用 `git.pagers`（不是旧 `git.paging.pager`），且 pager 输出不是 TTY，delta 必须显式带 `--side-by-side`，宽度用 `{{columnWidth}}`。
+- **delta/lazygit 分栏**：delta 0.19.x 只读 `~/.gitconfig`，而 Home Manager 的 Git 配置写在 `~/.config/git/config`，所以 `module/hm/program/git.nix` 把 `programs.delta.options` 额外镜像到 `~/.gitconfig`；删除它会让 delta 退回单栏。lazygit 0.61 使用 `git.pagers`（不是旧 `git.paging.pager`），并把 pager 放进与补丁面板等宽的 PTY；**不要**给 delta 传 `--width={{columnWidth}}`，该占位符是半宽，会让补丁只占面板一半。
 - `dotfile/` — 镜像用户主目录的原始文件。仅 Home Manager 模块通过 `home-manager.extraSpecialArgs.dotfile_dir` 引用（定义在 `host/home-manager.nix`），例：`source = dotfile_dir + /.config/kitty/kitty.conf`；不要把它加入 NixOS 级 `specialArgs`，系统模块不使用该路径。
 - `overlays/` — **不是 nixpkgs overlay**，是 `callPackage` 风格的包派生，用 `pkgs.callPackage ../../../overlays/xxx.nix {}` 引入（见 `sddm.nix`）。
 
