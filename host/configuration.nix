@@ -1,6 +1,11 @@
 # 主机级系统配置
 # 依赖 nixos-hardware 提供的硬件模块，并根据本机硬件启用对应模块
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  identity,
+  ...
+}:
 {
   imports = [
     # === GPU 配置 ===
@@ -36,9 +41,9 @@
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
 
-  users.users.visionary = {
+  users.users.${identity.username} = {
     isNormalUser = true;
-    description = "visionary";
+    description = identity.username;
     extraGroups = [
       "networkmanager"
       "input"
@@ -50,5 +55,5 @@
     shell = pkgs.fish;
   };
 
-  system.stateVersion = "26.05";
+  system.stateVersion = identity.stateVersion;
 }

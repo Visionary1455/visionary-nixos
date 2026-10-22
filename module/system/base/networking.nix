@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, identity, ... }:
 {
   # 网络
   networking = {
-    hostName = "visionary-computer"; # 与 flake.nix 中的主机配置名保持一致
+    hostName = identity.hostname;
     networkmanager.enable = true;
     # wireless = {
     #   enable = true;

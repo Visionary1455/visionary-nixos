@@ -1,5 +1,5 @@
-function rebuild --description 'NixOS rebuild：默认 flake 为 .#visionary-computer，可传入参数覆盖 flake 位置'
-    set -l flake ".#visionary-computer"
+function rebuild --description 'NixOS rebuild：默认使用当前目录的 flake，可传参数覆盖'
+    set -l flake "."
     if test (count $argv) -gt 0
         set flake $argv[1]
     end

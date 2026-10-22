@@ -14,6 +14,7 @@
   };
 
   inputs = {
+    # === 核心：nixpkgs 与 Home Manager ===
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -24,15 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nix/NixOS/Home Manager 等主题的 AI agent 技能集合。其 Home Manager 模块
-    # 会把技能安装到 ~/.config/opencode/skills（OpenCode 用户级技能目录）。
-    # follows 避免重复拉取 nixpkgs 与 home-manager。
-    nix-skills = {
-      url = "github:olafkfreund/nix-skills";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-
+    # === 硬件与桌面环境 ===
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     quickshell = {
       url = "git+https://git.outfoxxed.me/quickshell/quickshell";
@@ -46,10 +39,23 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # === 用户机密 ===
     sops-nix = {
       url = "git+https://gh-proxy.com/https://github.com/Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # === AI 工具与技能 ===
+    # Nix/NixOS/Home Manager 等主题的 AI agent 技能集合。其 Home Manager 模块
+    # 会把技能安装到 ~/.config/opencode/skills（OpenCode 用户级技能目录）。
+    # follows 避免重复拉取 nixpkgs 与 home-manager。
+    nix-skills = {
+      url = "github:olafkfreund/nix-skills";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     # opencode 2（V2 CLI，安装为 opencode2 命令，nixpkgs 里的 opencode 仍是 1.x）。
     # 不做 nixpkgs follows：本仓库锁定的 nixpkgs-unstable 较旧、缺
     # installAgentSkills 等参数，而该 flake 求值 packages 集合时会强制求值全部
@@ -60,10 +66,12 @@
   outputs =
     inputs@{ nixpkgs, ... }:
     let
-      system = "x86_64-linux";
-      hostname = "visionary-computer";
+      # 主机/用户身份的唯一来源；flake 输出与各模块都从它取值。
+      identity = import ./host/identity.nix;
+      inherit (identity) hostname system;
+
       nixosConfig = import ./host/nixos-system.nix {
-        inherit inputs nixpkgs system;
+        inherit inputs nixpkgs identity;
       };
     in
     {

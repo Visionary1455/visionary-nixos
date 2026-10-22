@@ -1,7 +1,4 @@
-{ lib, ... }:
-let
-  USERNAME = "visionary";
-in
+{ lib, identity, ... }:
 {
   # 创建 Hypr 相关目录（供 home.file 的 logo 目录使用）
   home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
@@ -9,9 +6,9 @@ in
   '';
 
   home = {
-    username = USERNAME;
-    homeDirectory = "/home/${USERNAME}";
-    stateVersion = "26.05";
+    username = identity.username;
+    homeDirectory = "/home/${identity.username}";
+    stateVersion = identity.stateVersion;
   };
 
   imports = [

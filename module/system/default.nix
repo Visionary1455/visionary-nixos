@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  identity,
   ...
 }:
 let
@@ -95,7 +96,7 @@ in
     ./program/clash-verge.nix
   ];
 
-  # 开启 visionar's linger，使 home-manager 的用户级服务
+  # 开启用户的 linger，使 home-manager 的用户级服务
   # （如 module/hm/program/ddns-go.nix 中的 ddns-go）在开机后无需登录即可自启
-  users.users.visionary.linger = true;
+  users.users.${identity.username}.linger = true;
 }

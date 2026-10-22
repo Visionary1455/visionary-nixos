@@ -16,7 +16,7 @@
     #   source = dotfile_dir + /.config/fish/functions/fish_prompt.fish;
     # };
 
-    # rebuild 命令：sudo nixos-rebuild switch --flake ".#visionary-computer"（纯求值，无需 --impure）
+    # rebuild 命令：sudo nixos-rebuild switch --flake ".#<hostname>"（纯求值，无需 --impure）
     ".config/fish/functions/rebuild.fish" = {
       source = dotfile_dir + /.config/fish/functions/rebuild.fish;
     };

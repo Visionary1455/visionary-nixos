@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  identity,
   ...
 }:
 let
@@ -32,7 +33,7 @@ in
       enable_auth=true
       relax_encryption=true
       allow_broken_crypto=true
-      username=visionary
+      username=${identity.username}
       password=${config.sops.placeholder.wayvnc-password}
     '';
     path = "${config.xdg.configHome}/wayvnc/config";

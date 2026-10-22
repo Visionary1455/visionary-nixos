@@ -47,9 +47,11 @@ nix fmt
 ## 目录结构
 
 ```
-├── flake.nix                    # flake 入口：inputs、outputs、系统标识
+├── flake.nix                    # flake 入口：inputs、outputs
 ├── host/
-│   ├── nixos-system.nix         # 组装 NixOS 与 Home Manager 主机配置
+│   ├── identity.nix             # 主机名/架构/用户名/stateVersion 的唯一来源
+│   ├── nixos-system.nix         # 组装 NixOS 模块并注入 specialArgs
+│   ├── home-manager.nix         # 将 Home Manager 接入 NixOS，注入 extraSpecialArgs
 │   ├── configuration.nix        # 主机级配置：AMD 硬件模块、xrdp、禁用睡眠、用户组
 │   └── hardware-configuration.nix # 自动生成；AMD 项手工修正，重生成会回退为 Intel
 ├── module/
@@ -69,9 +71,10 @@ nix fmt
 
 ### Flake 配置流向
 
-- `flake.nix` 声明 inputs，并导出 `nixosConfigurations.visionary-computer`、系统检查和 formatter。
-- `host/nixos-system.nix` 负责拼装主机配置、硬件配置、`module/system` 和 Home Manager。
-- `inputs` 通过 NixOS 的 `specialArgs` 与 Home Manager 的 `extraSpecialArgs` 传递；`dotfile_dir` 仅通过 `home-manager.extraSpecialArgs` 提供给用户模块，系统模块不依赖它。
+- `flake.nix` 声明 inputs，读取 `host/identity.nix`，并导出 `nixosConfigurations.<hostname>`、系统检查和 formatter。
+- `host/nixos-system.nix` 负责拼装 `configuration.nix`、硬件配置、`module/system` 与 Home Manager。
+- `host/home-manager.nix` 把 Home Manager 接入 NixOS，并通过 `extraSpecialArgs` 提供 `inputs`、`identity` 和 `dotfile_dir`。
+- `identity` 同时进入 NixOS 的 `specialArgs`，供系统模块读取主机名、用户名与状态版本；`dotfile_dir` 仅提供给 Home Manager，系统模块不依赖它。
 - 系统模块聚合入口是 `module/system/default.nix`；Home Manager 聚合入口是 `module/hm/default.nix` 和 `module/hm/program/default.nix`。
 
 ## 模块说明

@@ -1,31 +1,18 @@
 {
   inputs,
   nixpkgs,
-  system,
+  identity,
 }:
 nixpkgs.lib.nixosSystem {
-  inherit system;
+  inherit (identity) system;
   specialArgs = {
-    inherit inputs;
+    inherit inputs identity;
   };
   modules = [
     ./configuration.nix
     ./hardware-configuration.nix
-    ../module/system
+    ./home-manager.nix
 
-    inputs.home-manager.nixosModules.home-manager
-    {
-      home-manager = {
-        verbose = true;
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        backupFileExtension = "backhm";
-        extraSpecialArgs = {
-          inherit inputs;
-          dotfile_dir = ../dotfile;
-        };
-        users.visionary = ../module/hm;
-      };
-    }
+    ../module/system
   ];
 }
