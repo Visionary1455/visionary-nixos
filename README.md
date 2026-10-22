@@ -9,7 +9,7 @@
 - **输入法**：fcitx5（Wayland 前端，云拼音百度源，含萌娘百科/中文维基词库 overlay）
 - **终端与 Shell**：kitty + fish + starship（Catppuccin 主题），现代 CLI 替代（`grep` → `rg`、`ls` → `eza`、`cd` → `zoxide`、`df/du` → `duf`）
 - **文件管理**：Dolphin（GUI，含 ark/KIO 全家桶）+ yazi（终端 TUI，带 PDF/视频/图片/压缩包预览）
-- **开发工具**：VSCode（Wayland IME + 微软 CDN 绕过）、opencode（AI 助手，常驻 server 服务）、Neovim（clangd LSP + lldb-dap 调试 + clang-format）、lazygit（TUI Git）、全套 LSP（nix/nil、gopls、zls、typescript、lua、python 等）
+- **开发工具**：VSCode（Wayland IME + 微软 CDN 绕过）、opencode（AI 助手，常驻 server 服务）、Neovim（clangd LSP + lldb-dap 调试 + clang-format）、lazygit（TUI Git）、delta（Git diff 左右分栏）、全套 LSP（nix/nil、gopls、zls、typescript、lua、python 等）
 - **网络与远程**：NetworkManager、OpenSSH、xrdp 远程桌面、Clash Verge Rev（mihomo 内核，TUN 模式）
 - **服务**：ddns-go（阿里云 DDNS，IPv4/IPv6 双栈）、opencode server（端口 4096）、xray（本地代理服务）
 - **硬件与系统**：AMD CPU/核显（nixos-hardware）、Mesa 图形栈、PipeWire 音频、蓝牙（overskride）、禁用睡眠
