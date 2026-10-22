@@ -126,6 +126,7 @@ nix fmt
 | `program/noctalia.nix` | Noctalia shell 全量配置 |
 | `program/ddns-go.nix` | ddns-go 用户级服务 + 配置（凭据经 sops-nix 模板注入） |
 | `program/opencode.nix` | opencode 配置（server/TUI 插件、AGENTS.md） |
+| `program/nix-skills.nix` | 引入 `nix-skills` Home Manager 模块，把 Nix/NixOS 技能集安装到 `~/.config/opencode/skills` |
 | `program/wayvnc.nix` | wayvnc 用户服务与图形会话绑定 |
 | `program/xray.nix` | xray 用户级服务（sops-nix 注入凭据，启动前 `-test` 校验） |
 
@@ -243,6 +244,7 @@ journalctl --user -u xray -f
 | nixpkgs-unstable | `github:NixOS/nixpkgs` | `nixos-unstable` |
 | llm-agents | `github:numtide/llm-agents.nix` | — |
 | home-manager | `github:nix-community/home-manager` | `release-26.05` |
+| nix-skills | `github:olafkfreund/nix-skills` | — |
 | nixos-hardware | `github:NixOS/nixos-hardware` | `master` |
 | noctalia | `github:noctalia-dev/noctalia-shell` | — |
 | quickshell | `git+https://git.outfoxxed.me/quickshell/quickshell` | — |

@@ -24,6 +24,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nix/NixOS/Home Manager 等主题的 AI agent 技能集合。其 Home Manager 模块
+    # 会把技能安装到 ~/.config/opencode/skills（OpenCode 用户级技能目录）。
+    # follows 避免重复拉取 nixpkgs 与 home-manager。
+    nix-skills = {
+      url = "github:olafkfreund/nix-skills";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     quickshell = {
       url = "git+https://git.outfoxxed.me/quickshell/quickshell";

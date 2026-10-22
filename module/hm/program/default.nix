@@ -14,6 +14,7 @@
     ./tmux.nix
     ./noctalia.nix
     ./neovim.nix
+    ./nix-skills.nix
     ./niri.nix
     ./wayvnc.nix
     ./yazi.nix

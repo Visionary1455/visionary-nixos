@@ -152,6 +152,29 @@
         "type": "github"
       }
     },
+    "nix-skills": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790233682,
+        "narHash": "sha256-kpfzu06HYAMP/pmu3CRPQb+skIjZGByxvaUy7F08axw=",
+        "owner": "olafkfreund",
+        "repo": "nix-skills",
+        "rev": "f5c8e8b3b3255e323e5b84192d0b6ed2e79ef4f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "olafkfreund",
+        "repo": "nix-skills",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -277,6 +300,7 @@
         "dms": "dms",
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
+        "nix-skills": "nix-skills",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
