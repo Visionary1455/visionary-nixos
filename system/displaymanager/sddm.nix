@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  sddm-candy = pkgs.callPackage ../../../overlays/sddm-candy.nix { };
-  Bibata-Modern-Ice = pkgs.callPackage ../../../overlays/Bibata-Modern-Ice.nix { };
+  sddm-candy = pkgs.callPackage ../../overlays/sddm-candy.nix { };
+  Bibata-Modern-Ice = pkgs.callPackage ../../overlays/Bibata-Modern-Ice.nix { };
 in
 {
   environment.systemPackages = [

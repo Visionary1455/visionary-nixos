@@ -20,7 +20,7 @@
     ninja
     gnumake
 
-    # LLDB 调试器：其自带的 lldb-dap 是 nvim-dap 的 C/C++ 调试适配器（见 module/hm/program/neovim.nix）
+    # LLDB 调试器：其自带的 lldb-dap 是 nvim-dap 的 C/C++ 调试适配器（见 home/program/neovim.nix）
     lldb
   ];
 }

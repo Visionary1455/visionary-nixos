@@ -5,7 +5,7 @@
   # extra- 前缀是「追加」而非覆盖：默认的 cache.nixos.org 仍保留，镜像内容由
   # 默认信任的 cache.nixos.org-1 签名，因此无需额外公钥即可使用。
   # 注意：这类设置不在 Nix 的白名单内，需要 `accept-flake-config` 才会自动生效，
-  # 否则交互式会提示、非交互式会忽略（见 module/system/nixos/nix.nix）。
+  # 否则交互式会提示、非交互式会忽略（见 system/nixos/nix.nix）。
   nixConfig = {
     extra-substituters = [
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"

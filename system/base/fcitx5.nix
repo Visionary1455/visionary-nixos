@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  fcitx5-pinyin-moegirl = pkgs.callPackage ../../../overlays/fcitx5-pinyin-moegirl.nix { };
-  fcitx5-pinyin-zhwiki = pkgs.callPackage ../../../overlays/fcitx5-pinyin-zhwiki.nix { };
+  fcitx5-pinyin-moegirl = pkgs.callPackage ../../overlays/fcitx5-pinyin-moegirl.nix { };
+  fcitx5-pinyin-zhwiki = pkgs.callPackage ../../overlays/fcitx5-pinyin-zhwiki.nix { };
 in
 {
   # 中文本地化与输入法

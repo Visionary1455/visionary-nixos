@@ -97,6 +97,6 @@ in
   ];
 
   # 开启用户的 linger，使 home-manager 的用户级服务
-  # （如 module/hm/program/ddns-go.nix 中的 ddns-go）在开机后无需登录即可自启
+  # （如 home/program/ddns-go.nix 中的 ddns-go）在开机后无需登录即可自启
   users.users.${identity.username}.linger = true;
 }

@@ -54,16 +54,15 @@ nix fmt
 │   ├── home-manager.nix         # 将 Home Manager 接入 NixOS，注入 extraSpecialArgs
 │   ├── configuration.nix        # 主机级配置：AMD 硬件模块、xrdp、禁用睡眠、用户组
 │   └── hardware-configuration.nix # 自动生成；AMD 项手工修正，重生成会回退为 Intel
-├── module/
-│   ├── system/                  # NixOS 模块（聚合入口 default.nix）
-│   │   ├── base/                # 基础：网络、蓝牙、音频、输入法、游戏、硬件
-│   │   ├── nixos/               # bootloader、nix 设置、GC、自动升级、字体
-│   │   ├── displaymanager/      # SDDM
-│   │   └── program/             # niri、shell、LSP、虚拟化、Flatpak 等
-│   └── hm/                      # home-manager 模块（用户配置与导入聚合）
-│       ├── base/                # mutable 文件扩展、XDG、Qt 主题
-│       ├── program/             # 各程序配置：bat、dolphin、yazi、opencode 等
-│       └── sops.nix             # 用户机密的 sops-nix 配置
+├── system/                      # NixOS 模块（聚合入口 default.nix）
+│   ├── base/                    # 基础：网络、蓝牙、音频、输入法、游戏、硬件
+│   ├── nixos/                   # bootloader、nix 设置、GC、自动升级、字体
+│   ├── displaymanager/          # SDDM
+│   └── program/                 # niri、shell、LSP、虚拟化、Flatpak 等
+├── home/                        # home-manager 模块（用户配置与导入聚合）
+│   ├── base/                    # mutable 文件扩展、XDG、Qt 主题
+│   ├── program/                 # 各程序配置：bat、dolphin、yazi、opencode 等
+│   └── sops.nix                 # 用户机密的 sops-nix 配置
 ├── dotfile/                     # 用户原始配置；由 Home Manager 的 dotfile_dir 参数引用
 ├── overlays/                    # callPackage 风格包派生（非 nixpkgs overlay）
 └── AGENTS.md                    # 开发指南与易错点
@@ -72,14 +71,14 @@ nix fmt
 ### Flake 配置流向
 
 - `flake.nix` 声明 inputs，读取 `host/identity.nix`，并导出 `nixosConfigurations.<hostname>`、系统检查和 formatter。
-- `host/nixos-system.nix` 负责拼装 `configuration.nix`、硬件配置、`module/system` 与 Home Manager。
+- `host/nixos-system.nix` 负责拼装 `configuration.nix`、硬件配置、`system/` 与 Home Manager。
 - `host/home-manager.nix` 把 Home Manager 接入 NixOS，并通过 `extraSpecialArgs` 提供 `inputs`、`identity` 和 `dotfile_dir`。
 - `identity` 同时进入 NixOS 的 `specialArgs`，供系统模块读取主机名、用户名与状态版本；`dotfile_dir` 仅提供给 Home Manager，系统模块不依赖它。
-- 系统模块聚合入口是 `module/system/default.nix`；Home Manager 聚合入口是 `module/hm/default.nix` 和 `module/hm/program/default.nix`。
+- 系统模块聚合入口是 `system/default.nix`；Home Manager 聚合入口是 `home/default.nix` 和 `home/program/default.nix`。
 
 ## 模块说明
 
-### module/system（NixOS 侧）
+### system（NixOS 侧）
 
 | 文件 | 说明 |
 | --- | --- |
@@ -107,7 +106,7 @@ nix fmt
 | `program/virtualization.nix` | Docker + libvirt/QEMU 虚拟化（默认禁用） |
 | `program/clash-verge.nix` | Clash Verge Rev（mihomo 内核，TUN 模式 + serviceMode + 自启动） |
 
-### module/hm（home-manager 侧）
+### home（home-manager 侧）
 
 | 文件 | 说明 |
 | --- | --- |
@@ -187,10 +186,10 @@ nvim src/main.cpp
 
 ## 新增或修改模块
 
-1. 在 `module/system/` 或 `module/hm/` 下新建 `.nix` 文件
+1. 在 `system/` 或 `home/` 下新建 `.nix` 文件
 2. 在对应的聚合入口注册：
-   - 系统模块 → `module/system/default.nix` 的 `imports`
-   - 用户模块 → `module/hm/program/default.nix` 的 `imports`
+   - 系统模块 → `system/default.nix` 的 `imports`
+   - 用户模块 → `home/program/default.nix` 的 `imports`
 3. 禁用模块一律**注释掉** import 行，不要删除文件
 4. 需要引用 `dotfile/` 下的文件时，在 Home Manager 模块中使用 `dotfile_dir`（由 `host/nixos-system.nix` 的 `home-manager.extraSpecialArgs` 注入）：
    ```nix
@@ -225,12 +224,12 @@ journalctl --user -u xray -f
 ## 注意事项
 
 - **无需 `--impure`**：本机凭据由 sops-nix 在 activation 阶段解密注入（`sops.templates` + `sops.placeholder`），ddns-go/xray/opencode 均已改为该方式，纯求值即可部署。纯模式下 flake 只读取 git 已跟踪的文件，新增文件请先 `git add`（或临时用 `path:.`）。
-- **国内镜像（flake `nixConfig`）**：`flake.nix` 顶层的 `nixConfig.extra-substituters` 让系统 nix.conf 生效前也走清华/ISCAS 镜像。该设置不在 Nix 白名单内，需 `accept-flake-config` 才自动生效：`module/system/nixos/nix.nix` 已设 `accept-flake-config = true`，但**首次** rebuild 时它尚未写入 `/etc/nix/nix.conf`，故首次请加 `--accept-flake-config`（或对交互提示回答 `y`）。
+- **国内镜像（flake `nixConfig`）**：`flake.nix` 顶层的 `nixConfig.extra-substituters` 让系统 nix.conf 生效前也走清华/ISCAS 镜像。该设置不在 Nix 白名单内，需 `accept-flake-config` 才自动生效：`system/nixos/nix.nix` 已设 `accept-flake-config = true`，但**首次** rebuild 时它尚未写入 `/etc/nix/nix.conf`，故首次请加 `--accept-flake-config`（或对交互提示回答 `y`）。
 - **凭据保密**：所有密钥加密存于 `sops/secrets.yaml`（可安全入库），age 私钥在 `~/.config/sops/age/keys.txt`（严禁入库）。修改凭据后 `sops -e -i sops/secrets.yaml` 再 rebuild。
 - **unstable 引用**：内核来自 `nixpkgs-unstable`，引用统一用 `inputs.nixpkgs-unstable.legacyPackages.<system>`。opencode 2（V2 CLI，命令名 `opencode2`）来自 flake input `llm-agents`（`github:numtide/llm-agents.nix`），不加 `nixpkgs.follows`（见 AGENTS.md）。
 - **`mutable` 文件**：`mutable = true` 的文件被复制而非软链接，且**必须同时 `force = true`**；从配置移除后目标文件不会自动删除。
 - **linger**：用户级服务（ddns-go、opencode2-serve、xray）开机自启依赖 `users.users.visionary.linger = true`。
-- **vscodeCdnUrl**：VSCode 升级后 CDN URL 的 commit/build 号会变，需在 `module/system/default.nix` 中同步更新。
+- **vscodeCdnUrl**：VSCode 升级后 CDN URL 的 commit/build 号会变，需在 `system/default.nix` 中同步更新。
 - **XWayland**：niri 25.08+ 无内嵌 XWayland，由 `xwayland-satellite` 提供，X11 应用依赖。
 - **硬件配置**：`host/hardware-configuration.nix` 由 `nixos-generate-config` 自动生成；当前手工将 `kvm-intel`/Intel 微码改为 AMD。重新生成会覆盖回 Intel 项，之后需再次改为 `kvm-amd`/AMD 微码。
 - **Neovim 配置归属**：`~/.config/nvim` 整个目录由 `dotfile/.config/nvim` 软链接而来，home-manager 不会往里写文件（模块里开了 `sideloadInitLua`）。**不要给插件加 `config = ...`**，否则 home-manager 会重新启用 `init.lua` 写入并与目录软链接冲突。

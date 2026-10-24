@@ -58,7 +58,7 @@ in
     path = "${config.xdg.configHome}/ddns-go/config.yaml";
   };
 
-  # ddns-go 用户级服务（开机自启依赖系统侧的 linger, 见 module/system/default.nix）
+  # ddns-go 用户级服务（开机自启依赖系统侧的 linger, 见 system/default.nix）
   systemd.user.services.ddns-go = {
     Unit = {
       Description = "ddns-go DDNS client";

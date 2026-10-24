@@ -12,6 +12,6 @@
       inherit inputs identity;
       dotfile_dir = ../dotfile;
     };
-    users.${identity.username} = ../module/hm;
+    users.${identity.username} = ../home;
   };
 }

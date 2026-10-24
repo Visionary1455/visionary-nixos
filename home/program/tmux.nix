@@ -33,7 +33,7 @@ in
     '';
   };
 
-  # 开机即拉起一个分离的 main 会话（用户级 linger 已在 module/system/default.nix 开启，
+  # 开机即拉起一个分离的 main 会话（用户级 linger 已在 system/default.nix 开启，
   # 无需图形登录）；会话已存在时保持原样，不会踢掉已 attach 的客户端。
   systemd.user.services.tmux-main = {
     Unit = {

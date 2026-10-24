@@ -8,7 +8,7 @@
 
 let
   # opencode 2（V2 CLI）来自 flake input（nixpkgs 的 opencode 仍是 1.x）。
-  # 系统 PATH 里也有同名二进制（module/system/default.nix），但服务直接引用
+  # 系统 PATH 里也有同名二进制（system/default.nix），但服务直接引用
   # store 路径，不依赖 PATH。
   opencode2 = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2;
 
@@ -157,9 +157,9 @@ in
     '';
   };
 
-  # opencode server 用户级服务。开机自启依赖系统侧 linger（module/system/default.nix），
+  # opencode server 用户级服务。开机自启依赖系统侧 linger（system/default.nix），
   # 挂在 default.target.wants，故无图形会话也启动；4096 已在
-  # module/system/base/networking.nix 对全网放行，认证方式是 Basic（用户名为 opencode）。
+  # system/base/networking.nix 对全网放行，认证方式是 Basic（用户名为 opencode）。
   #
   # 注意：不要照抄 ddns-go/xray 的 ProtectHome/ProtectSystem 加固——serve 需要在用户
   # 家目录读写会话数据库与缓存，还要执行任意 shell 命令，收紧后必然不可用。

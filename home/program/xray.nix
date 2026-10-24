@@ -101,7 +101,7 @@ in
     path = "${config.xdg.configHome}/xray/config.json";
   };
 
-  # xray 用户级服务（开机自启依赖系统侧的 linger, 见 module/system/default.nix）
+  # xray 用户级服务（开机自启依赖系统侧的 linger, 见 system/default.nix）
   systemd.user.services.xray = {
     Unit = {
       Description = "xray proxy service";

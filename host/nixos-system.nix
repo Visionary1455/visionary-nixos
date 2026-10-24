@@ -13,6 +13,6 @@ nixpkgs.lib.nixosSystem {
     ./hardware-configuration.nix
     ./home-manager.nix
 
-    ../module/system
+    ../system
   ];
 }
