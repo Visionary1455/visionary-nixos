@@ -31,9 +31,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # 远程桌面
-  services.xrdp.enable = true;
-  services.xrdp.openFirewall = true;
+  # 远程桌面：lamco-rdp-server 用户服务使用 NLA/CredSSP 认证。
+  # 服务、凭据与端口在 home/program/lamco-rdp-server.nix 和
+  # system/base/networking.nix 中声明。
+  # 允许 lamco 的 FUSE 剪贴板文件传输使用 allow_other。
+  programs.fuse.userAllowOther = true;
 
   # 禁用睡眠/休眠，避免 NUC/台式机挂起问题
   systemd.targets.sleep.enable = false;

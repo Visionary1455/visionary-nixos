@@ -10,7 +10,7 @@
 - **终端与 Shell**：kitty + fish + starship（Catppuccin 主题），现代 CLI 替代（`grep` → `rg`、`ls` → `eza`、`cd` → `zoxide`、`df/du` → `duf`）
 - **文件管理**：Dolphin（GUI，含 ark/KIO 全家桶）+ yazi（终端 TUI，带 PDF/视频/图片/压缩包预览）
 - **开发工具**：VSCode（Wayland IME + 微软 CDN 绕过）、opencode（AI 助手，常驻 server 服务）、Neovim（clangd LSP + lldb-dap 调试 + clang-format）、lazygit（TUI Git）、delta（Git diff 左右分栏）、全套 LSP（nix/nil、gopls、zls、typescript、lua、python 等）
-- **网络与远程**：NetworkManager、OpenSSH、xrdp 远程桌面、Clash Verge Rev（mihomo 内核，TUN 模式）
+- **网络与远程**：NetworkManager、OpenSSH、lamco-rdp-server 远程桌面（RDP，端口 3389）、Clash Verge Rev（mihomo 内核，TUN 模式）
 - **服务**：ddns-go（阿里云 DDNS，IPv4/IPv6 双栈）、opencode server（端口 4096）、xray（本地代理服务）
 - **硬件与系统**：AMD CPU/核显（nixos-hardware）、Mesa 图形栈、PipeWire 音频、蓝牙（overskride）、禁用睡眠
 - **游戏**：Steam（gamescope 会话）+ Lutris + MangoHud
@@ -44,6 +44,16 @@ nix fmt
 
 > 注意：`nix fmt` 在当前 Nix 版本（≥2.24）下不会自动发现文件，需要显式传文件列表，例如 `nix fmt $(git ls-files '*.nix')`。
 
+## 远程桌面
+
+远程桌面由 `lamco-rdp-server` 提供（RDP，端口 `3389`），随 niri 图形会话启动：
+
+- 客户端连接 `<主机名或 IP>:3389`，用户名 `visionary`，密码为**系统登录密码**（存于 sops 机密 `lamco-rdp-password`）。
+- NLA/CredSSP 使用静态凭据，不经过 PAM；修改系统登录密码后，必须同步更新该 sops 机密并重新部署，否则 RDP 会提示凭据错误。
+- 首次连接会看到自签名 TLS 证书警告，确认后继续。
+- 查看状态与日志：`systemctl --user status lamco-rdp-server`、`journalctl --user -u lamco-rdp-server -f`。
+- 服务端源码构建参数在 `overlays/lamco-rdp-server.nix`；升级时同步修改 `version` 与 `hash`，先单独构建验证。
+
 ## 目录结构
 
 ```
@@ -52,7 +62,7 @@ nix fmt
 │   ├── identity.nix             # 主机名/架构/用户名/stateVersion 的唯一来源
 │   ├── nixos-system.nix         # 组装 NixOS 模块并注入 specialArgs
 │   ├── home-manager.nix         # 将 Home Manager 接入 NixOS，注入 extraSpecialArgs
-│   ├── configuration.nix        # 主机级配置：AMD 硬件模块、xrdp、禁用睡眠、用户组
+│   ├── configuration.nix        # 主机级配置：AMD 硬件模块、lamco NLA/FUSE、禁用睡眠、用户组
 │   └── hardware-configuration.nix # 自动生成；AMD 项手工修正，重生成会回退为 Intel
 ├── system/                      # NixOS 模块（聚合入口 default.nix）
 │   ├── base/                    # 基础：网络、蓝牙、音频、输入法、游戏、硬件
@@ -88,7 +98,7 @@ nix fmt
 | `nixos/gc.nix` | 每周自动 GC（保留 14 天）与定期 store 优化 |
 | `nixos/auto-upgrade.nix` | 每周自动升级并更新 flake.lock |
 | `nixos/fonts.nix` | Noto + Nerd Fonts 全家桶 |
-| `base/networking.nix` | NetworkManager、防火墙放行 4096（TCP）与 5900 |
+| `base/networking.nix` | NetworkManager、防火墙放行 4096 与 3389（TCP） |
 | `base/open-ssh.nix` | OpenSSH，仅允许 visionary 用户 |
 | `base/opengl.nix` | 图形栈与视频驱动包（Mesa、Intel VAAPI、NVIDIA VAAPI；本机使用 AMD 核显） |
 | `base/audio.nix` | PipeWire + WirePlumber + 蓝牙音频工具 |
@@ -129,7 +139,7 @@ nix fmt
 | `program/ddns-go.nix` | ddns-go 用户级服务 + 配置（凭据经 sops-nix 模板注入） |
 | `program/opencode.nix` | opencode 配置（server/TUI 插件、AGENTS.md） |
 | `program/nix-skills.nix` | 引入 `nix-skills` Home Manager 模块，把 Nix/NixOS 技能集安装到 `~/.config/opencode/skills` |
-| `program/wayvnc.nix` | wayvnc 用户服务与图形会话绑定 |
+| `program/lamco-rdp-server.nix` | lamco RDP 用户服务（NLA 认证，绑定 niri 图形会话） |
 | `program/xray.nix` | xray 用户级服务（sops-nix 注入凭据，启动前 `-test` 校验） |
 
 ### overlays（包派生）
@@ -139,6 +149,7 @@ nix fmt
 | `sddm-candy.nix` | Candy 主题，已适配 Qt6（Qt5Compat.GraphicalEffects） |
 | `Bibata-Modern-Ice.nix` | 鼠标光标主题 |
 | `fcitx5-pinyin-moegirl.nix` / `fcitx5-pinyin-zhwiki.nix` | fcitx5 中文词库 |
+| `lamco-rdp-server.nix` | lamco-rdp-server 1.4.5 源码构建（Wayland/wlroots、NLA、H.264） |
 
 ## Neovim C++ 开发环境
 

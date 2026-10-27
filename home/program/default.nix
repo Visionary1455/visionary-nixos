@@ -16,7 +16,7 @@
     ./neovim.nix
     ./nix-skills.nix
     ./niri.nix
-    ./wayvnc.nix
+    ./lamco-rdp-server.nix
     ./yazi.nix
     ./xray.nix
   ];

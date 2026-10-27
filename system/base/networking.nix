@@ -25,10 +25,10 @@
     # };
     firewall = {
       # 4096: opencode server（Basic Auth，HTTP over TCP）
-      # 5900: wayvnc VNC 服务端（见 home/program/wayvnc.nix）
+      # 3389: lamco-rdp-server RDP 服务端（见 home/program/lamco-rdp-server.nix）
       allowedTCPPorts = [
         4096
-        5900
+        3389
       ];
     };
   };
